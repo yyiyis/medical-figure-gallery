@@ -16,6 +16,38 @@ from scan_gallery import INDEX, LICENSES, extend_catalog, image_size, json_secti
 
 FEATURED = [
     {
+        "kind": "figures",
+        "journal": "Environment International",
+        "title": "从出生到成年早期的多域暴露测量",
+        "tags": "生命历程|暴露组|环境健康|表观遗传|研究设计",
+        "note": "图 1 用同一条时间轴对齐四类暴露、不同时点的测量与 22 岁的 DNA 甲基化采样。",
+        "source": "https://doi.org/10.1016/j.envint.2026.110430",
+        "image": "https://ars.els-cdn.com/content/image/1-s2.0-S0160412026003880-gr1_lrg.jpg",
+        "credit": "Opperbeck 等 · Environment International 图 1",
+        "license": "by",
+        "doi": "10.1016/j.envint.2026.110430",
+        "date": "2026-07-27",
+        "width": 3544,
+        "height": 2681,
+        "file": "environment-international-110430-fig1.jpg"
+    },
+    {
+        "kind": "figures",
+        "journal": "Nature Communications",
+        "title": "化学暴露组网络的多层分群",
+        "tags": "暴露组|网络图|组图",
+        "note": "图 2 用局部放大和嵌套矩形表现从总体网络到细分群落的层级，再用下排图比较群落特征。",
+        "source": "https://doi.org/10.1038/s41467-026-72402-y",
+        "image": "https://media.springernature.com/original/springer-static/image/art%3A10.1038%2Fs41467-026-72402-y/MediaObjects/41467_2026_72402_Fig2_HTML.png",
+        "credit": "Lombardo 等 · Nature Communications 图 2",
+        "license": "by-nc-nd",
+        "doi": "10.1038/s41467-026-72402-y",
+        "date": "2026-04-27",
+        "width": 1947,
+        "height": 1942,
+        "file": "nature-communications-72402-fig2.png"
+    },
+    {
         "kind": "abstract",
         "journal": "European Heart Journal",
         "title": "夜间光照与心脏结构和功能",
