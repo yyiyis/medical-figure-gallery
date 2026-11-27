@@ -1,0 +1,33 @@
+:root {
+  --paper: #f5f6f8;
+  --ink: #202733;
+  --muted: #526171;
+  --edge: #d7dfe8;
+  --accent: #244965;
+}
+body {line-height:1.65}
+header {padding:36px 0 22px; background:#fafbfc}
+h1 {
+  font-family: "Songti SC", "Noto Serif CJK SC", Georgia, serif;
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 700;
+  letter-spacing: -.015em;
+}
+header .usage-note {max-width: 76ch; margin-top:8px; font-size:13px}
+:focus-visible {outline-color:var(--accent)}
+.scope-badge, .tags li {background:#edf1f6}
+.controls {display:grid; grid-template-columns:1fr; gap:10px; margin-bottom:10px}
+.filters, .extra-filters {display:flex; flex-wrap:wrap; gap:7px 10px}
+.filters #search {width:min(370px,100%)}
+.extra-filters select, .filters select, .plain {min-height:40px}
+.card, .scope {border-radius:8px}
+.card-content h2 {font-weight:650}
+.scope-body table {border-collapse:collapse; min-width:560px; font-size:14px}
+.scope-body th, .scope-body td {padding:6px 12px; border-bottom:1px solid var(--edge); text-align:left}
+.scope-body td:nth-child(n+2):nth-child(-n+4) {text-align:right; font-variant-numeric:tabular-nums}
+dialog::backdrop {background:rgba(20,31,46,.79)}
+@media (max-width:700px) {
+  header {padding-top:24px}
+  .filters #search {width:100%}
+  .extra-filters select {max-width:calc(50% - 5px); flex:1 1 calc(50% - 5px)}
+}
