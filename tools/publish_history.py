@@ -4,6 +4,7 @@
 import argparse
 import html
 import json
+import os
 import re
 from datetime import date, datetime
 from pathlib import Path
@@ -192,6 +193,33 @@ def archive_featured(document):
     return set_section(document, 'catalog', added + catalogue), added
 
 
+def write_review_summary(report):
+    target = os.environ.get('GITHUB_STEP_SUMMARY')
+    if not target:
+        return
+    grouped = {}
+    for row in report['items']:
+        grouped.setdefault(row[1], []).append(row)
+    with Path(target).open('a', encoding='utf-8') as f:
+        f.write('## 历史图文摘要候选\n\n')
+        f.write(f"{report['start']} 至 {report['end']} · {len(report['items']):,} 张候选。"
+                '逐张核对后可用 DOI 发布。\n\n')
+        for journal, candidates in sorted(grouped.items()):
+            f.write(f'<details><summary>{html.escape(journal)} · {len(candidates)} 张</summary>\n\n')
+            f.write('| 图片或论文 | 首次线上 | 主题 | 尺寸 | 许可 | DOI |\n| --- | --- | --- | --- | --- | --- |\n')
+            for row in candidates:
+                info = row[10]
+                doi = info['doi'].strip()
+                title = html.escape(row[3]).replace('|', '&#124;').replace('\n', ' ')
+                tag = html.escape(row[4]).replace('|', '、')
+                preview = info.get('url', row[7])
+                links = f'<a href="https://doi.org/{quote(doi, safe="/")}">{title}</a>'
+                if valid_image_url(preview) and urlsplit(preview).hostname in {'ars.els-cdn.com', 'media.springernature.com'}:
+                    links += f' · <a href="{html.escape(preview, quote=True)}">原图</a>'
+                f.write(f"| {links} | {info['published']} | {tag} | {info['width']} × {info['height']} | {row[9]} | {html.escape(doi)} |\n")
+            f.write('\n</details>\n\n')
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--report', required=True, type=Path)
@@ -213,6 +241,7 @@ def main():
         updated = re.sub(r'(<p id="coverage-status">.*?)</p>', lambda m: m[1] + extra + '</p>', updated, count=1, flags=re.S)
     INDEX.write_text(updated, encoding='utf-8')
     print(f'Added {len(featured)} individually reviewed abstracts, figures and covers.')
+    write_review_summary(report)
     counts = report['results']
     print(f"Saved coverage for {len(counts)} journals, {sum(row['counts'].get('metadata_read', 0) for row in counts):,} records, and {len(report['items'])} graphical abstract candidates.")
     for row in counts:
