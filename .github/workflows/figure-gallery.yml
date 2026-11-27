@@ -19,8 +19,7 @@ on:
       journals:
         description: Comma-separated journal names (optional)
       report_run:
-        description: Completed historical scan run ID (history mode)
-        default: "45940859883"
+        description: Historical scan run ID (optional, uses the saved cloud report when blank)
       review_dois:
         description: Comma-separated reviewed DOIs to include (history mode)
       publish:
@@ -57,7 +56,7 @@ jobs:
           if [[ "$PUBLISH" == "true" ]]; then args+=(--publish); fi
           python3 tools/scan_gallery.py "${args[@]}"
       - name: Read historical report
-        if: inputs.mode == 'history'
+        if: inputs.mode == 'history' && inputs.report_run != ''
         uses: actions/download-artifact@v4
         with:
           name: scan-result
@@ -68,7 +67,17 @@ jobs:
         if: inputs.mode == 'history'
         env:
           REVIEW_DOIS: ${{ inputs.review_dois }}
-        run: python3 tools/publish_history.py --report "$RUNNER_TEMP/gallery-history/scan-result.json" --selection "$REVIEW_DOIS"
+          REPORT_RUN: ${{ inputs.report_run }}
+          PUBLISH: ${{ inputs.publish }}
+        run: |
+          archive="data/history-2026-11-27.json"
+          report="$archive"
+          if [[ -n "$REPORT_RUN" ]]; then report="$RUNNER_TEMP/gallery-history/scan-result.json"; fi
+          python3 tools/publish_history.py --report "$report" --selection "$REVIEW_DOIS"
+          if [[ "$PUBLISH" == "true" && "$report" != "$archive" ]]; then
+            mkdir -p data
+            cp "$report" "$archive"
+          fi
       - name: Store scan report
         if: always()
         uses: actions/upload-artifact@v4
@@ -81,6 +90,7 @@ jobs:
         if: github.event_name == 'schedule' || (inputs.publish && inputs.mode != 'deploy')
         run: |
           git add index.html
+          if [[ -f data/history-2026-11-27.json ]]; then git add data/history-2026-11-27.json; fi
           if [[ -d assets/reference ]]; then git add assets/reference; fi
           if ! git diff --cached --quiet; then
             git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -m "Update medical figure gallery"
@@ -113,5 +123,3 @@ jobs:
       - name: Deploy GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
-
