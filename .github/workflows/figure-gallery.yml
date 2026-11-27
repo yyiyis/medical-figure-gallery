@@ -10,7 +10,7 @@ on:
       mode:
         description: Run mode
         type: choice
-        options: [pilot, backfill, weekly, history, repair, deploy]
+        options: [pilot, backfill, weekly, history, deploy]
         default: pilot
       start:
         description: First online date, start (YYYY-MM-DD, optional)
@@ -43,9 +43,8 @@ jobs:
       - uses: actions/checkout@v6
         with:
           ref: main
-          fetch-depth: 8
       - name: Scan journal catalogues
-        if: github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.mode != 'deploy' && inputs.mode != 'history' && inputs.mode != 'repair')
+        if: github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.mode != 'deploy' && inputs.mode != 'history')
         env:
           MODE: ${{ inputs.mode || 'weekly' }}
           START: ${{ inputs.start }}
@@ -69,16 +68,11 @@ jobs:
         env:
           REVIEW_DOIS: ${{ inputs.review_dois }}
           REPORT_RUN: ${{ inputs.report_run }}
-          PUBLISH: ${{ inputs.publish }}
         run: |
           archive="data/history-2026-11-27.json"
           report="$archive"
           if [[ -n "$REPORT_RUN" ]]; then report="$RUNNER_TEMP/gallery-history/scan-result.json"; fi
-          python3 tools/publish_history.py --report "$report" --selection "$REVIEW_DOIS"
-          if [[ "$PUBLISH" == "true" && "$report" != "$archive" ]]; then
-            mkdir -p data
-            cp "$report" "$archive"
-          fi
+          python3 tools/promote_history.py --report "$report" --selection "$REVIEW_DOIS"
       - name: Store scan report
         if: always()
         uses: actions/upload-artifact@v4
@@ -87,47 +81,32 @@ jobs:
           path: ${{ runner.temp }}/scan-result.json
           retention-days: 30
           if-no-files-found: ignore
-      - name: Restore catalogue after web editor truncation
-        if: github.event_name == 'push' || inputs.mode == 'repair'
-        run: |
-          if ! git log -1 --format=%s -- index.html | grep -Fxq 'Group public journal directory by discipline'; then exit 0; fi
-          previous=6fbbdf70809248e73f4c6062563f898d70d81467
-          git fetch --no-tags origin "$previous"
-          python3 - "$previous" <<'PY'
-          import json
-          import re
-          import subprocess
-          import sys
-          from pathlib import Path
-
-          path = Path('index.html')
-          current = path.read_text(encoding='utf-8')
-          previous = subprocess.check_output(['git', 'show', f'{sys.argv[1]}:index.html'], text=True, encoding='utf-8')
-
-          def section(document, identifier):
-              pattern = rf'<script id="{identifier}"[^>]*>\s*(.*?)</script>'
-              return re.search(pattern, document, re.S)
-
-          registry = section(current, 'journal-registry')
-          previous_registry = section(previous, 'journal-registry')
-          names = lambda raw: sorted(j['name'] for g in json.loads(raw)['groups'] for j in g['journals'])
-          assert names(registry[1]) == names(previous_registry[1])
-          restored = previous[:previous_registry.start()] + registry[0] + previous[previous_registry.end():]
-          for identifier in ('journal-registry', 'catalog', 'collection-report'):
-              json.loads(section(restored, identifier)[1])
-          assert len(json.loads(section(restored, 'catalog')[1])) == 81
-          introduction = '<p>浏览图文摘要、正文组图和期刊封面。点图可在本页放大。</p>'
-          notice = '<p class="usage-note">本图集整理已公开发表的文献图表，供个人学习与科研作图参考。每张图标明出处及适用许可，转载或商用请遵循相应条款。</p>'
-          assert restored.count(introduction) == 1
-          restored = restored.replace(introduction, introduction + notice, 1)
-          path.write_text(restored, encoding='utf-8')
-          PY
       - name: Apply gallery interface updates
         if: github.event_name == 'push'
         run: |
           if [[ -f tools/update_site.py ]]; then python3 tools/update_site.py; fi
+      - name: Check whether the completed 2026 supplement has been archived
+        id: supplement
+        if: github.event_name == 'push'
+        run: |
+          if [[ ! -f data/history-supplement-2026-11-27.json ]]; then
+            echo "needed=true" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Read the completed 27-journal scan
+        if: steps.supplement.outputs.needed == 'true'
+        uses: actions/download-artifact@v4
+        with:
+          name: journal-supplement-2026
+          path: ${{ runner.temp }}/gallery-supplement
+          run-id: 45958344022
+          github-token: ${{ github.token }}
+      - name: Merge historical coverage and publish approved original figures
+        if: steps.supplement.outputs.needed == 'true'
+        run: |
+          cp "$RUNNER_TEMP/gallery-supplement/supplement-2026.json" data/history-supplement-2026-11-27.json
+          python3 tools/promote_history.py
       - name: Validate embedded gallery data
-        if: github.event_name == 'schedule' || github.event_name == 'push' || inputs.publish || inputs.mode == 'deploy' || inputs.mode == 'repair'
+        if: github.event_name == 'schedule' || github.event_name == 'push' || inputs.publish || inputs.mode == 'deploy'
         run: |
           python3 - <<'PY'
           import json
@@ -140,10 +119,11 @@ jobs:
               json.loads(match[1])
           PY
       - name: Commit updated gallery
-        if: github.event_name == 'push' || github.event_name == 'schedule' || (inputs.publish && inputs.mode != 'deploy') || inputs.mode == 'repair'
+        if: github.event_name == 'push' || github.event_name == 'schedule' || (inputs.publish && inputs.mode != 'deploy')
         run: |
           git add index.html
           if [[ -f data/history-2026-11-27.json ]]; then git add data/history-2026-11-27.json; fi
+          if [[ -f data/history-supplement-2026-11-27.json ]]; then git add data/history-supplement-2026-11-27.json; fi
           if [[ -d assets/reference ]]; then git add assets/reference; fi
           if ! git diff --cached --quiet; then
             git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -m "Update medical figure gallery"
@@ -151,7 +131,7 @@ jobs:
           fi
       - name: Stage public site
         id: site
-        if: github.event_name == 'schedule' || github.event_name == 'push' || inputs.publish || inputs.mode == 'deploy' || inputs.mode == 'repair'
+        if: github.event_name == 'schedule' || github.event_name == 'push' || inputs.publish || inputs.mode == 'deploy'
         run: |
           mkdir -p "$RUNNER_TEMP/gallery-site"
           cp index.html "$RUNNER_TEMP/gallery-site/"
