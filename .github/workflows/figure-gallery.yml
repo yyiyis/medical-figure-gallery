@@ -10,7 +10,7 @@ on:
       mode:
         description: Run mode
         type: choice
-        options: [pilot, backfill, weekly, history, deploy]
+        options: [pilot, backfill, weekly, history, repair, deploy]
         default: pilot
       start:
         description: First online date, start (YYYY-MM-DD, optional)
@@ -44,7 +44,7 @@ jobs:
         with:
           ref: main
       - name: Scan journal catalogues
-        if: github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.mode != 'deploy' && inputs.mode != 'history')
+        if: github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.mode != 'deploy' && inputs.mode != 'history' && inputs.mode != 'repair')
         env:
           MODE: ${{ inputs.mode || 'weekly' }}
           START: ${{ inputs.start }}
@@ -86,8 +86,51 @@ jobs:
           path: ${{ runner.temp }}/scan-result.json
           retention-days: 30
           if-no-files-found: ignore
+      - name: Restore catalogue after web editor truncation
+        if: inputs.mode == 'repair'
+        run: |
+          previous=6fbbdf70809248e73f4c6062563f898d70d81467
+          git fetch --no-tags origin "$previous"
+          python3 - "$previous" <<'PY'
+          import json
+          import re
+          import subprocess
+          import sys
+          from pathlib import Path
+
+          path = Path('index.html')
+          current = path.read_text(encoding='utf-8')
+          previous = subprocess.check_output(['git', 'show', f'{sys.argv[1]}:index.html'], text=True, encoding='utf-8')
+
+          def section(document, identifier):
+              pattern = rf'<script id="{identifier}"[^>]*>\s*(.*?)</script>'
+              return re.search(pattern, document, re.S)
+
+          registry = section(current, 'journal-registry')
+          previous_registry = section(previous, 'journal-registry')
+          names = lambda raw: sorted(j['name'] for g in json.loads(raw)['groups'] for j in g['journals'])
+          assert names(registry[1]) == names(previous_registry[1])
+          restored = previous[:previous_registry.start()] + registry[0] + previous[previous_registry.end():]
+          for identifier in ('journal-registry', 'catalog', 'collection-report'):
+              json.loads(section(restored, identifier)[1])
+          assert len(json.loads(section(restored, 'catalog')[1])) == 81
+          path.write_text(restored, encoding='utf-8')
+          PY
+      - name: Validate embedded gallery data
+        if: github.event_name == 'schedule' || github.event_name == 'push' || inputs.publish || inputs.mode == 'deploy' || inputs.mode == 'repair'
+        run: |
+          python3 - <<'PY'
+          import json
+          import re
+          from pathlib import Path
+
+          document = Path('index.html').read_text(encoding='utf-8')
+          for identifier in ('journal-registry', 'catalog', 'collection-report'):
+              match = re.search(rf'<script id="{identifier}"[^>]*>\s*(.*?)</script>', document, re.S)
+              json.loads(match[1])
+          PY
       - name: Commit updated gallery
-        if: github.event_name == 'schedule' || (inputs.publish && inputs.mode != 'deploy')
+        if: github.event_name == 'schedule' || (inputs.publish && inputs.mode != 'deploy') || inputs.mode == 'repair'
         run: |
           git add index.html
           if [[ -f data/history-2026-11-27.json ]]; then git add data/history-2026-11-27.json; fi
@@ -98,7 +141,7 @@ jobs:
           fi
       - name: Stage public site
         id: site
-        if: github.event_name == 'schedule' || github.event_name == 'push' || inputs.publish || inputs.mode == 'deploy'
+        if: github.event_name == 'schedule' || github.event_name == 'push' || inputs.publish || inputs.mode == 'deploy' || inputs.mode == 'repair'
         run: |
           mkdir -p "$RUNNER_TEMP/gallery-site"
           cp index.html "$RUNNER_TEMP/gallery-site/"
