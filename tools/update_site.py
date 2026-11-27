@@ -1,5 +1,6 @@
 """Maintain the gallery interface without reserializing embedded data."""
 from pathlib import Path
+import json
 import re
 
 root = Path(__file__).resolve().parent.parent
@@ -41,5 +42,81 @@ if (root / 'assets' / 'gallery-search.js').is_file() and 'src="assets/gallery-se
     const results = available.filter(item => (category === 'all' || item[0] === category)
       && (!journal.value || journal.value === item[1]) && matchesFigure(item, search.value));
 """)
+
+# Journal names and NLM index abbreviations used for the 2026 extension.
+JOURNAL_ADDITIONS = {
+    '综合医学': [
+        ('eClinicalMedicine', 'EClinicalMedicine'),
+        ('BMJ Medicine', 'BMJ Med'),
+        ('eBioMedicine', 'EBioMedicine'),
+        ('The Lancet Regional Health – Europe', 'Lancet Reg Health Eur'),
+        ('The Lancet Regional Health – Americas', 'Lancet Reg Health Am'),
+    ],
+    '心血管病学': [
+        ('JACC: Asia', 'JACC Asia'),
+        ('JACC: Cardiovascular Imaging', 'JACC Cardiovasc Imaging'),
+        ('JACC: Clinical Electrophysiology', 'JACC Clin Electrophysiol'),
+        ('European Journal of Heart Failure', 'Eur J Heart Fail'),
+        ('Hypertension', 'Hypertension'),
+        ('Circulation: Population Health and Outcomes', 'Circ Popul Health Outcomes'),
+    ],
+    '流行病学与公共卫生': [
+        ('Journal of Clinical Epidemiology', 'J Clin Epidemiol'),
+        ('JAMA Health Forum', 'JAMA Health Forum'),
+        ('Nature Health', 'issn:3005-0693'),
+    ],
+    '环境健康': [('Environmental Science & Technology', 'Environ Sci Technol')],
+    '老年医学与老龄化研究': [
+        ('GeroScience', 'Geroscience'),
+        ('Aging Cell', 'Aging Cell'),
+        ('npj Aging', 'NPJ Aging'),
+    ],
+    '内分泌与代谢': [
+        ('The Lancet Diabetes & Endocrinology', 'Lancet Diabetes Endocrinol'),
+        ('Diabetes Care', 'Diabetes Care'),
+    ],
+    '神经病学': [('JAMA Neurology', 'JAMA Neurol'), ('The Lancet Neurology', 'Lancet Neurol')],
+    '呼吸医学': [
+        ('European Respiratory Journal', 'Eur Respir J'),
+        ('American Journal of Respiratory and Critical Care Medicine', 'Am J Respir Crit Care Med'),
+    ],
+    '感染病学': [('Clinical Infectious Diseases', 'Clin Infect Dis')],
+    '数字医学': [
+        ('PLOS Digital Health', 'PLOS Digit Health'),
+        ('Journal of Medical Internet Research', 'J Med Internet Res'),
+    ],
+}
+
+
+# Only replace the registry payload so existing figures and reports stay intact.
+registry_script = re.search(r'(<script id="journal-registry"[^>]*>)(.*?)(</script>)', document, re.S)
+if not registry_script:
+    raise ValueError('Journal registry missing')
+registry = json.loads(registry_script[2])
+by_group = {group['title']: group for group in registry['groups']}
+existing = {journal['name'] for group in registry['groups'] for journal in group['journals']}
+original_count = len(existing)
+for group, additions in JOURNAL_ADDITIONS.items():
+    for name, index in additions:
+        if name in existing:
+            continue
+        journal = {'name': name, 'pubmed': index}
+        if index.startswith('issn:'):
+            journal.update(pubmed=None, issn=index.removeprefix('issn:'))
+        by_group[group]['journals'].append(journal)
+        existing.add(name)
+if len(existing) != original_count:
+    updated = '\n' + json.dumps(registry, ensure_ascii=False, indent=2) + '\n'
+    document = document[:registry_script.start(2)] + updated + document[registry_script.end(2):]
+
+pending_label = "        else entry.append(el('span','scope-badge','暂无预览'));"
+if pending_label not in document:
+    old_badge = "        if (previewCount) entry.append(el('span','scope-badge',previewCount + ' 张图'));"
+    replace_once(old_badge, old_badge + '\n' + pending_label)
+    anchor = "    const covered = tracked.filter(journal => imagesPerJournal.has(journal.name)).length;"
+    replace_once(anchor, anchor + "\n" + """    const progress = JSON.parse(document.querySelector('#collection-report').textContent);
+    const scanned = new Set((progress.history?.results ?? []).filter(entry => !entry.errors.length).map(entry => entry.name));
+    const pending = tracked.filter(journal => !scanned.has(journal.name)).length;
+    if (pending) document.querySelector('#coverage-status').append(' 另有 ' + pending + ' 刊待完成历史目录盘点。');""")
 
 page.write_text(document, encoding='utf-8')
