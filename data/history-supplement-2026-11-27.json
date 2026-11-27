@@ -384,6 +384,28 @@
         "no_label_in_pmc": 277
       },
       "errors": []
+    },
+    {
+      "name": "BMJ Open",
+      "counts": {
+        "indexed": 4001,
+        "metadata_read": 4001,
+        "publisher_review": 5,
+        "outside_topic_filter": 2542,
+        "article_type_excluded": 23,
+        "no_label_in_pmc": 1424,
+        "licence_unconfirmed": 7
+      },
+      "errors": []
+    },
+    {
+      "name": "Brain Health",
+      "counts": {
+        "indexed": 9,
+        "metadata_read": 9,
+        "publisher_review": 9
+      },
+      "errors": []
     }
   ],
   "candidates": 121,
