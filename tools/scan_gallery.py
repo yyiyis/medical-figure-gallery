@@ -28,7 +28,7 @@ STUDY = re.compile(r'\b(cohort|biobank|participants|randomi[sz]ed|patients|regis
 TOPICS = {
     '暴露组': r'\bexposom\w*|cumulative exposur|environmental exposur|early.life exposur|joint exposur|exposure mixtures|multiple exposures',
     '生命历程': r'life.course|lifecourse|childhood|early.life|prenatal|adolescen|intergenerational|longitudinal trajector',
-    '环境健康': r'air pollution|particulate matter|PM2\.5|ambient heat|temperature|climate change|built environment|environmental justice|environmental epidemiology|traffic noise|greenness|wildfire smoke|lead exposure|PFAS|perfluoro|pesticides|drinking water',
+    '环境健康': r'air pollution|particulate matter|PM2\.5|ambient heat|temperature|climate change|built environment|environmental justice|environmental epidemiology|traffic noise|nighttime light|light at night|greenness|wildfire smoke|lead exposure|PFAS|perfluoro|pesticides|drinking water',
     '组学': r'\b(?:multi.?)?omics\b|\b(?:proteom|metabolom|epigenom|transcriptom|genom)\w*\b',
     '老龄化': r'\b(?:aging|ageing|frailty|dementia|multimorbidity|healthspan|longevity)\b',
     '心血管': r'cardiovascular|heart failure|stroke|coronary|cardiometabolic|atherosclero',
@@ -137,7 +137,26 @@ def study_topics(title, abstract):
     return [name for name, pattern in TOPICS.items() if re.search(pattern, text, re.I)]
 
 
+def webp_size(data):
+    if len(data) < 25 or data[:4] != b'RIFF' or data[8:12] != b'WEBP':
+        return None
+    kind = data[12:16]
+    length = int.from_bytes(data[16:20], 'little')
+    if kind == b'VP8X' and length == 10 and len(data) >= 30 and not data[20] & 2:
+        return (1 + int.from_bytes(data[24:27], 'little'), 1 + int.from_bytes(data[27:30], 'little'))
+    if kind == b'VP8L' and length >= 5 and data[20] == 0x2F:
+        bits = int.from_bytes(data[21:25], 'little')
+        return (bits & 0x3FFF) + 1, ((bits >> 14) & 0x3FFF) + 1
+    if kind == b'VP8 ' and length >= 10 and len(data) >= 30 and data[23:26] == b'\x9d\x01\x2a':
+        width = int.from_bytes(data[26:28], 'little') & 0x3FFF
+        height = int.from_bytes(data[28:30], 'little') & 0x3FFF
+        return (width, height) if width and height else None
+    return None
+
+
 def image_size(data):
+    if data.startswith(b'RIFF'):
+        return webp_size(data)
     if data.startswith(b'\x89PNG\r\n\x1a\n') and len(data) >= 24:
         return int.from_bytes(data[16:20], 'big'), int.from_bytes(data[20:24], 'big')
     if not data.startswith(b'\xff\xd8'):
@@ -194,6 +213,23 @@ def named_graphics(xml):
                 yield name.strip(), file
 
 
+def pmc_epublication_date(xml):
+    dates = []
+    for node in xml.findall('./front/article-meta/pub-date'):
+        format_name = node.get('publication-format', '').casefold()
+        publication_type = node.get('pub-type', '').casefold()
+        date_type = node.get('date-type', 'pub').casefold()
+        if date_type != 'pub' or (format_name != 'electronic' and publication_type not in {'epub', 'epublish'}):
+            continue
+        try:
+            online = date.fromisoformat(node.get('iso-8601-date', ''))
+        except ValueError:
+            online = exact_date([node.findtext(part) for part in ('year', 'month', 'day')])
+        if online:
+            dates.append(online)
+    return min(dates, default=None)
+
+
 def licensed_graphic(article):
     version, files = pmc_version(article['pmcid'])
     if not version:
@@ -208,15 +244,22 @@ def licensed_graphic(article):
     license_links = set(re.findall(r'https?://creativecommons\.org/licenses/([a-z-]+)/(\d\.\d)', evidence, re.I))
     if license_links != {(licence, '4.0')}:
         return None, 'licence_unconfirmed'
+    if article['published'] is None:
+        online = pmc_epublication_date(xml)
+        if online is None:
+            return None, 'date_needs_confirmation'
+        if not article['start'] <= online <= article['end']:
+            return None, 'outside_online_date'
+        article = dict(article, published=online)
     possibilities = list(named_graphics(xml))
     if not possibilities:
         return None, 'no_label_in_pmc'
     seen = set()
     for label, file in possibilities:
         leaf = file.rsplit('/', 1)[-1]
-        keys = [k for k in files if k.rsplit('/', 1)[-1] in {leaf, leaf + '.jpg', leaf + '.png', leaf + '.jpeg'}]
+        keys = [k for k in files if k.rsplit('/', 1)[-1] in {leaf, leaf + '.jpg', leaf + '.png', leaf + '.jpeg', leaf + '.webp'}]
         for key in keys:
-            if not re.search(r'\.(?:jpe?g|png)$', key, re.I):
+            if not re.search(r'\.(?:jpe?g|png|webp)$', key, re.I):
                 continue
             fingerprint = files[key] or key
             if fingerprint in seen:
@@ -268,16 +311,16 @@ def article_info(record, journal, start, end):
     if not topics:
         return None, 'outside_topic_filter'
     online = article_date(record)
-    if not online:
+    ids = {k.get('IdType'): (k.text or '').strip() for k in record.findall('./PubmedData/ArticleIdList/ArticleId')}
+    if online is None and not ids.get('pmc'):
         return None, 'date_needs_confirmation'
-    if not start <= online <= end:
+    if online and not start <= online <= end:
         return None, 'outside_online_date'
-    ids = {k.get('IdType'): k.text or '' for k in record.findall('./PubmedData/ArticleIdList/ArticleId')}
     if not ids.get('doi'):
         return None, 'doi_missing'
     author = article.findtext('.//AuthorList/Author/LastName') or article.findtext('.//AuthorList/Author/CollectiveName') or journal
     return {'title': title, 'topics': topics, 'published': online, 'doi': ids['doi'].lower(), 'journal': journal,
-            'author': author + ' 等', 'pmcid': ids.get('pmc'), 'pii': ids.get('pii') or ''}, None
+            'author': author + ' 等', 'pmcid': ids.get('pmc'), 'pii': ids.get('pii') or '', 'start': start, 'end': end}, None
 
 
 def publisher_date(items):
@@ -469,7 +512,7 @@ def main():
         candidates, result = scan_journal(journal,begin,stop)
         entries.extend(candidates)
         checks.append(result)
-    run = {'mode':options.mode, 'start':str(begin), 'end':str(stop), 'stamp':now.strftime('%Y-%m-%d %H:%M'), 'results':checks}
+    run = {'mode':options.mode, 'start':str(begin), 'end':str(stop), 'stamp':datetime.now(ZoneInfo('Asia/Shanghai')).strftime('%Y-%m-%d %H:%M'), 'results':checks}
     catalog, added = extend_catalog(json_section(document,'catalog'),entries)
     run['candidates'] = len(added)
     options.report.write_text(json.dumps({**run,'items':added},ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
@@ -492,4 +535,5 @@ def main():
 
 if __name__ == '__main__':
     main()
+
 
