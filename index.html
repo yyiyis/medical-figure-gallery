@@ -9,7 +9,7 @@
   :root {color-scheme:light; --paper:#f6f7f2; --ink:#171f1b; --muted:#56625a; --edge:#d7ddd5; --accent:#1b563f; --panel:#fff}
   * {box-sizing:border-box}
   body {margin:0; background:var(--paper); color:var(--ink); font:16px/1.6 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
-  .wrap {width:min(100% - 44px,1180px); margin-inline:auto}
+  .wrap {width:min(100% - 44px,1650px); margin-inline:auto}
   header {padding:42px 0 22px; border-bottom:1px solid var(--edge)}
   h1 {margin:0; font-size:clamp(33px,5vw,53px); line-height:1.14; letter-spacing:-.045em}
   header p {margin:9px 0 0; color:var(--muted)}
@@ -27,11 +27,11 @@
   input[type=checkbox] {accent-color:var(--accent); width:16px; height:16px; vertical-align:-3px}
   .view-options {color:var(--muted); font-size:14px}
   #status {margin:13px 0 8px; font-size:14px; color:var(--muted)}
-  #gallery {display:grid; grid-template-columns:minmax(0,1fr); gap:20px}
-  #gallery.compact {grid-template-columns:repeat(2,minmax(0,1fr))}
+  #gallery {display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,480px),1fr)); gap:20px}
+  #gallery.single-column {grid-template-columns:minmax(0,1fr); max-width:1180px; margin-inline:auto}
   .card {min-width:0; overflow:hidden; background:white; border:1px solid var(--edge); border-radius:12px}
-  .preview {position:relative; display:block; width:100%; height:clamp(330px,59vh,640px); padding:12px; border:0; border-bottom:1px solid var(--edge); background:white; cursor:zoom-in}
-  .compact .preview {height:clamp(250px,38vw,450px)}
+  .preview {position:relative; display:block; width:100%; height:clamp(290px,30vw,420px); padding:12px; border:0; border-bottom:1px solid var(--edge); background:white; cursor:zoom-in}
+  #gallery.single-column .preview {height:clamp(330px,59vh,640px)}
   .preview:focus-visible {outline-offset:-4px}
   .preview img {display:block; width:100%; height:100%; object-fit:contain}
   .zoom {position:absolute; right:13px; bottom:13px; padding:4px 9px; border:1px solid var(--edge); border-radius:6px; background:#fff; color:var(--accent); font-size:13px; font-weight:650}
@@ -53,12 +53,14 @@
   #viewer img {display:block; width:100%; height:min(82dvh,1050px); object-fit:contain; padding:6px}
   #viewer img[hidden] {display:none}
   #viewer-source {padding:8px 14px 11px; border-top:1px solid var(--edge)}
+  @media (max-width:1023px) {
+    .view-options label:has(#single-column) {display:none}
+    .preview {height:clamp(320px,62vw,500px)}
+  }
   @media (max-width:700px) {
     .wrap {width:calc(100% - 24px)}
     header {padding-top:25px}
-    #gallery.compact {grid-template-columns:minmax(0,1fr)}
-    .view-options label:has(#compact) {display:none}
-    .preview,.compact .preview {height:clamp(240px,90vw,490px); padding:6px}
+    .preview,#gallery.single-column .preview {height:clamp(240px,90vw,490px); padding:6px}
     .tab {padding:5px 8px; font-size:14px}
     .card-content {padding:12px}
     #viewer img {height:min(72dvh,680px)}
@@ -78,7 +80,7 @@
   </div>
   <div class="view-options">
     <label><input id="all-sources" type="checkbox">包含仅有出处的条目</label>
-    <label><input id="compact" type="checkbox">并排浏览</label>
+    <label><input id="single-column" type="checkbox" aria-controls="gallery">单栏看大图</label>
   </div>
   <p id="status" role="status"></p>
   <section id="gallery" aria-label="医学期刊图片"></section>
@@ -119,7 +121,7 @@
   const search = document.querySelector('#search');
   const journal = document.querySelector('#journal');
   const allSources = document.querySelector('#all-sources');
-  const compact = document.querySelector('#compact');
+  const singleColumn = document.querySelector('#single-column');
   const grid = document.querySelector('#gallery');
   const status = document.querySelector('#status');
   const viewer = document.querySelector('#viewer');
@@ -231,7 +233,7 @@
   search.addEventListener('input',render);
   journal.addEventListener('change',render);
   allSources.addEventListener('change', () => {updateJournals(); render();});
-  compact.addEventListener('change', () => grid.classList.toggle('compact',compact.checked));
+  singleColumn.addEventListener('change', () => grid.classList.toggle('single-column',singleColumn.checked));
   document.querySelector('#reset').addEventListener('click', () => {
     category = 'all';
     search.value = '';
