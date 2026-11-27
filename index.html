@@ -183,6 +183,26 @@
           "issn": "2959-8745",
           "archive": "https://www.the-innovation.org/medicine/archive",
           "track": true
+        },
+        {
+          "name": "eClinicalMedicine",
+          "pubmed": "EClinicalMedicine"
+        },
+        {
+          "name": "BMJ Medicine",
+          "pubmed": "BMJ Med"
+        },
+        {
+          "name": "eBioMedicine",
+          "pubmed": "EBioMedicine"
+        },
+        {
+          "name": "The Lancet Regional Health – Europe",
+          "pubmed": "Lancet Reg Health Eur"
+        },
+        {
+          "name": "The Lancet Regional Health – Americas",
+          "pubmed": "Lancet Reg Health Am"
         }
       ]
     },
@@ -240,6 +260,30 @@
         {
           "name": "JAMA Cardiology",
           "pubmed": "JAMA Cardiol"
+        },
+        {
+          "name": "JACC: Asia",
+          "pubmed": "JACC Asia"
+        },
+        {
+          "name": "JACC: Cardiovascular Imaging",
+          "pubmed": "JACC Cardiovasc Imaging"
+        },
+        {
+          "name": "JACC: Clinical Electrophysiology",
+          "pubmed": "JACC Clin Electrophysiol"
+        },
+        {
+          "name": "European Journal of Heart Failure",
+          "pubmed": "Eur J Heart Fail"
+        },
+        {
+          "name": "Hypertension",
+          "pubmed": "Hypertension"
+        },
+        {
+          "name": "Circulation: Population Health and Outcomes",
+          "pubmed": "Circ Popul Health Outcomes"
         }
       ]
     },
@@ -277,6 +321,19 @@
         {
           "name": "Social Science & Medicine",
           "pubmed": "Soc Sci Med"
+        },
+        {
+          "name": "Journal of Clinical Epidemiology",
+          "pubmed": "J Clin Epidemiol"
+        },
+        {
+          "name": "JAMA Health Forum",
+          "pubmed": "JAMA Health Forum"
+        },
+        {
+          "name": "Nature Health",
+          "pubmed": null,
+          "issn": "3005-0693"
         }
       ]
     },
@@ -316,6 +373,10 @@
         {
           "name": "Environmental Research",
           "pubmed": "Environ Res"
+        },
+        {
+          "name": "Environmental Science & Technology",
+          "pubmed": "Environ Sci Technol"
         }
       ]
     },
@@ -333,6 +394,18 @@
         {
           "name": "Age and Ageing",
           "pubmed": "Age Ageing"
+        },
+        {
+          "name": "GeroScience",
+          "pubmed": "Geroscience"
+        },
+        {
+          "name": "Aging Cell",
+          "pubmed": "Aging Cell"
+        },
+        {
+          "name": "npj Aging",
+          "pubmed": "NPJ Aging"
         }
       ]
     },
@@ -350,6 +423,14 @@
         {
           "name": "Nature Metabolism",
           "pubmed": "Nat Metab"
+        },
+        {
+          "name": "The Lancet Diabetes & Endocrinology",
+          "pubmed": "Lancet Diabetes Endocrinol"
+        },
+        {
+          "name": "Diabetes Care",
+          "pubmed": "Diabetes Care"
         }
       ]
     },
@@ -359,6 +440,14 @@
         {
           "name": "Alzheimer’s & Dementia",
           "pubmed": "Alzheimers Dement"
+        },
+        {
+          "name": "JAMA Neurology",
+          "pubmed": "JAMA Neurol"
+        },
+        {
+          "name": "The Lancet Neurology",
+          "pubmed": "Lancet Neurol"
         }
       ]
     },
@@ -368,6 +457,14 @@
         {
           "name": "Thorax",
           "pubmed": "Thorax"
+        },
+        {
+          "name": "European Respiratory Journal",
+          "pubmed": "Eur Respir J"
+        },
+        {
+          "name": "American Journal of Respiratory and Critical Care Medicine",
+          "pubmed": "Am J Respir Crit Care Med"
         }
       ]
     },
@@ -377,6 +474,10 @@
         {
           "name": "Emerging Infectious Diseases",
           "pubmed": "Emerg Infect Dis"
+        },
+        {
+          "name": "Clinical Infectious Diseases",
+          "pubmed": "Clin Infect Dis"
         }
       ]
     },
@@ -390,6 +491,14 @@
         {
           "name": "npj Digital Medicine",
           "pubmed": "NPJ Digit Med"
+        },
+        {
+          "name": "PLOS Digital Health",
+          "pubmed": "PLOS Digit Health"
+        },
+        {
+          "name": "Journal of Medical Internet Research",
+          "pubmed": "J Med Internet Res"
         }
       ]
     },
@@ -576,6 +685,10 @@
     const tracked = registry.groups.flatMap(group => group.journals);
     const count = tracked.length;
     const covered = tracked.filter(journal => imagesPerJournal.has(journal.name)).length;
+    const progress = JSON.parse(document.querySelector('#collection-report').textContent);
+    const scanned = new Set((progress.history?.results ?? []).filter(entry => !entry.errors.length).map(entry => entry.name));
+    const pending = tracked.filter(journal => !scanned.has(journal.name)).length;
+    if (pending) document.querySelector('#coverage-status').append(' 另有 ' + pending + ' 刊待完成历史目录盘点。');
     document.querySelector('#scope-summary').textContent = count + ' 刊目录 · ' + covered + ' 刊可预览';
     const groups = registry.groups.map(group => {
       const section = el('section');
@@ -585,6 +698,7 @@
         const entry = el('li','',journal.name);
         const previewCount = imagesPerJournal.get(journal.name);
         if (previewCount) entry.append(el('span','scope-badge',previewCount + ' 张图'));
+        else entry.append(el('span','scope-badge','暂无预览'));
         if (journal.archive && !journal.track) {
           const archive = link('2026 原刊归档',journal.archive);
           archive.className = 'scope-badge';
