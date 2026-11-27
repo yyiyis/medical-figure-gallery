@@ -16,6 +16,22 @@ from scan_gallery import INDEX, LICENSES, extend_catalog, image_size, json_secti
 
 FEATURED = [
     {
+        "kind": "figures",
+        "journal": "Cell Reports Medicine",
+        "title": "老年队列的代谢组与生活方式风险分层",
+        "tags": "组学|代谢组|老龄化|队列研究|研究设计",
+        "note": "图 1 用四个色块依次展示队列设计、代谢组测量、BMI 与代谢健康分层，以及生活方式和代谢评分的联合分析。",
+        "source": "https://doi.org/10.1016/j.xcrm.2026.102907",
+        "image": "https://ars.els-cdn.com/content/image/1-s2.0-S2666379126003241-gr1_lrg.jpg",
+        "credit": "Chen 等 · Cell Reports Medicine 图 1",
+        "license": "by-nc-nd",
+        "doi": "10.1016/j.xcrm.2026.102907",
+        "date": "2026-07-01",
+        "width": 2822,
+        "height": 4151,
+        "file": "cell-reports-medicine-102907-fig1.jpg"
+    },
+    {
         "kind": "cover",
         "journal": "Emerging Infectious Diseases",
         "title": "维米尔《地理学家》",
