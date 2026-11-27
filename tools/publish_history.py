@@ -16,6 +16,70 @@ from scan_gallery import INDEX, LICENSES, extend_catalog, image_size, json_secti
 
 FEATURED = [
     {
+        "kind": "abstract",
+        "journal": "European Heart Journal",
+        "title": "热带气旋与急性冠脉综合征",
+        "tags": "环境健康|极端天气|心血管|人群研究",
+        "note": "把气旋路径和全国医院病例并排放，上方交代样本，下方并列呈现就医延迟、滞后风险和应对含义。",
+        "source": "https://doi.org/10.1093/eurheartj/ehag066",
+        "image": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13549725.1/ehag066_sga.webp",
+        "credit": "Li 等 · Oxford University Press / PubMed Central",
+        "license": "by",
+        "doi": "10.1093/eurheartj/ehag066",
+        "date": "2026-02-18",
+        "width": 1600,
+        "height": 1481,
+        "file": "ehj-ehag066.webp"
+    },
+    {
+        "kind": "abstract",
+        "journal": "European Heart Journal",
+        "title": "儿童血压的遗传特征与成年健康",
+        "tags": "生命历程|组学|人群遗传|心血管",
+        "note": "左侧区分儿童发现与复现队列，并展示遗传重叠，右侧按器官归纳成年期结局。",
+        "source": "https://doi.org/10.1093/eurheartj/ehag313",
+        "image": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13533560.1/ehag313_ga.webp",
+        "credit": "Xie 等 · Oxford University Press / PubMed Central",
+        "license": "by",
+        "doi": "10.1093/eurheartj/ehag313",
+        "date": "2026-04-27",
+        "width": 1600,
+        "height": 1694,
+        "file": "ehj-ehag313.webp"
+    },
+    {
+        "kind": "abstract",
+        "journal": "European Heart Journal",
+        "title": "孕期母亲自身免疫病与子代心血管风险",
+        "tags": "生命历程|早期暴露|心血管|队列研究",
+        "note": "在同一张图里交代出生队列、父亲和表亲比较、可能的中介因素，并列展示估计值。",
+        "source": "https://doi.org/10.1093/eurheartj/ehag316",
+        "image": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13690822.1/ehag316_sga.webp",
+        "credit": "Mo 等 · Oxford University Press / PubMed Central",
+        "license": "by",
+        "doi": "10.1093/eurheartj/ehag316",
+        "date": "2026-04-22",
+        "width": 1600,
+        "height": 1695,
+        "file": "ehj-ehag316.webp"
+    },
+    {
+        "kind": "abstract",
+        "journal": "European Heart Journal",
+        "title": "乳腺癌治疗随访中的心脏变化与联合组学",
+        "tags": "组学|蛋白组|代谢组|心血管|队列研究",
+        "note": "用随访时间轴区分同次和跨次访视的分析，再用上下两层区分统计方法与发现。",
+        "source": "https://doi.org/10.1093/eurheartj/ehag487",
+        "image": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13359040.2/ehag487_sga.webp",
+        "credit": "Ky 等 · Oxford University Press / PubMed Central",
+        "license": "by",
+        "doi": "10.1093/eurheartj/ehag487",
+        "date": "2026-06-29",
+        "width": 1600,
+        "height": 1674,
+        "file": "ehj-ehag487.webp"
+    },
+    {
         "kind": "figures",
         "journal": "Cell Reports Medicine",
         "title": "老年队列的代谢组与生活方式风险分层",
@@ -256,11 +320,7 @@ def archive_featured(document):
                 raise ValueError('source image exceeds the archive size limit')
             dimensions = image_size(payload)
             expected = (item['width'], item['height'])
-            if reference.suffix == '.webp':
-                prefix = payload[:12]
-                if len(payload) < 30 or prefix[:4] != b'RIFF' or prefix[8:12] != b'WEBP':
-                    raise ValueError('source did not return the approved WebP image')
-            elif dimensions != expected:
+            if dimensions != expected:
                 raise ValueError(f'source image dimensions {dimensions} differ from {expected}')
         except (OSError, ValueError) as err:
             print(f"Deferred image: {item['title']}: {err}")
