@@ -78,11 +78,16 @@ def main():
     queue['items'] = sorted(pending.values(), key=lambda row: (row[10]['published'], doi(row)), reverse=True)
     now = datetime.now(ZoneInfo('Asia/Shanghai')).strftime('%Y-%m-%d %H:%M')
     last_scan = queue.get('scan', progress['latest'])
-    latest = {**last_scan, 'stamp': now, 'candidates': len(added), 'pending_review': len(pending)}
+    abstracts = sum(row[0] == 'abstract' for row in added)
+    latest = {**last_scan, 'stamp': now, 'candidates': abstracts, 'pending_review': len(pending)}
     progress['latest'] = latest
     updated = set_section(set_section(document, 'catalog', catalog), 'collection-report', progress)
     updated = update_stamp(updated, progress['history'], latest)
+    figures = sum(row[0] == 'figures' for row in added)
+    covers = sum(row[0] == 'cover' for row in added)
     note = f' 当前有 {len(pending)} 张周更候选待复核。'
+    if figures or covers:
+        note = f' 新增正文图 {figures} 张、封面 {covers} 张。' + note
     updated = re.sub(r'(<p id="coverage-status">.*?)</p>',
                      lambda match: match[1] + html.escape(note) + '</p>', updated, count=1, flags=re.S)
     QUEUE.write_text(json.dumps(queue, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
