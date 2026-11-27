@@ -1,0 +1,43 @@
+name: Medical figure gallery
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: Scan mode
+        type: choice
+        options: [pilot, backfill, weekly]
+        default: pilot
+      start:
+        description: First online date, start (YYYY-MM-DD)
+        default: "2026-05-01"
+      end:
+        description: First online date, end (YYYY-MM-DD)
+        default: "2026-05-14"
+      journals:
+        description: Comma-separated journal names (empty uses mode defaults)
+permissions:
+  contents: read
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - name: Discover licensed graphical abstracts
+        env:
+          MODE: ${{ inputs.mode }}
+          START: ${{ inputs.start }}
+          END: ${{ inputs.end }}
+          JOURNALS: ${{ inputs.journals }}
+        run: |
+          python3 tools/scan_gallery.py --mode "$MODE" --start "$START" --end "$END" --journal "$JOURNALS" --report "$RUNNER_TEMP/scan-result.json"
+      - name: Store results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: scan-result
+          path: ${{ runner.temp }}/scan-result.json
+          retention-days: 30
+          if-no-files-found: ignore
