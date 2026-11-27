@@ -82,6 +82,21 @@ FEATURED = [
 ]
 
 
+EDITORIAL = {
+    "10.1016/j.jacadv.2026.102646": [
+        "社会环境|多病共存|人群研究",
+        "上下两层分别交代暴露和结局定义，再并排展示两种社会经济地位定义对疾病转移估计的影响。"
+    ],
+    "10.1016/j.jacadv.2026.102665": [
+        "人群遗传|组学|研究设计",
+        "发现队列和验证队列并排布置，再用人群风险分布说明研究如何定义冠心病韧性。"
+    ],
+    "10.1016/j.jacadv.2026.102968": [
+        "癌症幸存者|多重暴露|人群研究",
+        "用九个图标说明风险因素，再把三项结局的估计并排呈现。"
+    ]
+}
+
 PENDING = (
     'publisher_review', 'date_needs_confirmation', 'licence_unconfirmed',
     'figure_check_failed', 'missing_pmc_version', 'image_unavailable_or_small',
@@ -139,6 +154,9 @@ def apply_report(document, report, selectors, published_at):
                 or not report['start'] <= date.fromisoformat(quality['published']).isoformat() <= report['end']
                 or quality['width'] < 1200 or quality['height'] < 1):
             raise ValueError(f'Figure failed publication checks: {doi}')
+        if doi in EDITORIAL:
+            tags, row[5] = EDITORIAL[doi]
+            row[4] = '|'.join(dict.fromkeys((row[4] + '|' + tags).split('|')))
         curated.append(row)
     catalogue, added = extend_catalog(json_section(document, 'catalog'), curated)
     progress = json_section(document, 'collection-report', {})
