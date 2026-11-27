@@ -29,7 +29,7 @@ on:
         default: false
 permissions: {}
 concurrency:
-  group: medical-figure-gallery-pages
+  group: ${{ github.event_name == 'workflow_dispatch' && inputs.mode == 'history' && !inputs.publish && format('medical-figure-gallery-review-{0}', github.run_id) || 'medical-figure-gallery-pages' }}
   cancel-in-progress: false
 jobs:
   scan:
