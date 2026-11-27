@@ -4,7 +4,7 @@ on:
     - cron: "20 1 * * 1"
   push:
     branches: [main]
-    paths: [index.html, .github/workflows/figure-gallery.yml, assets/gallery-search.js, assets/gallery-style.css, tools/update_site.py, tools/promote_history.py]
+    paths: [index.html, .github/workflows/figure-gallery.yml, assets/gallery-search.js, assets/gallery-style.css, tools/update_site.py, tools/promote_history.py, tools/update_weekly.py]
   workflow_dispatch:
     inputs:
       mode:
@@ -21,7 +21,7 @@ on:
       report_run:
         description: Historical scan run ID (optional, uses the saved cloud report when blank)
       review_dois:
-        description: Comma-separated reviewed DOIs to include (history mode)
+        description: Comma-separated reviewed DOIs to publish (history or weekly mode)
       publish:
         description: Publish scan results to the gallery
         type: boolean
@@ -44,17 +44,25 @@ jobs:
         with:
           ref: main
       - name: Scan journal catalogues
-        if: github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.mode != 'deploy' && inputs.mode != 'history')
+        if: github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.mode != 'deploy' && inputs.mode != 'history' && !(inputs.mode == 'weekly' && inputs.review_dois != ''))
         env:
           MODE: ${{ inputs.mode || 'weekly' }}
           START: ${{ inputs.start }}
           END: ${{ inputs.end }}
           JOURNALS: ${{ inputs.journals }}
-          PUBLISH: ${{ github.event_name == 'schedule' || inputs.publish }}
+          PUBLISH: ${{ inputs.mode == 'backfill' && inputs.publish }}
         run: |
           args=(--mode "$MODE" --start "$START" --end "$END" --journal "$JOURNALS" --report "$RUNNER_TEMP/scan-result.json")
           if [[ "$PUBLISH" == "true" ]]; then args+=(--publish); fi
           python3 tools/scan_gallery.py "${args[@]}"
+      - name: Save weekly candidates and update the scan date
+        if: github.event_name == 'schedule' || (inputs.mode == 'weekly' && inputs.publish && inputs.review_dois == '')
+        run: python3 tools/update_weekly.py --scan "$RUNNER_TEMP/scan-result.json"
+      - name: Publish reviewed weekly originals
+        if: inputs.mode == 'weekly' && inputs.publish && inputs.review_dois != ''
+        env:
+          REVIEW_DOIS: ${{ inputs.review_dois }}
+        run: python3 tools/update_weekly.py --reviewed "$REVIEW_DOIS"
       - name: Read historical report
         if: inputs.mode == 'history' && inputs.report_run != ''
         uses: actions/download-artifact@v4
@@ -127,6 +135,7 @@ jobs:
           git add index.html
           if [[ -f data/history-2026-11-27.json ]]; then git add data/history-2026-11-27.json; fi
           if [[ -f data/history-supplement-2026-11-27.json ]]; then git add data/history-supplement-2026-11-27.json; fi
+          if [[ -f data/weekly-review.json ]]; then git add data/weekly-review.json; fi
           if [[ -d assets/reference ]]; then git add assets/reference; fi
           if ! git diff --cached --quiet; then
             git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -m "Update medical figure gallery"
