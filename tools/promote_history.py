@@ -38,6 +38,24 @@ CURATED = [
     ('10.1093/eurheartj/ehag519', '全谷物剂量与心代谢指标的证据汇总',
      '心血管|代谢健康|荟萃分析|森林图',
      '把共同的剂量刻度、不同代谢指标及证据等级排在同一框架内。', (1600, 1692)),
+    ('10.1016/j.ebiom.2026.106542', '从 DNA 甲基化与表达组寻找慢性肾病信号',
+     '组学|队列研究|表观遗传|研究流程图|慢性肾病',
+     '将人群入组置顶，中段并列组学测量和关联分析，用编号把每个分析接到对应的结果。', (1600, 1130)),
+    ('10.1183/13993003.01162-2026', '长新冠不同表型的呼吸道微生物组',
+     '队列研究|组学|感染病学|呼吸医学|研究流程图',
+     '左侧以时间轴交代多中心随访与采样，右侧把微生物组、表型和炎症指标放在对应的行。', (1600, 924)),
+    ('10.1093/cid/ciag473', '原生关节感染的诊治综述图',
+     '感染病学|概念与方法示意图|临床综述|医学插画',
+     '关节插画居中，病因与危险因素分列，诊断、治疗及结局放在下方连续区域。', (1600, 1789)),
+    ('10.1021/acs.est.6c03113', '孕期 PFAS、母体 DNA 甲基化与出生体格',
+     '暴露组|PFAS|孕期|组学|表观遗传|环境健康|队列研究',
+     '三列分别表示早期暴露、甲基化结果和出生结局，箭头对应论文中的直接及间接效应。', (1983, 1006)),
+    ('10.1161/hypertensionaha.126.27526', '降压靶点与脂肪性肝病的遗传工具研究',
+     '组学|孟德尔随机化|代谢健康|心血管|研究流程图',
+     '平行排列遗传数据、工具变量与多来源证据，突出各方法的用途和同方向结果。', (1600, 1616)),
+    ('10.1007/s11357-025-02090-x', '长寿队列的外周血转录组工作流',
+     '老龄化|长寿|组学|转录组|队列研究|研究流程图',
+     '两个长寿相关队列出发，分别连接时钟、死亡风险特征与衰老特征，再接到一般人群评估。', (1600, 803)),
 ]
 
 
@@ -105,6 +123,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--report', type=Path)
     parser.add_argument('--selection', default='')
+    parser.add_argument('--if-new', action='store_true')
     args = parser.parse_args()
     reports = [load(BASE)]
     if SUPPLEMENT.exists():
@@ -112,6 +131,10 @@ def main():
     if args.report and args.report not in (BASE, SUPPLEMENT):
         reports.append(load(args.report))
     document = INDEX.read_text(encoding='utf-8')
+    if args.if_new:
+        present = {row[6] for row in json_section(document, 'catalog')}
+        if all('https://doi.org/' + entry[0] in present for entry in CURATED):
+            return
     registry = json_section(document, 'journal-registry')
     medicine = next(group for group in registry['groups'] if group['title'] == '综合医学')
     if all(journal['name'] != 'BMJ Open' for journal in medicine['journals']):
