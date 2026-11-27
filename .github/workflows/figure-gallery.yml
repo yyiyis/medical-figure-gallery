@@ -4,7 +4,7 @@ on:
     - cron: "20 1 * * 1"
   push:
     branches: [main]
-    paths: [index.html]
+    paths: [index.html, .github/workflows/figure-gallery.yml, assets/gallery-search.js, assets/gallery-style.css, tools/update_site.py]
   workflow_dispatch:
     inputs:
       mode:
@@ -43,6 +43,7 @@ jobs:
       - uses: actions/checkout@v6
         with:
           ref: main
+          fetch-depth: 8
       - name: Scan journal catalogues
         if: github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.mode != 'deploy' && inputs.mode != 'history' && inputs.mode != 'repair')
         env:
@@ -87,8 +88,9 @@ jobs:
           retention-days: 30
           if-no-files-found: ignore
       - name: Restore catalogue after web editor truncation
-        if: inputs.mode == 'repair'
+        if: github.event_name == 'push' || inputs.mode == 'repair'
         run: |
+          if ! git log -1 --format=%s -- index.html | grep -Fxq 'Group public journal directory by discipline'; then exit 0; fi
           previous=6fbbdf70809248e73f4c6062563f898d70d81467
           git fetch --no-tags origin "$previous"
           python3 - "$previous" <<'PY'
@@ -114,8 +116,16 @@ jobs:
           for identifier in ('journal-registry', 'catalog', 'collection-report'):
               json.loads(section(restored, identifier)[1])
           assert len(json.loads(section(restored, 'catalog')[1])) == 81
+          introduction = '<p>浏览图文摘要、正文组图和期刊封面。点图可在本页放大。</p>'
+          notice = '<p class="usage-note">本图集整理已公开发表的文献图表，供个人学习与科研作图参考。每张图标明出处及适用许可，转载或商用请遵循相应条款。</p>'
+          assert restored.count(introduction) == 1
+          restored = restored.replace(introduction, introduction + notice, 1)
           path.write_text(restored, encoding='utf-8')
           PY
+      - name: Apply gallery interface updates
+        if: github.event_name == 'push'
+        run: |
+          if [[ -f tools/update_site.py ]]; then python3 tools/update_site.py; fi
       - name: Validate embedded gallery data
         if: github.event_name == 'schedule' || github.event_name == 'push' || inputs.publish || inputs.mode == 'deploy' || inputs.mode == 'repair'
         run: |
@@ -130,7 +140,7 @@ jobs:
               json.loads(match[1])
           PY
       - name: Commit updated gallery
-        if: github.event_name == 'schedule' || (inputs.publish && inputs.mode != 'deploy') || inputs.mode == 'repair'
+        if: github.event_name == 'push' || github.event_name == 'schedule' || (inputs.publish && inputs.mode != 'deploy') || inputs.mode == 'repair'
         run: |
           git add index.html
           if [[ -f data/history-2026-11-27.json ]]; then git add data/history-2026-11-27.json; fi
@@ -145,7 +155,7 @@ jobs:
         run: |
           mkdir -p "$RUNNER_TEMP/gallery-site"
           cp index.html "$RUNNER_TEMP/gallery-site/"
-          if [[ -d assets/reference ]]; then cp -R assets "$RUNNER_TEMP/gallery-site/"; fi
+          if [[ -d assets ]]; then cp -R assets "$RUNNER_TEMP/gallery-site/"; fi
           echo "deploy=true" >> "$GITHUB_OUTPUT"
       - name: Upload Pages site
         if: steps.site.outputs.deploy == 'true'
