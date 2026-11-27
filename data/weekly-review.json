@@ -1,5 +1,33 @@
 {
-  "items": [],
+  "items": [
+    [
+      "figures",
+      "Nature",
+      2026,
+      "四国队列如何比较临床前与临床肥胖",
+      "多国多队列|UK Biobank|开滦研究|All of Us|SIDIAP|代谢健康|队列研究|多面板组图|环形图",
+      "图 2 让每个队列的两个圆环沿用同一配色，分别以全体参与者和符合综合体格肥胖标准者为分母，突出临床肥胖占比怎样变化。",
+      "https://doi.org/10.1038/s41586-026-11237-5",
+      "https://media.springernature.com/original/springer-static/image/art%3A10.1038%2Fs41586-026-11237-5/MediaObjects/41586_2026_11237_Fig2_HTML.png",
+      "Pan 等 · Nature 图 2",
+      "by",
+      {
+        "doi": "10.1038/s41586-026-11237-5",
+        "published": "2026-11-11",
+        "width": 2163,
+        "height": 1158,
+        "features": {
+          "dataset": [
+            "多国多队列",
+            "UK Biobank",
+            "开滦研究",
+            "All of Us",
+            "SIDIAP"
+          ]
+        }
+      }
+    ]
+  ],
   "scan": {
     "mode": "weekly",
     "start": "2026-10-31",
