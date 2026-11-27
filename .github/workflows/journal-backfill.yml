@@ -1,0 +1,44 @@
+name: Supplement the 2026 journal scan
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/journal-backfill.yml]
+  workflow_dispatch:
+permissions: {}
+concurrency:
+  group: medical-figure-gallery-supplement
+  cancel-in-progress: false
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - name: Scan the 27 newly listed journals
+        run: |
+          python3 - "$RUNNER_TEMP/supplement-2026.json" <<'PY'
+          import runpy
+          import subprocess
+          import sys
+
+          site = runpy.run_path('tools/update_site.py')
+          new_journals = ','.join(name for group in site['JOURNAL_ADDITIONS'].values() for name, _ in group)
+          registry = site['registry']
+          subprocess.run([
+              sys.executable, 'tools/scan_gallery.py', '--mode', 'backfill',
+              '--start', registry['start'], '--end', registry['end'],
+              '--journal', new_journals, '--report', sys.argv[1],
+          ], check=True)
+          PY
+      - name: Retain evidence for figure and licence review
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: journal-supplement-2026
+          path: ${{ runner.temp }}/supplement-2026.json
+          retention-days: 90
+          if-no-files-found: error
