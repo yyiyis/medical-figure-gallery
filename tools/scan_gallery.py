@@ -106,7 +106,7 @@ def article_date(record):
 
 def find_pmids(journal, start, end):
     name = journal['pubmed']
-    term = f'"{name}"[jour] AND ({start:%Y/%m/%d}[dp]:{end:%Y/%m/%d}[dp])'
+    term = f'"{name}"[jour] AND ({start:%Y/%m/%d}:{end:%Y/%m/%d}[epdat] OR {start:%Y/%m/%d}:{end:%Y/%m/%d}[dp])'
     result = json.loads(eutils('esearch', term=term, retmode='json', retmax=10000))['esearchresult']
     if result.get('errorlist'):
         raise ValueError(f'PubMed query: {result["errorlist"]}')
@@ -266,7 +266,7 @@ def article_info(record, journal, start, end):
         return None, 'date_needs_confirmation'
     if not start <= online <= end:
         return None, 'outside_online_date'
-    ids = {k.get('IdType'): k.text or '' for k in record.findall('.//ArticleId')}
+    ids = {k.get('IdType'): k.text or '' for k in record.findall('./PubmedData/ArticleIdList/ArticleId')}
     if not ids.get('doi'):
         return None, 'doi_missing'
     author = article.findtext('.//AuthorList/Author/LastName') or article.findtext('.//AuthorList/Author/CollectiveName') or journal
@@ -468,6 +468,8 @@ def main():
     run['candidates'] = len(added)
     options.report.write_text(json.dumps({**run,'items':added},ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     print(f'Processed {len(checks)} journals and identified {len(added)} new graphical abstract candidates.',flush=True)
+    for row in added:
+        print(json.dumps({'doi':row[10]['doi'],'journal':row[1],'title':row[3],'size':[row[10]['width'],row[10]['height']], 'published':row[10]['published'],'image':row[10].get('url',row[7]),'licence':row[9]},ensure_ascii=False),flush=True)
     if not checks or all(r['errors'] for r in checks):
         raise SystemExit('No journal was scanned successfully')
     if options.publish:
