@@ -1,5 +1,7 @@
 name: Medical figure gallery
 on:
+  schedule:
+    - cron: "20 1 * * 1"
   push:
     branches: [main]
     paths: [index.html]
@@ -90,3 +92,4 @@ jobs:
       - name: Deploy GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
