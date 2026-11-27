@@ -26,9 +26,9 @@ RETRY_STATUS = {429, 500, 502, 503, 504}
 FIGURE_LABEL = re.compile(r'graphical.abstract|visual.abstract|central.illustration', re.I)
 STUDY = re.compile(r'\b(cohort|biobank|participants|randomi[sz]ed|patients|registry|population.based|case.control|longitudinal|epidemiolog)\w*\b', re.I)
 TOPICS = {
-    '暴露组': r'\bexposom\w*|cumulative exposur|environmental exposur|early.life exposur|joint exposur',
-    '生命历程': r'life.course|lifecourse|childhood|intergenerational|longitudinal trajector',
-    '环境健康': r'air pollution|particulate matter|ambient heat|temperature|climate change|built environment|environmental justice|environmental epidemiology',
+    '暴露组': r'\bexposom\w*|cumulative exposur|environmental exposur|early.life exposur|joint exposur|exposure mixtures|multiple exposures',
+    '生命历程': r'life.course|lifecourse|childhood|early.life|prenatal|adolescen|intergenerational|longitudinal trajector',
+    '环境健康': r'air pollution|particulate matter|PM2\.5|ambient heat|temperature|climate change|built environment|environmental justice|environmental epidemiology|traffic noise|greenness|wildfire smoke|lead exposure|PFAS|perfluoro|pesticides|drinking water',
     '组学': r'\b(?:multi.?)?omics\b|\b(?:proteom|metabolom|epigenom|transcriptom|genom)\w*\b',
     '老龄化': r'\b(?:aging|ageing|frailty|dementia|multimorbidity|healthspan|longevity)\b',
     '心血管': r'cardiovascular|heart failure|stroke|coronary|cardiometabolic|atherosclero',
@@ -183,7 +183,8 @@ def named_graphics(xml):
         if node.tag not in {'abstract', 'fig', 'sec'}:
             continue
         name = ' '.join([node.get('abstract-type', ''), node.get('sec-type', ''), text_of(node.find('label')), text_of(node.find('title'))])
-        if not FIGURE_LABEL.search(name):
+        is_graphical_abstract = node.tag == 'abstract' and node.get('abstract-type','').casefold() == 'graphical'
+        if not is_graphical_abstract and not FIGURE_LABEL.search(name):
             continue
         if node.find('.//permissions') is not None:
             continue
@@ -202,6 +203,11 @@ def licensed_graphic(article):
     if not licence:
         return None, 'licence_unconfirmed'
     xml = ET.fromstring(request(PMC + version.removesuffix('.json') + '.xml'))
+    permissions = xml.find('./front/article-meta/permissions')
+    evidence = ET.tostring(permissions, encoding='unicode') if permissions is not None else ''
+    license_links = set(re.findall(r'https?://creativecommons\.org/licenses/([a-z-]+)/(\d\.\d)', evidence, re.I))
+    if license_links != {(licence, '4.0')}:
+        return None, 'licence_unconfirmed'
     possibilities = list(named_graphics(xml))
     if not possibilities:
         return None, 'no_label_in_pmc'
@@ -275,7 +281,7 @@ def article_info(record, journal, start, end):
 
 
 def publisher_date(items):
-    values = [exact_date(parts) for f in ('published-online','published') for parts in items.get(f,{}).get('date-parts',[])]
+    values = [exact_date(parts) for f in ('published-online',) for parts in items.get(f,{}).get('date-parts',[])]
     return min((value for value in values if value), default=None)
 
 
@@ -318,7 +324,7 @@ def innovation_article(item, journal, start, end):
         return None, 'outside_topic_filter'
     online = publisher_date(item)
     if not online:
-        for name in ('citation_online_date','citation_publication_date','citation_date'):
+        for name in ('citation_online_date','citation_publication_date'):
             value = tag_content(page,name)
             if re.fullmatch(r'\d{4}[-/]\d{2}[-/]\d{2}',value):
                 online = exact_date(re.split('[-/]',value))
@@ -423,9 +429,9 @@ def update_stamp(document, history, latest):
     if history.get('results'):
         indexed = sum(r['counts'].get('metadata_read',0) for r in history['results'])
         completed = sum(not r['errors'] for r in history['results'])
-        note += f' 首轮目录扫描 {completed} 刊，检索到 {indexed:,} 条记录。'
+        note += f' 历史目录已扫描 {completed}/{len(history["results"])} 刊，共读取 {indexed:,} 条记录。'
     if latest:
-        note += ' 最近一次更新 ' + latest['stamp'] + '（北京时间）。'
+        note += ' 最近发布 ' + latest['stamp'] + '（北京时间）。本次扫描 ' + latest['start'] + ' 至 ' + latest['end'] + '，新增 ' + str(latest.get('candidates',0)) + ' 张图文摘要。'
     pattern = r'(<p id="coverage-status">).*?(</p>)'
     return re.sub(pattern,lambda m:m[1]+html.escape(note)+m[2],document,count=1,flags=re.S)
 
@@ -486,3 +492,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
