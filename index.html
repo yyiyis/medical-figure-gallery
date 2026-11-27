@@ -27,15 +27,12 @@
   input[type=checkbox] {accent-color:var(--accent); width:16px; height:16px; vertical-align:-3px}
   .view-options {color:var(--muted); font-size:14px}
   #status {margin:13px 0 8px; font-size:14px; color:var(--muted)}
-  #gallery {display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,480px),1fr)); gap:20px}
-  #gallery.single-column {grid-template-columns:minmax(0,1fr); max-width:1180px; margin-inline:auto}
-  .card {min-width:0; overflow:hidden; background:white; border:1px solid var(--edge); border-radius:12px}
-  .preview {position:relative; display:block; width:100%; height:clamp(290px,30vw,420px); padding:12px; border:0; border-bottom:1px solid var(--edge); background:white; cursor:zoom-in}
-  #gallery.single-column .preview {height:clamp(330px,59vh,640px)}
+  #gallery {column-width:480px; column-gap:20px}
+  #gallery.single-column, #gallery:has(> .card:only-child), #gallery:has(> .empty) {column-count:1; column-width:auto; max-width:1180px; margin-inline:auto}
+  .card {width:100%; break-inside:avoid; overflow:hidden; margin:0 0 20px; background:white; border:1px solid var(--edge); border-radius:12px}
+  .preview {display:block; width:100%; padding:0; border:0; border-bottom:1px solid var(--edge); background:white; cursor:zoom-in}
   .preview:focus-visible {outline-offset:-4px}
-  .preview img {display:block; width:100%; height:100%; object-fit:contain}
-  .zoom {position:absolute; right:13px; bottom:13px; padding:4px 9px; border:1px solid var(--edge); border-radius:6px; background:#fff; color:var(--accent); font-size:13px; font-weight:650}
-  .preview:hover .zoom {border-color:var(--accent)}
+  .preview img {display:block; width:100%; height:auto}
   .card-content {padding:14px 18px 16px}
   .meta,.credit {font-size:13px; color:var(--muted)}
   .meta {margin:0 0 4px}
@@ -45,25 +42,28 @@
   .tags li {background:#edf1eb; border-radius:5px; padding:2px 7px; font-size:13px}
   .source {display:flex; flex-wrap:wrap; gap:5px 12px; align-items:baseline; font-size:14px}
   .empty,.image-error {padding:12px 16px; margin:0; color:var(--muted)}
-  dialog {width:min(1400px,calc(100% - 22px)); max-height:calc(100dvh - 18px); padding:0; border:1px solid var(--edge); border-radius:12px; color:var(--ink); background:white}
+  dialog {width:min(1400px,calc(100% - 22px),max(330px,calc((100dvh - 130px) * var(--figure-aspect,1)))); max-height:calc(100dvh - 18px); padding:0; border:1px solid var(--edge); border-radius:12px; color:var(--ink); background:white}
+  dialog[open] {display:flex; flex-direction:column}
+  #viewer.actual-size {width:min(1400px,calc(100% - 22px))}
   dialog::backdrop {background:rgba(15,25,20,.78)}
   .viewer-bar {display:flex; justify-content:space-between; align-items:center; gap:14px; padding:10px 14px; border-bottom:1px solid var(--edge)}
   .viewer-bar h2 {font-size:18px}
-  .viewer-bar form {margin:0; flex:none}
-  #viewer img {display:block; width:100%; height:min(82dvh,1050px); object-fit:contain; padding:6px}
+  .viewer-actions {display:flex; gap:6px; flex:none}
+  .viewer-bar form {margin:0}
+  #viewer-viewport {min-height:0; overflow:auto}
+  #viewer img {display:block; width:auto; height:auto; max-width:100%; max-height:calc(100dvh - 130px); margin-inline:auto}
+  #viewer.actual-size img {max-width:none; max-height:none; margin:0}
   #viewer img[hidden] {display:none}
   #viewer-source {padding:8px 14px 11px; border-top:1px solid var(--edge)}
   @media (max-width:1023px) {
     .view-options label:has(#single-column) {display:none}
-    .preview {height:clamp(320px,62vw,500px)}
   }
   @media (max-width:700px) {
     .wrap {width:calc(100% - 24px)}
     header {padding-top:25px}
-    .preview,#gallery.single-column .preview {height:clamp(240px,90vw,490px); padding:6px}
     .tab {padding:5px 8px; font-size:14px}
     .card-content {padding:12px}
-    #viewer img {height:min(72dvh,680px)}
+    .viewer-bar {flex-wrap:wrap}
   }
 </style>
 </head>
@@ -86,20 +86,28 @@
   <section id="gallery" aria-label="医学期刊图片"></section>
 </main>
 <dialog id="viewer" aria-labelledby="viewer-title">
-  <div class="viewer-bar"><h2 id="viewer-title"></h2><form method="dialog"><button class="plain" autofocus>关闭</button></form></div>
-  <img alt="" referrerpolicy="no-referrer">
-  <p class="image-error" hidden>图片暂时无法加载，可打开原始出处。</p>
+  <div class="viewer-bar">
+    <h2 id="viewer-title"></h2>
+    <div class="viewer-actions">
+      <button id="actual-size" class="plain" type="button" aria-pressed="false">原始尺寸</button>
+      <form method="dialog"><button class="plain" autofocus>关闭</button></form>
+    </div>
+  </div>
+  <div id="viewer-viewport" role="region" aria-label="图片预览" tabindex="0">
+    <img alt="" referrerpolicy="no-referrer">
+    <p class="image-error" hidden>图片暂时无法加载，可打开原始出处。</p>
+  </div>
   <div id="viewer-source" class="source"></div>
 </dialog>
 <script id="catalog" type="application/json">
 [
-  ["abstract","European Heart Journal",2026,"CRP 与一般人群的心血管风险","风险预测|心血管","左栏交代人群和测量，右侧三列依次展示累积发病、调整后风险和增量预测价值。","https://academic.oup.com/eurheartj/article/47/15/1799/8377304","https://cdn.ncbi.nlm.nih.gov/pmc/blobs/5e6c/13101082/5d1756bad390/ehaf937_sga.jpg","Kurt 等","by"],
-  ["abstract","European Heart Journal",2026,"联合生物标志物与 SCORE2","风险预测|心血管","左侧交代队列和指标组合，右侧用两个并排的点区间图比较筛查识别人数和估计的用药效率。","https://academic.oup.com/eurheartj/article/47/15/1861/8379858","https://cdn.ncbi.nlm.nih.gov/pmc/blobs/b208/13079997/4175d60cb951/ehaf947_sga.jpg","Ritchie 等","by"],
-  ["abstract","JACC: Advances",2026,"老年人心血管健康轨迹与结局","生命历程|心血管|队列设计","Central Illustration 把长期健康轨迹和随访结局放进一张图，适合参考重复测量队列的叙述顺序。","https://pmc.ncbi.nlm.nih.gov/articles/PMC12804104/","https://cdn.ncbi.nlm.nih.gov/pmc/blobs/a831/12804104/abc9bf513e6c/gr4.jpg","Li 等，Central Illustration","by-nc-nd"],
-  ["abstract","The Innovation Medicine",2024,"PM₂.₅ 组分与心血管疾病","环境健康|心血管","图文摘要压缩研究问题，正文再展开地域分布、暴露–反应和分层结果。","https://www.the-innovation.org/article/id/66355e8352bf657b0f62aa78","https://data.the-innovation.org//innovation-data/medicine/2024/3/PIC/XINNMEDICINE-2023-0103-Abstract.jpg","Cai 等","by"],
-  ["abstract","Cell Reports Medicine",2025,"中国成人肥胖指标与风险阈值","队列设计|分层|心血管","用独立区块交代人群、肥胖指标和结局，把几种容易混淆的测量放在同一区域。","https://pmc.ncbi.nlm.nih.gov/articles/PMC12490207/#abs0002","https://cdn.ncbi.nlm.nih.gov/pmc/blobs/3c09/12490207/ea1b730d008b/fx1.jpg","Jia 等","by-nc-nd"],
-  ["figures","The Innovation Medicine",2025,"空气污染与 COPD、胃肠疾病的转归","研究设计|多状态模型|环境健康","左侧交代样本怎么筛，右侧画出不同疾病状态之间如何转移。","https://the-innovation.org/article/doi/10.59717/j.xinn-med.2025.100175","https://data.the-innovation.org//innovation-data/medicine/2025/4/PIC/XINNMEDICINE-2025-0036-1.jpg","Shi 等，Figure 1","by"],
-  ["figures","Nature Medicine",2026,"更年期研究的方法与结果概览","研究设计|时间轴|衰老","用小曲线先说明个体时间差异怎样把群体变化变平，再显示按距绝经时间对齐的实例。","https://www.nature.com/articles/s41591-026-04614-0/figures/1","https://media.springernature.com/lw1200/springer-static/image/art%3A10.1038%2Fs41591-026-04614-0/MediaObjects/41591_2026_4614_Fig1_HTML.png","Pridham 等，Figure 1","by-nc-nd"],
+  ["abstract","European Heart Journal",2026,"CRP 与一般人群的心血管风险","风险预测|心血管","左栏交代人群和测量，右侧三列依次展示累积发病、调整后风险和增量预测价值。","https://academic.oup.com/eurheartj/article/47/15/1799/8377304","https://cdn.ncbi.nlm.nih.gov/pmc/blobs/5e6c/13101082/5d1756bad390/ehaf937_sga.jpg","Kurt 等","by",{"width":4200,"height":4763,"url":"https://oup.silverchair-cdn.com/oup/backfile/Content_public/Journal/eurheartj/47/15/10.1093_eurheartj_ehaf937/1/ehaf937_sga.jpeg?Expires=2147483647&Signature=PmmQWYcJkmhVaqm7RsFJJ~7jV18VGn2yHzLGLvsIN2xlYukpar5JjbVLEFCnXlLcBKDxJNa8dCLaKKOz57itUdWvgdYczIG32ThNoHLw3wZ9QWovIwdD5f5smiKMcvplDw4kgdJzOOMNmUD06MztnK~g1hN0f7QT5iw9fLcWLZzQupxRIPYQyrz3E8L~CmaEVRs9EIqTkIuBdM~RYIpBPB6gGHU8AIvKOuUcJqYiTmLK8gwAjOcyC9crQUKvZrzUho4Kp7PLW6IGKOQV8vnNQwSeHeBVUhzdPQ0WJ40eEdyJxV4GBrSolK-Ul2PnaI~5Hayk5gIHtC7Tfeh8-2oE4A__&Key-Pair-Id=APKAIE5G5CRDK6RD3PGA"}],
+  ["abstract","European Heart Journal",2026,"联合生物标志物与 SCORE2","风险预测|心血管","左侧交代队列和指标组合，右侧用两个并排的点区间图比较筛查识别人数和估计的用药效率。","https://academic.oup.com/eurheartj/article/47/15/1861/8379858","https://cdn.ncbi.nlm.nih.gov/pmc/blobs/b208/13079997/4175d60cb951/ehaf947_sga.jpg","Ritchie 等","by",{"width":4187,"height":3907,"url":"https://oup.silverchair-cdn.com/oup/backfile/Content_public/Journal/eurheartj/47/15/10.1093_eurheartj_ehaf947/1/ehaf947_sga.jpeg?Expires=2147483647&Signature=Ci1ckwiEm7btI4pj77S9qHYnnZgdaKE8G3bADACbdVsaTNQfzizLELSLppGM4NON-sqxVLV7avZTzAUZFe15D4xJm9C2HBMH0jagC1mhNg8WaLAYbzL0XBom0AXj2VAmDTZ8TbdyIeRpDfI11ggPvNF0JpK9VjKzJ25Zt46pN~JTPs4LzBmblvLK63EdQpE9liuYc6Gntl0JIH0vMGwu3C~f~Y2xD~w6s3FmgOXSY~nEDg4Og~a5PDNfeml1w6uuLLeCMVFaaLE-rpYEKoprKzSv8Bv0MBsXbrVw33qRu0rAZKUXGHdruIesG8b7gDwFvqTL3F2jdV1IXdbfQIp2pA__&Key-Pair-Id=APKAIE5G5CRDK6RD3PGA"}],
+  ["abstract","JACC: Advances",2026,"老年人心血管健康轨迹与结局","生命历程|心血管|队列设计","Central Illustration 把长期健康轨迹和随访结局放进一张图，适合参考重复测量队列的叙述顺序。","https://pmc.ncbi.nlm.nih.gov/articles/PMC12804104/","https://cdn.ncbi.nlm.nih.gov/pmc/blobs/a831/12804104/abc9bf513e6c/gr4.jpg","Li 等，Central Illustration","by-nc-nd",{"width":3446,"height":4176,"url":"https://ars.els-cdn.com/content/image/1-s2.0-S2772963X25009317-gr4_lrg.jpg"}],
+  ["abstract","The Innovation Medicine",2024,"PM₂.₅ 组分与心血管疾病","环境健康|心血管","图文摘要压缩研究问题，正文再展开地域分布、暴露–反应和分层结果。","https://www.the-innovation.org/article/id/66355e8352bf657b0f62aa78","https://data.the-innovation.org//innovation-data/medicine/2024/3/PIC/XINNMEDICINE-2023-0103-Abstract.jpg","Cai 等","by",{"width":4505,"height":2976}],
+  ["abstract","Cell Reports Medicine",2025,"中国成人肥胖指标与风险阈值","队列设计|分层|心血管","用独立区块交代人群、肥胖指标和结局，把几种容易混淆的测量放在同一区域。","https://pmc.ncbi.nlm.nih.gov/articles/PMC12490207/#abs0002","https://cdn.ncbi.nlm.nih.gov/pmc/blobs/3c09/12490207/ea1b730d008b/fx1.jpg","Jia 等","by-nc-nd",{"width":996,"height":996,"url":"https://ars.els-cdn.com/content/image/1-s2.0-S2666379125003829-fx1_lrg.jpg"}],
+  ["figures","The Innovation Medicine",2025,"空气污染与 COPD、胃肠疾病的转归","研究设计|多状态模型|环境健康","左侧交代样本怎么筛，右侧画出不同疾病状态之间如何转移。","https://the-innovation.org/article/doi/10.59717/j.xinn-med.2025.100175","https://data.the-innovation.org//innovation-data/medicine/2025/4/PIC/XINNMEDICINE-2025-0036-1.jpg","Shi 等，Figure 1","by",{"width":2252,"height":1227}],
+  ["figures","Nature Medicine",2026,"更年期研究的方法与结果概览","研究设计|时间轴|衰老","用小曲线先说明个体时间差异怎样把群体变化变平，再显示按距绝经时间对齐的实例。","https://www.nature.com/articles/s41591-026-04614-0/figures/1","https://media.springernature.com/lw1200/springer-static/image/art%3A10.1038%2Fs41591-026-04614-0/MediaObjects/41591_2026_4614_Fig1_HTML.png","Pridham 等，Figure 1","by-nc-nd",{"width":1832,"height":1282,"url":"https://media.springernature.com/original/springer-static/image/art%3A10.1038%2Fs41591-026-04614-0/MediaObjects/41591_2026_4614_Fig1_HTML.png"}],
   ["abstract","The Lancet",2024,"痴呆风险因素的生命历程信息图","生命历程|衰老|公共卫生","用早年、中年、晚年三段配色组织风险因素，最后汇到总体归因估计。","https://www.thelancet.com/infographics-do/dementia-risk"],
   ["abstract","JACC",2025,"久坐与未来心血管疾病","队列设计|剂量反应|心血管","Central Illustration 把腕戴加速度计、人群和结局放在同一区域，给剂量–反应和时间替代结果各留出位置。","https://pubmed.ncbi.nlm.nih.gov/39545903/#figures"],
   ["abstract","European Journal of Preventive Cardiology",2025,"体力活动与心血管病患者死亡风险","队列设计|体力活动|心血管","把加速度计测量接到随访设计和不同死因的结果。","https://academic.oup.com/eurjpc/article/32/1/20/7725534"],
@@ -127,6 +135,8 @@
   const viewer = document.querySelector('#viewer');
   const viewerImage = viewer.querySelector('img');
   const viewerError = viewer.querySelector('.image-error');
+  const viewerViewport = document.querySelector('#viewer-viewport');
+  const actualSize = document.querySelector('#actual-size');
   const tabs = new Map();
   let category = 'all';
 
@@ -148,18 +158,41 @@
     line.append(credit + ' · ', link(licenses[license], 'https://creativecommons.org/licenses/' + license + '/4.0/'), ' · 图像未修改');
     return line;
   }
+  function loadImage(img, image, quality, onFailure) {
+    img.onerror = () => {
+      if (quality.url && img.getAttribute('src') === quality.url) {
+        img.src = image;
+        return;
+      }
+      onFailure();
+    };
+    img.src = quality.url || image;
+  }
+  function setActualSize(active) {
+    viewer.classList.toggle('actual-size', active);
+    actualSize.setAttribute('aria-pressed', String(active));
+    actualSize.textContent = active ? '适应窗口' : '原始尺寸';
+    viewerViewport.scrollTo(0, 0);
+  }
   function openImage(item) {
-    const [kind, journalName, year, title, , , url, image, credit, license] = item;
+    const [kind, journalName, year, title, , , url, image, credit, license, quality] = item;
     viewer.querySelector('#viewer-title').textContent = title;
     viewer.querySelector('#viewer-source').replaceChildren(link('原始出处 ↗', url), creditLine(credit, license));
     viewerImage.alt = title + ' · ' + [types[kind], journalName, year].filter(Boolean).join(' · ');
     viewerError.hidden = true;
     viewerImage.hidden = false;
-    viewerImage.src = image;
+    viewer.style.setProperty('--figure-aspect',quality.width / quality.height);
+    actualSize.disabled = false;
+    loadImage(viewerImage,image,quality,() => {
+      viewerImage.hidden = true;
+      viewerError.hidden = false;
+      actualSize.disabled = true;
+    });
     viewer.showModal();
+    setActualSize(false);
   }
   function card(item) {
-    const [kind, name, year, title, keywords, note, url, image, credit, license] = item;
+    const [kind, name, year, title, keywords, note, url, image, credit, license, quality] = item;
     const box = el('article','card');
     if (image) {
       const preview = el('button','preview');
@@ -170,12 +203,13 @@
       img.loading = 'lazy';
       img.decoding = 'async';
       img.referrerPolicy = 'no-referrer';
-      img.addEventListener('error', () => {
+      img.width = quality.width;
+      img.height = quality.height;
+      loadImage(img,image,quality,() => {
         preview.remove();
         box.prepend(el('p','image-error','图片暂时无法加载，可打开原始出处。'));
-      }, {once:true});
-      preview.append(img,el('span','zoom','放大查看'));
-      img.src = image;
+      });
+      preview.append(img);
       preview.addEventListener('click', () => openImage(item));
       box.append(preview);
     }
@@ -242,7 +276,7 @@
     search.focus();
   });
   viewer.addEventListener('click', event => {if (event.target === viewer) viewer.close();});
-  viewerImage.addEventListener('error', () => {viewerImage.hidden = true; viewerError.hidden = false;});
+  actualSize.addEventListener('click', () => setActualSize(!viewer.classList.contains('actual-size')));
   updateJournals();
   render();
 })();</script>
