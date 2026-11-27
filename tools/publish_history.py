@@ -16,6 +16,22 @@ from scan_gallery import INDEX, LICENSES, extend_catalog, image_size, json_secti
 
 FEATURED = [
     {
+        "kind": "cover",
+        "journal": "Emerging Infectious Diseases",
+        "title": "维米尔《地理学家》",
+        "tags": "封面|公共卫生|医学史",
+        "note": "2026 年 6 月号所用封面画作。期刊用绘画中的光与观察，引出早期显微镜和对微生物的认识。",
+        "source": "https://wwwnc.cdc.gov/eid/article/32/6/ac-3206_article",
+        "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Johannes_Vermeer_-_The_Geographer_-_Google_Art_Project.jpg/1920px-Johannes_Vermeer_-_The_Geographer_-_Google_Art_Project.jpg?utm_campaign=index&utm_content=thumbnail&utm_source=commons.wikimedia.org",
+        "credit": "Johannes Vermeer · Städel Museum / Google Art Project · 公有领域",
+        "license": "pd",
+        "doi": "10.3201/eid3206.ac3206",
+        "date": "2026-05-27",
+        "width": 1920,
+        "height": 2153,
+        "file": "eid-2026-06-the-geographer.jpg"
+    },
+    {
         "kind": "figures",
         "journal": "Environment International",
         "title": "从出生到成年早期的多域暴露测量",
