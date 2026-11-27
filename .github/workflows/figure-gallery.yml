@@ -81,6 +81,7 @@ jobs:
         if: github.event_name == 'schedule' || (inputs.publish && inputs.mode != 'deploy')
         run: |
           git add index.html
+          if [[ -d assets/reference ]]; then git add assets/reference; fi
           if ! git diff --cached --quiet; then
             git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -m "Update medical figure gallery"
             git push origin HEAD:main
@@ -91,6 +92,7 @@ jobs:
         run: |
           mkdir -p "$RUNNER_TEMP/gallery-site"
           cp index.html "$RUNNER_TEMP/gallery-site/"
+          if [[ -d assets/reference ]]; then cp -R assets "$RUNNER_TEMP/gallery-site/"; fi
           echo "deploy=true" >> "$GITHUB_OUTPUT"
       - name: Upload Pages site
         if: steps.site.outputs.deploy == 'true'
