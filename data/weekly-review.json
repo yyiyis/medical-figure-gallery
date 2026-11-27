@@ -1,0 +1,38 @@
+{
+  "items": [],
+  "scan": {
+    "mode": "weekly",
+    "start": "2026-10-31",
+    "end": "2026-11-27",
+    "stamp": "2026-11-27 18:59",
+    "results": [
+      {
+        "name": "European Heart Journal",
+        "counts": {
+          "indexed": 209,
+          "metadata_read": 209,
+          "publisher_review": 14,
+          "outside_topic_filter": 161,
+          "article_type_excluded": 13,
+          "date_needs_confirmation": 11,
+          "outside_online_date": 8,
+          "licence_unconfirmed": 1,
+          "missing_pmc_version": 1
+        },
+        "errors": []
+      },
+      {
+        "name": "Environmental Health Perspectives",
+        "counts": {
+          "indexed": 15,
+          "metadata_read": 15,
+          "outside_topic_filter": 3,
+          "outside_online_date": 10,
+          "article_type_excluded": 2
+        },
+        "errors": []
+      }
+    ],
+    "candidates": 0
+  }
+}
