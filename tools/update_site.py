@@ -112,7 +112,12 @@ for group, additions in JOURNAL_ADDITIONS.items():
             journal.update(pubmed=None, issn=index.removeprefix('issn:'))
         by_group[group]['journals'].append(journal)
         existing.add(name)
-if len(existing) != original_count or legacy_group is not None:
+exposome = next(journal for group in registry['groups'] for journal in group['journals']
+                if journal['name'] == 'Exposome')
+enable_exposome = exposome.get('track') is not True
+if enable_exposome:
+    exposome['track'] = True
+if len(existing) != original_count or legacy_group is not None or enable_exposome:
     updated = '\n' + json.dumps(registry, ensure_ascii=False, indent=2) + '\n'
     document = document[:registry_script.start(2)] + updated + document[registry_script.end(2):]
 
@@ -129,5 +134,17 @@ if pending_label not in document:
 if 'GallerySearch.formatDate(item)' not in document:
     replace_once('[types[kind],name,year]', '[types[kind],name,GallerySearch.formatDate(item)]')
     replace_once('[types[kind], journalName, year]', '[types[kind], journalName, GallerySearch.formatDate(item)]')
+
+# Complete the publication month on the archived DETECT-AHEAD figure.
+detect_image = 'https://pmc-oa-opendata.s3.amazonaws.com/PMC11296689.1/nihms-2012174-f0002.jpg'
+detect_metadata = json.dumps({'width': 1200, 'height': 806}, separators=(',', ':'))
+detect_credit = json.dumps('Quer 等，Figure 2（美国国家医学图书馆收录的作者终稿）', ensure_ascii=False)
+detect_fields = f'"{detect_image}",{detect_credit},"by-nc-nd",'
+previous_detect = detect_fields + detect_metadata
+if previous_detect in document:
+    updated_detect = json.dumps(
+        {'width': 1200, 'height': 806, 'published': '2024-07-24'}, separators=(',', ':')
+    )
+    replace_once(previous_detect, detect_fields + updated_detect)
 
 page.write_text(document, encoding='utf-8')
