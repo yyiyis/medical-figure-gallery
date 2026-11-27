@@ -1,39 +1,54 @@
 name: Medical figure gallery
 on:
+  push:
+    branches: [main]
+    paths: [index.html]
   workflow_dispatch:
     inputs:
       mode:
-        description: Scan mode
+        description: Run mode
         type: choice
-        options: [pilot, backfill, weekly]
+        options: [pilot, backfill, weekly, deploy]
         default: pilot
       start:
-        description: First online date, start (YYYY-MM-DD)
-        default: "2026-05-01"
+        description: First online date, start (YYYY-MM-DD, optional)
       end:
-        description: First online date, end (YYYY-MM-DD)
-        default: "2026-05-14"
+        description: First online date, end (YYYY-MM-DD, optional)
       journals:
-        description: Comma-separated journal names (empty uses mode defaults)
-permissions:
-  contents: read
+        description: Comma-separated journal names (optional)
+      publish:
+        description: Publish scan results to the gallery
+        type: boolean
+        default: false
+permissions: {}
+concurrency:
+  group: medical-figure-gallery-pages
+  cancel-in-progress: false
 jobs:
   scan:
     runs-on: ubuntu-latest
     timeout-minutes: 90
+    permissions:
+      contents: write
+    outputs:
+      deploy: ${{ steps.site.outputs.deploy }}
     steps:
       - uses: actions/checkout@v6
         with:
-          persist-credentials: false
-      - name: Discover licensed graphical abstracts
+          ref: main
+      - name: Scan journal catalogues
+        if: github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.mode != 'deploy')
         env:
-          MODE: ${{ inputs.mode }}
+          MODE: ${{ inputs.mode || 'weekly' }}
           START: ${{ inputs.start }}
           END: ${{ inputs.end }}
           JOURNALS: ${{ inputs.journals }}
+          PUBLISH: ${{ github.event_name == 'schedule' || inputs.publish }}
         run: |
-          python3 tools/scan_gallery.py --mode "$MODE" --start "$START" --end "$END" --journal "$JOURNALS" --report "$RUNNER_TEMP/scan-result.json"
-      - name: Store results
+          args=(--mode "$MODE" --start "$START" --end "$END" --journal "$JOURNALS" --report "$RUNNER_TEMP/scan-result.json")
+          if [[ "$PUBLISH" == "true" ]]; then args+=(--publish); fi
+          python3 tools/scan_gallery.py "${args[@]}"
+      - name: Store scan report
         if: always()
         uses: actions/upload-artifact@v4
         with:
@@ -41,3 +56,37 @@ jobs:
           path: ${{ runner.temp }}/scan-result.json
           retention-days: 30
           if-no-files-found: ignore
+      - name: Commit updated gallery
+        if: github.event_name == 'schedule' || (inputs.publish && inputs.mode != 'deploy')
+        run: |
+          git add index.html
+          if ! git diff --cached --quiet; then
+            git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -m "Update medical figure gallery"
+            git push origin HEAD:main
+          fi
+      - name: Stage public site
+        id: site
+        if: github.event_name == 'schedule' || github.event_name == 'push' || inputs.publish || inputs.mode == 'deploy'
+        run: |
+          mkdir -p "$RUNNER_TEMP/gallery-site"
+          cp index.html "$RUNNER_TEMP/gallery-site/"
+          echo "deploy=true" >> "$GITHUB_OUTPUT"
+      - name: Upload Pages site
+        if: steps.site.outputs.deploy == 'true'
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ${{ runner.temp }}/gallery-site
+  deploy:
+    if: needs.scan.outputs.deploy == 'true'
+    needs: scan
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
