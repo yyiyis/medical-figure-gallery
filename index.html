@@ -122,7 +122,455 @@
   <div id="viewer-source" class="source"></div>
 </dialog>
 <script id="journal-registry" type="application/json">
-{"start":"2026-01-01","end":"2026-11-27","groups":[{"title":"综合医学","journals":[{"name":"NEJM","pubmed":"N Engl J Med"},{"name":"The Lancet","pubmed":"Lancet"},{"name":"JAMA","pubmed":"JAMA"},{"name":"The BMJ","pubmed":"BMJ"},{"name":"JAMA Network Open","pubmed":"JAMA Netw Open"},{"name":"JAMA Internal Medicine","pubmed":"JAMA Intern Med"},{"name":"NEJM Evidence","pubmed":"NEJM Evid"},{"name":"Annals of Internal Medicine","pubmed":"Ann Intern Med"},{"name":"Nature Medicine","pubmed":"Nat Med"},{"name":"PLOS Medicine","pubmed":"PLoS Med"},{"name":"The Lancet Regional Health – Western Pacific","pubmed":"Lancet Reg Health West Pac"},{"name":"Cell Reports Medicine","pubmed":"Cell Rep Med"},{"name":"The Innovation Medicine","pubmed":null,"issn":"2959-8745","archive":"https://www.the-innovation.org/medicine/archive","track":true},{"name":"eClinicalMedicine","pubmed":"EClinicalMedicine"},{"name":"BMJ Medicine","pubmed":"BMJ Med"},{"name":"eBioMedicine","pubmed":"EBioMedicine"},{"name":"The Lancet Regional Health – Europe","pubmed":"Lancet Reg Health Eur"},{"name":"The Lancet Regional Health – Americas","pubmed":"Lancet Reg Health Am"},{"name":"BMJ Open","pubmed":"BMJ Open"}]},{"title":"心血管病学","journals":[{"name":"European Heart Journal","pubmed":"Eur Heart J"},{"name":"European Journal of Preventive Cardiology","pubmed":"Eur J Prev Cardiol"},{"name":"European Heart Journal – Digital Health","pubmed":"Eur Heart J Digit Health"},{"name":"European Heart Journal Open","pubmed":"Eur Heart J Open"},{"name":"European Heart Journal – Quality of Care and Clinical Outcomes","pubmed":"Eur Heart J Qual Care Clin Outcomes"},{"name":"JACC","pubmed":"J Am Coll Cardiol"},{"name":"JACC: Advances","pubmed":"JACC Adv"},{"name":"JACC: CardioOncology","pubmed":"JACC CardioOncol"},{"name":"JACC: Heart Failure","pubmed":"JACC Heart Fail"},{"name":"Circulation","pubmed":"Circulation"},{"name":"Journal of the American Heart Association","pubmed":"J Am Heart Assoc"},{"name":"Heart","pubmed":"Heart"},{"name":"JAMA Cardiology","pubmed":"JAMA Cardiol"},{"name":"JACC: Asia","pubmed":"JACC Asia"},{"name":"JACC: Cardiovascular Imaging","pubmed":"JACC Cardiovasc Imaging"},{"name":"JACC: Clinical Electrophysiology","pubmed":"JACC Clin Electrophysiol"},{"name":"European Journal of Heart Failure","pubmed":"Eur J Heart Fail"},{"name":"Hypertension","pubmed":"Hypertension"},{"name":"Circulation: Population Health and Outcomes","pubmed":"Circ Popul Health Outcomes"}]},{"title":"流行病学与公共卫生","journals":[{"name":"The Lancet Public Health","pubmed":"Lancet Public Health"},{"name":"International Journal of Epidemiology","pubmed":"Int J Epidemiol"},{"name":"American Journal of Epidemiology","pubmed":"Am J Epidemiol"},{"name":"Epidemiology","pubmed":"Epidemiology"},{"name":"European Journal of Epidemiology","pubmed":"Eur J Epidemiol"},{"name":"Journal of Epidemiology and Community Health","pubmed":"J Epidemiol Community Health"},{"name":"BMJ Global Health","pubmed":"BMJ Glob Health"},{"name":"Social Science & Medicine","pubmed":"Soc Sci Med"},{"name":"Journal of Clinical Epidemiology","pubmed":"J Clin Epidemiol"},{"name":"JAMA Health Forum","pubmed":"JAMA Health Forum"},{"name":"Nature Health","pubmed":null,"issn":"3005-0693"}]},{"title":"环境健康","journals":[{"name":"The Lancet Planetary Health","pubmed":"Lancet Planet Health"},{"name":"Environment International","pubmed":"Environ Int"},{"name":"Environmental Health Perspectives","pubmed":"Environ Health Perspect"},{"name":"Exposome","pubmed":null,"issn":"2635-2265","archive":"https://academic.oup.com/exposome/issue-archive/2026"},{"name":"Environmental Epidemiology","pubmed":"Environ Epidemiol"},{"name":"Journal of Exposure Science & Environmental Epidemiology","pubmed":"J Expo Sci Environ Epidemiol"},{"name":"Environmental Health","pubmed":"Environ Health"},{"name":"Environmental Research","pubmed":"Environ Res"},{"name":"Environmental Science & Technology","pubmed":"Environ Sci Technol"}]},{"title":"老年医学与老龄化研究","journals":[{"name":"Nature Aging","pubmed":"Nat Aging"},{"name":"The Lancet Healthy Longevity","pubmed":"Lancet Healthy Longev"},{"name":"Age and Ageing","pubmed":"Age Ageing"},{"name":"GeroScience","pubmed":"Geroscience"},{"name":"Aging Cell","pubmed":"Aging Cell"},{"name":"npj Aging","pubmed":"NPJ Aging"}]},{"title":"内分泌与代谢","journals":[{"name":"Metabolism","pubmed":"Metabolism"},{"name":"Cell Metabolism","pubmed":"Cell Metab"},{"name":"Nature Metabolism","pubmed":"Nat Metab"},{"name":"The Lancet Diabetes & Endocrinology","pubmed":"Lancet Diabetes Endocrinol"},{"name":"Diabetes Care","pubmed":"Diabetes Care"}]},{"title":"神经病学","journals":[{"name":"Alzheimer’s & Dementia","pubmed":"Alzheimers Dement"},{"name":"JAMA Neurology","pubmed":"JAMA Neurol"},{"name":"The Lancet Neurology","pubmed":"Lancet Neurol"}]},{"title":"呼吸医学","journals":[{"name":"Thorax","pubmed":"Thorax"},{"name":"European Respiratory Journal","pubmed":"Eur Respir J"},{"name":"American Journal of Respiratory and Critical Care Medicine","pubmed":"Am J Respir Crit Care Med"}]},{"title":"感染病学","journals":[{"name":"Emerging Infectious Diseases","pubmed":"Emerg Infect Dis"},{"name":"Clinical Infectious Diseases","pubmed":"Clin Infect Dis"}]},{"title":"数字医学","journals":[{"name":"The Lancet Digital Health","pubmed":"Lancet Digit Health"},{"name":"npj Digital Medicine","pubmed":"NPJ Digit Med"},{"name":"PLOS Digital Health","pubmed":"PLOS Digit Health"},{"name":"Journal of Medical Internet Research","pubmed":"J Med Internet Res"}]},{"title":"遗传学与组学","journals":[{"name":"Nature Genetics","pubmed":"Nat Genet"},{"name":"Cell Genomics","pubmed":"Cell Genom"},{"name":"Genome Medicine","pubmed":"Genome Med"},{"name":"Genome Biology","pubmed":"Genome Biol"},{"name":"Metabolomics","pubmed":"Metabolomics"},{"name":"Journal of Proteome Research","pubmed":"J Proteome Res"}]},{"title":"综合科学与生命科学","journals":[{"name":"Nature","pubmed":"Nature"},{"name":"Science","pubmed":"Science"},{"name":"Cell","pubmed":"Cell"},{"name":"Nature Communications","pubmed":"Nat Commun"},{"name":"Science Advances","pubmed":"Sci Adv"},{"name":"The Innovation","pubmed":"Innovation (Camb)"}]}]}
+{
+  "start": "2026-01-01",
+  "end": "2026-11-27",
+  "groups": [
+    {
+      "title": "综合医学",
+      "journals": [
+        {
+          "name": "NEJM",
+          "pubmed": "N Engl J Med"
+        },
+        {
+          "name": "The Lancet",
+          "pubmed": "Lancet"
+        },
+        {
+          "name": "JAMA",
+          "pubmed": "JAMA"
+        },
+        {
+          "name": "The BMJ",
+          "pubmed": "BMJ"
+        },
+        {
+          "name": "JAMA Network Open",
+          "pubmed": "JAMA Netw Open"
+        },
+        {
+          "name": "JAMA Internal Medicine",
+          "pubmed": "JAMA Intern Med"
+        },
+        {
+          "name": "NEJM Evidence",
+          "pubmed": "NEJM Evid"
+        },
+        {
+          "name": "Annals of Internal Medicine",
+          "pubmed": "Ann Intern Med"
+        },
+        {
+          "name": "Nature Medicine",
+          "pubmed": "Nat Med"
+        },
+        {
+          "name": "PLOS Medicine",
+          "pubmed": "PLoS Med"
+        },
+        {
+          "name": "The Lancet Regional Health – Western Pacific",
+          "pubmed": "Lancet Reg Health West Pac"
+        },
+        {
+          "name": "Cell Reports Medicine",
+          "pubmed": "Cell Rep Med"
+        },
+        {
+          "name": "The Innovation Medicine",
+          "pubmed": null,
+          "issn": "2959-8745",
+          "archive": "https://www.the-innovation.org/medicine/archive",
+          "track": true
+        },
+        {
+          "name": "eClinicalMedicine",
+          "pubmed": "EClinicalMedicine"
+        },
+        {
+          "name": "BMJ Medicine",
+          "pubmed": "BMJ Med"
+        },
+        {
+          "name": "eBioMedicine",
+          "pubmed": "EBioMedicine"
+        },
+        {
+          "name": "The Lancet Regional Health – Europe",
+          "pubmed": "Lancet Reg Health Eur"
+        },
+        {
+          "name": "The Lancet Regional Health – Americas",
+          "pubmed": "Lancet Reg Health Am"
+        },
+        {
+          "name": "BMJ Open",
+          "pubmed": "BMJ Open"
+        }
+      ]
+    },
+    {
+      "title": "心血管病学",
+      "journals": [
+        {
+          "name": "European Heart Journal",
+          "pubmed": "Eur Heart J"
+        },
+        {
+          "name": "European Journal of Preventive Cardiology",
+          "pubmed": "Eur J Prev Cardiol"
+        },
+        {
+          "name": "European Heart Journal – Digital Health",
+          "pubmed": "Eur Heart J Digit Health"
+        },
+        {
+          "name": "European Heart Journal Open",
+          "pubmed": "Eur Heart J Open"
+        },
+        {
+          "name": "European Heart Journal – Quality of Care and Clinical Outcomes",
+          "pubmed": "Eur Heart J Qual Care Clin Outcomes"
+        },
+        {
+          "name": "JACC",
+          "pubmed": "J Am Coll Cardiol"
+        },
+        {
+          "name": "JACC: Advances",
+          "pubmed": "JACC Adv"
+        },
+        {
+          "name": "JACC: CardioOncology",
+          "pubmed": "JACC CardioOncol"
+        },
+        {
+          "name": "JACC: Heart Failure",
+          "pubmed": "JACC Heart Fail"
+        },
+        {
+          "name": "Circulation",
+          "pubmed": "Circulation"
+        },
+        {
+          "name": "Journal of the American Heart Association",
+          "pubmed": "J Am Heart Assoc"
+        },
+        {
+          "name": "Heart",
+          "pubmed": "Heart"
+        },
+        {
+          "name": "JAMA Cardiology",
+          "pubmed": "JAMA Cardiol"
+        },
+        {
+          "name": "JACC: Asia",
+          "pubmed": "JACC Asia"
+        },
+        {
+          "name": "JACC: Cardiovascular Imaging",
+          "pubmed": "JACC Cardiovasc Imaging"
+        },
+        {
+          "name": "JACC: Clinical Electrophysiology",
+          "pubmed": "JACC Clin Electrophysiol"
+        },
+        {
+          "name": "European Journal of Heart Failure",
+          "pubmed": "Eur J Heart Fail"
+        },
+        {
+          "name": "Hypertension",
+          "pubmed": "Hypertension"
+        },
+        {
+          "name": "Circulation: Population Health and Outcomes",
+          "pubmed": "Circ Popul Health Outcomes"
+        }
+      ]
+    },
+    {
+      "title": "流行病学与公共卫生",
+      "journals": [
+        {
+          "name": "The Lancet Public Health",
+          "pubmed": "Lancet Public Health"
+        },
+        {
+          "name": "International Journal of Epidemiology",
+          "pubmed": "Int J Epidemiol"
+        },
+        {
+          "name": "American Journal of Epidemiology",
+          "pubmed": "Am J Epidemiol"
+        },
+        {
+          "name": "Epidemiology",
+          "pubmed": "Epidemiology"
+        },
+        {
+          "name": "European Journal of Epidemiology",
+          "pubmed": "Eur J Epidemiol"
+        },
+        {
+          "name": "Journal of Epidemiology and Community Health",
+          "pubmed": "J Epidemiol Community Health"
+        },
+        {
+          "name": "BMJ Global Health",
+          "pubmed": "BMJ Glob Health"
+        },
+        {
+          "name": "Social Science & Medicine",
+          "pubmed": "Soc Sci Med"
+        },
+        {
+          "name": "Journal of Clinical Epidemiology",
+          "pubmed": "J Clin Epidemiol"
+        },
+        {
+          "name": "JAMA Health Forum",
+          "pubmed": "JAMA Health Forum"
+        },
+        {
+          "name": "Nature Health",
+          "pubmed": null,
+          "issn": "3005-0693"
+        }
+      ]
+    },
+    {
+      "title": "环境健康",
+      "journals": [
+        {
+          "name": "The Lancet Planetary Health",
+          "pubmed": "Lancet Planet Health"
+        },
+        {
+          "name": "Environment International",
+          "pubmed": "Environ Int"
+        },
+        {
+          "name": "Environmental Health Perspectives",
+          "pubmed": "Environ Health Perspect"
+        },
+        {
+          "name": "Exposome",
+          "pubmed": null,
+          "issn": "2635-2265",
+          "archive": "https://academic.oup.com/exposome/issue-archive/2026"
+        },
+        {
+          "name": "Environmental Epidemiology",
+          "pubmed": "Environ Epidemiol"
+        },
+        {
+          "name": "Journal of Exposure Science & Environmental Epidemiology",
+          "pubmed": "J Expo Sci Environ Epidemiol"
+        },
+        {
+          "name": "Environmental Health",
+          "pubmed": "Environ Health"
+        },
+        {
+          "name": "Environmental Research",
+          "pubmed": "Environ Res"
+        },
+        {
+          "name": "Environmental Science & Technology",
+          "pubmed": "Environ Sci Technol"
+        }
+      ]
+    },
+    {
+      "title": "老年医学与老龄化研究",
+      "journals": [
+        {
+          "name": "Nature Aging",
+          "pubmed": "Nat Aging"
+        },
+        {
+          "name": "The Lancet Healthy Longevity",
+          "pubmed": "Lancet Healthy Longev"
+        },
+        {
+          "name": "Age and Ageing",
+          "pubmed": "Age Ageing"
+        },
+        {
+          "name": "GeroScience",
+          "pubmed": "Geroscience"
+        },
+        {
+          "name": "Aging Cell",
+          "pubmed": "Aging Cell"
+        },
+        {
+          "name": "npj Aging",
+          "pubmed": "NPJ Aging"
+        }
+      ]
+    },
+    {
+      "title": "内分泌与代谢",
+      "journals": [
+        {
+          "name": "Metabolism",
+          "pubmed": "Metabolism"
+        },
+        {
+          "name": "Cell Metabolism",
+          "pubmed": "Cell Metab"
+        },
+        {
+          "name": "Nature Metabolism",
+          "pubmed": "Nat Metab"
+        },
+        {
+          "name": "The Lancet Diabetes & Endocrinology",
+          "pubmed": "Lancet Diabetes Endocrinol"
+        },
+        {
+          "name": "Diabetes Care",
+          "pubmed": "Diabetes Care"
+        }
+      ]
+    },
+    {
+      "title": "神经病学与脑健康",
+      "journals": [
+        {
+          "name": "Alzheimer’s & Dementia",
+          "pubmed": "Alzheimers Dement"
+        },
+        {
+          "name": "JAMA Neurology",
+          "pubmed": "JAMA Neurol"
+        },
+        {
+          "name": "The Lancet Neurology",
+          "pubmed": "Lancet Neurol"
+        },
+        {
+          "name": "Brain Health",
+          "pubmed": null,
+          "issn": "3142-9963"
+        }
+      ]
+    },
+    {
+      "title": "呼吸医学",
+      "journals": [
+        {
+          "name": "Thorax",
+          "pubmed": "Thorax"
+        },
+        {
+          "name": "European Respiratory Journal",
+          "pubmed": "Eur Respir J"
+        },
+        {
+          "name": "American Journal of Respiratory and Critical Care Medicine",
+          "pubmed": "Am J Respir Crit Care Med"
+        }
+      ]
+    },
+    {
+      "title": "感染病学",
+      "journals": [
+        {
+          "name": "Emerging Infectious Diseases",
+          "pubmed": "Emerg Infect Dis"
+        },
+        {
+          "name": "Clinical Infectious Diseases",
+          "pubmed": "Clin Infect Dis"
+        }
+      ]
+    },
+    {
+      "title": "数字医学",
+      "journals": [
+        {
+          "name": "The Lancet Digital Health",
+          "pubmed": "Lancet Digit Health"
+        },
+        {
+          "name": "npj Digital Medicine",
+          "pubmed": "NPJ Digit Med"
+        },
+        {
+          "name": "PLOS Digital Health",
+          "pubmed": "PLOS Digit Health"
+        },
+        {
+          "name": "Journal of Medical Internet Research",
+          "pubmed": "J Med Internet Res"
+        }
+      ]
+    },
+    {
+      "title": "遗传学与组学",
+      "journals": [
+        {
+          "name": "Nature Genetics",
+          "pubmed": "Nat Genet"
+        },
+        {
+          "name": "Cell Genomics",
+          "pubmed": "Cell Genom"
+        },
+        {
+          "name": "Genome Medicine",
+          "pubmed": "Genome Med"
+        },
+        {
+          "name": "Genome Biology",
+          "pubmed": "Genome Biol"
+        },
+        {
+          "name": "Metabolomics",
+          "pubmed": "Metabolomics"
+        },
+        {
+          "name": "Journal of Proteome Research",
+          "pubmed": "J Proteome Res"
+        }
+      ]
+    },
+    {
+      "title": "综合科学与生命科学",
+      "journals": [
+        {
+          "name": "Nature",
+          "pubmed": "Nature"
+        },
+        {
+          "name": "Science",
+          "pubmed": "Science"
+        },
+        {
+          "name": "Cell",
+          "pubmed": "Cell"
+        },
+        {
+          "name": "Nature Communications",
+          "pubmed": "Nat Commun"
+        },
+        {
+          "name": "Science Advances",
+          "pubmed": "Sci Adv"
+        },
+        {
+          "name": "The Innovation",
+          "pubmed": "Innovation (Camb)"
+        }
+      ]
+    }
+  ]
+}
 </script>
 <script id="collection-report" type="application/json">
 {"latest":{"mode":"backfill","start":"2026-01-01","end":"2026-11-27","stamp":"2026-11-27 15:49","results":[{"name":"NEJM","counts":{"indexed":1322,"metadata_read":1322,"article_type_excluded":681,"outside_topic_filter":556,"date_needs_confirmation":27,"publisher_review":43,"outside_online_date":10,"no_label_in_pmc":3,"licence_unconfirmed":2},"errors":[]},{"name":"The Lancet","counts":{"indexed":1257,"metadata_read":1257,"outside_topic_filter":608,"publisher_review":59,"article_type_excluded":561,"date_needs_confirmation":20,"outside_online_date":4,"licence_unconfirmed":2,"no_label_in_pmc":2,"missing_pmc_version":1},"errors":[]},{"name":"JAMA","counts":{"indexed":1797,"metadata_read":1797,"outside_topic_filter":1527,"publisher_review":7,"article_type_excluded":158,"date_needs_confirmation":19,"missing_pmc_version":72,"licence_unconfirmed":14},"errors":[]},{"name":"The BMJ","counts":{"indexed":2272,"metadata_read":2272,"outside_topic_filter":1452,"article_type_excluded":758,"publisher_review":33,"no_label_in_pmc":29},"errors":[]},{"name":"JAMA Network Open","counts":{"indexed":2392,"metadata_read":2392,"article_type_excluded":137,"outside_topic_filter":1344,"publisher_review":22,"no_label_in_pmc":886,"licence_unconfirmed":3},"errors":[]},{"name":"JAMA Internal Medicine","counts":{"indexed":445,"metadata_read":445,"outside_topic_filter":266,"article_type_excluded":116,"date_needs_confirmation":5,"publisher_review":1,"missing_pmc_version":32,"no_label_in_pmc":9,"licence_unconfirmed":10,"outside_online_date":6},"errors":[]},{"name":"NEJM Evidence","counts":{"indexed":150,"metadata_read":150,"article_type_excluded":55,"outside_topic_filter":71,"publisher_review":16,"outside_online_date":6,"no_label_in_pmc":1,"licence_unconfirmed":1},"errors":[]},{"name":"Annals of Internal Medicine","counts":{"indexed":664,"metadata_read":664,"article_type_excluded":169,"publisher_review":46,"outside_topic_filter":434,"outside_online_date":9,"licence_unconfirmed":6},"errors":[]},{"name":"Nature Medicine","counts":{"indexed":754,"metadata_read":754,"article_type_excluded":198,"outside_topic_filter":387,"publisher_review":41,"date_needs_confirmation":1,"outside_online_date":10,"no_label_in_pmc":111,"licence_unconfirmed":6},"errors":[]},{"name":"PLOS Medicine","counts":{"indexed":274,"metadata_read":274,"outside_topic_filter":130,"article_type_excluded":22,"no_label_in_pmc":118,"licence_unconfirmed":4},"errors":[]},{"name":"The Lancet Regional Health – Western Pacific","counts":{"indexed":235,"metadata_read":235,"outside_topic_filter":106,"article_type_excluded":26,"outside_online_date":4,"no_label_in_pmc":97,"candidate":2},"errors":[]},{"name":"Cell Reports Medicine","counts":{"indexed":513,"metadata_read":513,"publisher_review":11,"outside_topic_filter":377,"date_needs_confirmation":2,"article_type_excluded":7,"outside_online_date":3,"image_unavailable_or_small":112,"no_label_in_pmc":1},"errors":[]},{"name":"The Innovation Medicine","counts":{"indexed":92,"metadata_read":92,"outside_topic_filter":83,"date_needs_confirmation":9},"errors":[]},{"name":"eClinicalMedicine","counts":{"indexed":560,"metadata_read":560,"outside_topic_filter":266,"article_type_excluded":47,"outside_online_date":13,"no_label_in_pmc":232,"licence_unconfirmed":1,"candidate":1},"errors":[]},{"name":"BMJ Medicine","counts":{"indexed":62,"metadata_read":62,"publisher_review":1,"outside_topic_filter":21,"article_type_excluded":11,"no_label_in_pmc":29},"errors":[]},{"name":"eBioMedicine","counts":{"indexed":508,"metadata_read":508,"publisher_review":12,"outside_topic_filter":246,"article_type_excluded":30,"outside_online_date":11,"no_label_in_pmc":205,"candidate":1,"licence_unconfirmed":2,"image_unavailable_or_small":1},"errors":[]},{"name":"The Lancet Regional Health – Europe","counts":{"indexed":368,"metadata_read":368,"outside_topic_filter":171,"article_type_excluded":57,"outside_online_date":27,"no_label_in_pmc":107,"candidate":2,"licence_unconfirmed":3,"missing_pmc_version":1},"errors":[]},{"name":"The Lancet Regional Health – Americas","counts":{"indexed":373,"metadata_read":373,"outside_topic_filter":185,"article_type_excluded":54,"outside_online_date":21,"no_label_in_pmc":108,"licence_unconfirmed":4,"missing_pmc_version":1},"errors":[]},{"name":"BMJ Open","counts":{},"errors":["待完成历史目录盘点"]},{"name":"European Heart Journal","counts":{"indexed":1385,"metadata_read":1385,"publisher_review":105,"outside_topic_filter":991,"article_type_excluded":47,"date_needs_confirmation":125,"candidate":29,"licence_unconfirmed":8,"missing_pmc_version":13,"image_unavailable_or_small":28,"outside_online_date":39},"errors":[]},{"name":"European Journal of Preventive Cardiology","counts":{"indexed":940,"metadata_read":940,"outside_topic_filter":348,"publisher_review":209,"article_type_excluded":194,"date_needs_confirmation":174,"licence_unconfirmed":7,"outside_online_date":6,"missing_pmc_version":2},"errors":[]},{"name":"European Heart Journal – Digital Health","counts":{"indexed":215,"metadata_read":215,"article_type_excluded":23,"outside_topic_filter":71,"outside_online_date":24,"candidate":37,"missing_pmc_version":1,"image_unavailable_or_small":58,"no_label_in_pmc":1},"errors":[]},{"name":"European Heart Journal Open","counts":{"indexed":210,"metadata_read":210,"outside_topic_filter":44,"article_type_excluded":24,"outside_online_date":13,"candidate":44,"no_label_in_pmc":27,"image_unavailable_or_small":58},"errors":[]},{"name":"European Heart Journal – Quality of Care and Clinical Outcomes","counts":{"indexed":234,"metadata_read":234,"outside_topic_filter":76,"publisher_review":13,"article_type_excluded":63,"date_needs_confirmation":50,"candidate":10,"licence_unconfirmed":2,"image_unavailable_or_small":13,"outside_online_date":7},"errors":[]},{"name":"JACC","counts":{"indexed":823,"metadata_read":823,"outside_topic_filter":274,"article_type_excluded":350,"publisher_review":128,"date_needs_confirmation":15,"outside_online_date":26,"licence_unconfirmed":20,"candidate":3,"image_unavailable_or_small":6,"missing_pmc_version":1},"errors":[]},{"name":"JACC: Advances","counts":{"indexed":928,"metadata_read":928,"publisher_review":51,"article_type_excluded":219,"outside_topic_filter":250,"date_needs_confirmation":8,"outside_online_date":30,"candidate":349,"no_label_in_pmc":7,"image_unavailable_or_small":14},"errors":[]},{"name":"JACC: CardioOncology","counts":{"indexed":101,"metadata_read":101,"outside_topic_filter":30,"article_type_excluded":47,"publisher_review":4,"candidate":18,"image_unavailable_or_small":1,"no_label_in_pmc":1},"errors":[]},{"name":"JACC: Heart Failure","counts":{"indexed":358,"metadata_read":358,"publisher_review":73,"outside_topic_filter":107,"article_type_excluded":140,"date_needs_confirmation":3,"outside_online_date":25,"licence_unconfirmed":8,"no_label_in_pmc":1,"image_unavailable_or_small":1},"errors":[]},{"name":"Circulation","counts":{"indexed":712,"metadata_read":712,"outside_topic_filter":244,"publisher_review":100,"article_type_excluded":274,"outside_online_date":18,"no_label_in_pmc":40,"missing_pmc_version":2,"licence_unconfirmed":34},"errors":[]},{"name":"Journal of the American Heart Association","counts":{"indexed":1357,"metadata_read":1357,"publisher_review":165,"article_type_excluded":82,"outside_topic_filter":372,"outside_online_date":54,"no_label_in_pmc":522,"image_unavailable_or_small":162},"errors":[]},{"name":"Heart","counts":{"indexed":425,"metadata_read":425,"article_type_excluded":87,"outside_topic_filter":134,"publisher_review":176,"licence_unconfirmed":6,"no_label_in_pmc":22},"errors":[]},{"name":"JAMA Cardiology","counts":{"indexed":311,"metadata_read":311,"publisher_review":2,"article_type_excluded":49,"outside_topic_filter":155,"date_needs_confirmation":5,"no_label_in_pmc":25,"missing_pmc_version":65,"licence_unconfirmed":7,"outside_online_date":3},"errors":[]},{"name":"JACC: Asia","counts":{"indexed":457,"metadata_read":457,"publisher_review":41,"article_type_excluded":190,"outside_topic_filter":112,"outside_online_date":14,"candidate":95,"image_unavailable_or_small":2,"no_label_in_pmc":3},"errors":[]},{"name":"JACC: Cardiovascular Imaging","counts":{"indexed":265,"metadata_read":265,"outside_topic_filter":24,"article_type_excluded":173,"publisher_review":41,"date_needs_confirmation":1,"outside_online_date":19,"licence_unconfirmed":6,"missing_pmc_version":1},"errors":[]},{"name":"JACC: Clinical Electrophysiology","counts":{"indexed":510,"metadata_read":510,"article_type_excluded":148,"publisher_review":84,"outside_topic_filter":254,"outside_online_date":22,"licence_unconfirmed":2},"errors":[]},{"name":"European Journal of Heart Failure","counts":{"indexed":367,"metadata_read":367,"article_type_excluded":78,"publisher_review":117,"outside_topic_filter":123,"date_needs_confirmation":48,"missing_pmc_version":1},"errors":[]},{"name":"Hypertension","counts":{"indexed":331,"metadata_read":331,"outside_topic_filter":151,"article_type_excluded":52,"publisher_review":47,"outside_online_date":29,"licence_unconfirmed":35,"no_label_in_pmc":16,"candidate":1},"errors":[]},{"name":"Circulation: Population Health and Outcomes","counts":{"indexed":147,"metadata_read":147,"outside_topic_filter":28,"publisher_review":40,"article_type_excluded":39,"outside_online_date":1,"licence_unconfirmed":31,"no_label_in_pmc":7,"missing_pmc_version":1},"errors":[]},{"name":"The Lancet Public Health","counts":{"indexed":156,"metadata_read":156,"outside_topic_filter":84,"article_type_excluded":35,"publisher_review":10,"date_needs_confirmation":19,"outside_online_date":2,"no_label_in_pmc":6},"errors":[]},{"name":"International Journal of Epidemiology","counts":{"indexed":274,"metadata_read":274,"outside_topic_filter":50,"date_needs_confirmation":78,"article_type_excluded":10,"no_label_in_pmc":115,"licence_unconfirmed":9,"missing_pmc_version":6,"outside_online_date":6},"errors":[]},{"name":"American Journal of Epidemiology","counts":{"indexed":471,"metadata_read":471,"outside_topic_filter":213,"publisher_review":47,"article_type_excluded":20,"date_needs_confirmation":54,"licence_unconfirmed":39,"no_label_in_pmc":40,"missing_pmc_version":29,"outside_online_date":29},"errors":[]},{"name":"Epidemiology","counts":{"indexed":145,"metadata_read":145,"outside_topic_filter":88,"publisher_review":22,"outside_online_date":12,"no_label_in_pmc":9,"licence_unconfirmed":14},"errors":[]},{"name":"European Journal of Epidemiology","counts":{"indexed":158,"metadata_read":158,"article_type_excluded":26,"publisher_review":42,"outside_topic_filter":39,"outside_online_date":7,"no_label_in_pmc":43,"candidate":1},"errors":[]},{"name":"Journal of Epidemiology and Community Health","counts":{"indexed":204,"metadata_read":204,"outside_topic_filter":100,"publisher_review":45,"article_type_excluded":34,"no_label_in_pmc":19,"licence_unconfirmed":6},"errors":[]},{"name":"BMJ Global Health","counts":{"indexed":444,"metadata_read":444,"outside_topic_filter":367,"publisher_review":1,"article_type_excluded":4,"no_label_in_pmc":68,"licence_unconfirmed":4},"errors":[]},{"name":"Social Science & Medicine","counts":{"indexed":1103,"metadata_read":1103,"publisher_review":160,"outside_topic_filter":846,"article_type_excluded":32,"outside_online_date":38,"licence_unconfirmed":17,"missing_pmc_version":2,"no_label_in_pmc":8},"errors":[]},{"name":"Journal of Clinical Epidemiology","counts":{"indexed":427,"metadata_read":427,"outside_topic_filter":288,"publisher_review":55,"article_type_excluded":68,"outside_online_date":14,"licence_unconfirmed":1,"no_label_in_pmc":1},"errors":[]},{"name":"JAMA Health Forum","counts":{"indexed":296,"metadata_read":296,"outside_topic_filter":243,"article_type_excluded":12,"publisher_review":2,"no_label_in_pmc":38,"licence_unconfirmed":1},"errors":[]},{"name":"Nature Health","counts":{"indexed":212,"metadata_read":212,"publisher_review":212},"errors":[]},{"name":"The Lancet Planetary Health","counts":{"indexed":142,"metadata_read":142,"outside_topic_filter":100,"publisher_review":15,"article_type_excluded":20,"outside_online_date":1,"no_label_in_pmc":5,"licence_unconfirmed":1},"errors":[]},{"name":"Environment International","counts":{"indexed":648,"metadata_read":648,"publisher_review":158,"outside_topic_filter":415,"article_type_excluded":28,"outside_online_date":19,"candidate":1,"no_label_in_pmc":21,"licence_unconfirmed":6},"errors":[]},{"name":"Environmental Health Perspectives","counts":{"indexed":57,"metadata_read":57,"outside_topic_filter":21,"article_type_excluded":4,"outside_online_date":9,"image_unavailable_or_small":14,"licence_unconfirmed":1,"candidate":2,"no_label_in_pmc":6},"errors":[]},{"name":"Exposome","counts":{"indexed":11,"metadata_read":11,"publisher_review":11},"errors":[]},{"name":"Environmental Epidemiology","counts":{"indexed":98,"metadata_read":98,"outside_topic_filter":3,"article_type_excluded":2,"outside_online_date":5,"no_label_in_pmc":81,"licence_unconfirmed":5,"missing_pmc_version":1,"image_unavailable_or_small":1},"errors":[]},{"name":"Journal of Exposure Science & Environmental Epidemiology","counts":{"indexed":216,"metadata_read":216,"publisher_review":46,"outside_topic_filter":99,"article_type_excluded":6,"outside_online_date":26,"no_label_in_pmc":26,"licence_unconfirmed":12,"image_unavailable_or_small":1},"errors":[]},{"name":"Environmental Health","counts":{"indexed":80,"metadata_read":80,"outside_topic_filter":26,"article_type_excluded":3,"no_label_in_pmc":49,"candidate":2},"errors":[]},{"name":"Environmental Research","counts":{"indexed":2770,"metadata_read":2770,"outside_topic_filter":2367,"publisher_review":244,"article_type_excluded":41,"outside_online_date":70,"licence_unconfirmed":35,"no_label_in_pmc":6,"missing_pmc_version":7},"errors":[]},{"name":"Environmental Science & Technology","counts":{"indexed":2845,"metadata_read":2845,"outside_topic_filter":2646,"article_type_excluded":72,"date_needs_confirmation":37,"publisher_review":52,"outside_online_date":6,"image_unavailable_or_small":26,"candidate":1,"missing_pmc_version":1,"licence_unconfirmed":4},"errors":[]},{"name":"Nature Aging","counts":{"indexed":250,"metadata_read":250,"outside_topic_filter":177,"article_type_excluded":29,"publisher_review":17,"date_needs_confirmation":2,"outside_online_date":4,"no_label_in_pmc":19,"licence_unconfirmed":2},"errors":[]},{"name":"The Lancet Healthy Longevity","counts":{"indexed":123,"metadata_read":123,"article_type_excluded":19,"outside_topic_filter":66,"publisher_review":31,"date_needs_confirmation":2,"outside_online_date":1,"no_label_in_pmc":3,"licence_unconfirmed":1},"errors":[]},{"name":"Age and Ageing","counts":{"indexed":360,"metadata_read":360,"date_needs_confirmation":82,"outside_topic_filter":144,"article_type_excluded":29,"no_label_in_pmc":98,"image_unavailable_or_small":3,"licence_unconfirmed":4},"errors":[]},{"name":"GeroScience","counts":{"indexed":954,"metadata_read":954,"publisher_review":302,"outside_topic_filter":363,"article_type_excluded":21,"outside_online_date":194,"missing_pmc_version":33,"no_label_in_pmc":31,"candidate":6,"image_unavailable_or_small":4},"errors":[]},{"name":"Aging Cell","counts":{"indexed":494,"metadata_read":494,"outside_topic_filter":353,"article_type_excluded":21,"date_needs_confirmation":1,"outside_online_date":11,"image_unavailable_or_small":108},"errors":[]},{"name":"npj Aging","counts":{"indexed":161,"metadata_read":161,"outside_topic_filter":87,"article_type_excluded":8,"no_label_in_pmc":66},"errors":[]},{"name":"Metabolism","counts":{"indexed":282,"metadata_read":282,"publisher_review":49,"outside_topic_filter":155,"article_type_excluded":62,"outside_online_date":14,"licence_unconfirmed":1,"no_label_in_pmc":1},"errors":[]},{"name":"Cell Metabolism","counts":{"indexed":263,"metadata_read":263,"article_type_excluded":80,"outside_topic_filter":169,"publisher_review":8,"outside_online_date":1,"missing_pmc_version":1,"licence_unconfirmed":2,"image_unavailable_or_small":1,"candidate":1},"errors":[]},{"name":"Nature Metabolism","counts":{"indexed":250,"metadata_read":250,"publisher_review":11,"article_type_excluded":31,"outside_topic_filter":198,"no_label_in_pmc":8,"licence_unconfirmed":2},"errors":[]},{"name":"The Lancet Diabetes & Endocrinology","counts":{"indexed":191,"metadata_read":191,"outside_topic_filter":91,"article_type_excluded":58,"publisher_review":30,"date_needs_confirmation":1,"outside_online_date":7,"licence_unconfirmed":1,"no_label_in_pmc":3},"errors":[]},{"name":"Diabetes Care","counts":{"indexed":467,"metadata_read":467,"article_type_excluded":179,"outside_topic_filter":165,"publisher_review":12,"date_needs_confirmation":37,"licence_unconfirmed":52,"missing_pmc_version":22},"errors":[]},{"name":"Alzheimer’s & Dementia","counts":{"indexed":946,"metadata_read":946,"date_needs_confirmation":1,"outside_topic_filter":309,"article_type_excluded":53,"no_label_in_pmc":567,"image_unavailable_or_small":12,"outside_online_date":4},"errors":[]},{"name":"JAMA Neurology","counts":{"indexed":256,"metadata_read":256,"outside_topic_filter":146,"article_type_excluded":35,"date_needs_confirmation":3,"missing_pmc_version":38,"no_label_in_pmc":25,"licence_unconfirmed":7,"outside_online_date":2},"errors":[]},{"name":"The Lancet Neurology","counts":{"indexed":267,"metadata_read":267,"article_type_excluded":82,"publisher_review":8,"date_needs_confirmation":22,"outside_topic_filter":149,"outside_online_date":1,"missing_pmc_version":1,"licence_unconfirmed":4},"errors":[]},{"name":"Thorax","counts":{"indexed":339,"metadata_read":339,"outside_topic_filter":149,"article_type_excluded":106,"publisher_review":55,"licence_unconfirmed":8,"no_label_in_pmc":21},"errors":[]},{"name":"European Respiratory Journal","counts":{"indexed":402,"metadata_read":402,"article_type_excluded":253,"publisher_review":28,"outside_topic_filter":96,"candidate":7,"no_label_in_pmc":5,"licence_unconfirmed":2,"image_unavailable_or_small":11},"errors":[]},{"name":"American Journal of Respiratory and Critical Care Medicine","counts":{"indexed":699,"metadata_read":699,"outside_topic_filter":490,"publisher_review":11,"article_type_excluded":151,"date_needs_confirmation":15,"no_label_in_pmc":14,"missing_pmc_version":12,"licence_unconfirmed":4,"outside_online_date":2},"errors":[]},{"name":"Emerging Infectious Diseases","counts":{"indexed":345,"metadata_read":345,"outside_topic_filter":269,"article_type_excluded":13,"date_needs_confirmation":52,"no_label_in_pmc":11},"errors":[]},{"name":"Clinical Infectious Diseases","counts":{"indexed":1079,"metadata_read":1079,"article_type_excluded":105,"outside_topic_filter":754,"publisher_review":40,"date_needs_confirmation":68,"candidate":7,"licence_unconfirmed":24,"missing_pmc_version":17,"no_label_in_pmc":32,"image_unavailable_or_small":8,"outside_online_date":24},"errors":[]},{"name":"The Lancet Digital Health","counts":{"indexed":138,"metadata_read":138,"outside_topic_filter":84,"publisher_review":30,"article_type_excluded":21,"licence_unconfirmed":1,"no_label_in_pmc":2},"errors":[]},{"name":"npj Digital Medicine","counts":{"indexed":883,"metadata_read":883,"publisher_review":5,"outside_topic_filter":610,"article_type_excluded":80,"no_label_in_pmc":188},"errors":[]},{"name":"PLOS Digital Health","counts":{"indexed":477,"metadata_read":477,"outside_topic_filter":361,"article_type_excluded":9,"no_label_in_pmc":107},"errors":[]},{"name":"Journal of Medical Internet Research","counts":{"indexed":1477,"metadata_read":1477,"outside_topic_filter":1099,"publisher_review":7,"article_type_excluded":94,"no_label_in_pmc":277},"errors":[]},{"name":"Nature Genetics","counts":{"indexed":398,"metadata_read":398,"outside_topic_filter":306,"publisher_review":17,"article_type_excluded":27,"outside_online_date":1,"no_label_in_pmc":40,"licence_unconfirmed":7},"errors":[]},{"name":"Cell Genomics","counts":{"indexed":165,"metadata_read":165,"outside_topic_filter":133,"publisher_review":3,"article_type_excluded":12,"outside_online_date":5,"image_unavailable_or_small":12},"errors":[]},{"name":"Genome Medicine","counts":{"indexed":177,"metadata_read":177,"outside_topic_filter":83,"article_type_excluded":2,"no_label_in_pmc":89,"candidate":3},"errors":[]},{"name":"Genome Biology","counts":{"indexed":368,"metadata_read":368,"outside_topic_filter":325,"article_type_excluded":6,"no_label_in_pmc":36,"candidate":1},"errors":[]},{"name":"Metabolomics","counts":{"indexed":168,"metadata_read":168,"outside_topic_filter":86,"article_type_excluded":3,"publisher_review":1,"no_label_in_pmc":69,"candidate":3,"image_unavailable_or_small":6},"errors":[]},{"name":"Journal of Proteome Research","counts":{"indexed":519,"metadata_read":519,"outside_topic_filter":356,"article_type_excluded":8,"date_needs_confirmation":40,"publisher_review":44,"outside_online_date":27,"image_unavailable_or_small":37,"missing_pmc_version":3,"candidate":2,"licence_unconfirmed":2},"errors":[]},{"name":"Nature","counts":{"indexed":4219,"metadata_read":4219,"outside_topic_filter":1311,"article_type_excluded":2812,"publisher_review":27,"outside_online_date":8,"no_label_in_pmc":58,"licence_unconfirmed":3},"errors":[]},{"name":"Science","counts":{"indexed":1844,"metadata_read":1844,"article_type_excluded":777,"outside_topic_filter":1042,"publisher_review":17,"licence_unconfirmed":6,"image_unavailable_or_small":1,"missing_pmc_version":1},"errors":[]},{"name":"Cell","counts":{"indexed":584,"metadata_read":584,"article_type_excluded":66,"outside_topic_filter":482,"publisher_review":20,"date_needs_confirmation":1,"outside_online_date":1,"licence_unconfirmed":9,"image_unavailable_or_small":2,"missing_pmc_version":3},"errors":[]},{"name":"Nature Communications","counts":{"indexed":11108,"metadata_read":11108,"outside_topic_filter":10074,"article_type_excluded":361,"publisher_review":5,"no_label_in_pmc":668},"errors":[]},{"name":"Science Advances","counts":{"indexed":3449,"metadata_read":3449,"outside_topic_filter":3270,"article_type_excluded":62,"no_label_in_pmc":117},"errors":[]},{"name":"The Innovation","counts":{"indexed":251,"metadata_read":251,"outside_topic_filter":211,"article_type_excluded":26,"outside_online_date":6,"image_unavailable_or_small":8},"errors":[]}],"candidates":6},"history":{"mode":"backfill","start":"2026-01-01","end":"2026-11-27","stamp":"2026-11-27 14:23","results":[{"name":"NEJM","counts":{"indexed":1322,"metadata_read":1322,"article_type_excluded":681,"outside_topic_filter":556,"date_needs_confirmation":27,"publisher_review":43,"outside_online_date":10,"no_label_in_pmc":3,"licence_unconfirmed":2},"errors":[]},{"name":"The Lancet","counts":{"indexed":1257,"metadata_read":1257,"outside_topic_filter":608,"publisher_review":59,"article_type_excluded":561,"date_needs_confirmation":20,"outside_online_date":4,"licence_unconfirmed":2,"no_label_in_pmc":2,"missing_pmc_version":1},"errors":[]},{"name":"JAMA","counts":{"indexed":1797,"metadata_read":1797,"outside_topic_filter":1527,"publisher_review":7,"article_type_excluded":158,"date_needs_confirmation":19,"missing_pmc_version":72,"licence_unconfirmed":14},"errors":[]},{"name":"The BMJ","counts":{"indexed":2272,"metadata_read":2272,"outside_topic_filter":1452,"article_type_excluded":758,"publisher_review":33,"no_label_in_pmc":29},"errors":[]},{"name":"JAMA Network Open","counts":{"indexed":2392,"metadata_read":2392,"article_type_excluded":137,"outside_topic_filter":1344,"publisher_review":22,"no_label_in_pmc":886,"licence_unconfirmed":3},"errors":[]},{"name":"JAMA Internal Medicine","counts":{"indexed":445,"metadata_read":445,"outside_topic_filter":266,"article_type_excluded":116,"date_needs_confirmation":5,"publisher_review":1,"missing_pmc_version":32,"no_label_in_pmc":9,"licence_unconfirmed":10,"outside_online_date":6},"errors":[]},{"name":"NEJM Evidence","counts":{"indexed":150,"metadata_read":150,"article_type_excluded":55,"outside_topic_filter":71,"publisher_review":16,"outside_online_date":6,"no_label_in_pmc":1,"licence_unconfirmed":1},"errors":[]},{"name":"Annals of Internal Medicine","counts":{"indexed":664,"metadata_read":664,"article_type_excluded":169,"publisher_review":46,"outside_topic_filter":434,"outside_online_date":9,"licence_unconfirmed":6},"errors":[]},{"name":"Nature Medicine","counts":{"indexed":754,"metadata_read":754,"article_type_excluded":198,"outside_topic_filter":387,"publisher_review":41,"date_needs_confirmation":1,"outside_online_date":10,"no_label_in_pmc":111,"licence_unconfirmed":6},"errors":[]},{"name":"PLOS Medicine","counts":{"indexed":274,"metadata_read":274,"outside_topic_filter":130,"article_type_excluded":22,"no_label_in_pmc":118,"licence_unconfirmed":4},"errors":[]},{"name":"The Lancet Regional Health – Western Pacific","counts":{"indexed":235,"metadata_read":235,"outside_topic_filter":106,"article_type_excluded":26,"outside_online_date":4,"no_label_in_pmc":97,"candidate":2},"errors":[]},{"name":"Cell Reports Medicine","counts":{"indexed":513,"metadata_read":513,"publisher_review":11,"outside_topic_filter":377,"date_needs_confirmation":2,"article_type_excluded":7,"outside_online_date":3,"image_unavailable_or_small":112,"no_label_in_pmc":1},"errors":[]},{"name":"The Innovation Medicine","counts":{"indexed":92,"metadata_read":92,"outside_topic_filter":83,"date_needs_confirmation":9},"errors":[]},{"name":"eClinicalMedicine","counts":{"indexed":560,"metadata_read":560,"outside_topic_filter":266,"article_type_excluded":47,"outside_online_date":13,"no_label_in_pmc":232,"licence_unconfirmed":1,"candidate":1},"errors":[]},{"name":"BMJ Medicine","counts":{"indexed":62,"metadata_read":62,"publisher_review":1,"outside_topic_filter":21,"article_type_excluded":11,"no_label_in_pmc":29},"errors":[]},{"name":"eBioMedicine","counts":{"indexed":508,"metadata_read":508,"publisher_review":12,"outside_topic_filter":246,"article_type_excluded":30,"outside_online_date":11,"no_label_in_pmc":205,"candidate":1,"licence_unconfirmed":2,"image_unavailable_or_small":1},"errors":[]},{"name":"The Lancet Regional Health – Europe","counts":{"indexed":368,"metadata_read":368,"outside_topic_filter":171,"article_type_excluded":57,"outside_online_date":27,"no_label_in_pmc":107,"candidate":2,"licence_unconfirmed":3,"missing_pmc_version":1},"errors":[]},{"name":"The Lancet Regional Health – Americas","counts":{"indexed":373,"metadata_read":373,"outside_topic_filter":185,"article_type_excluded":54,"outside_online_date":21,"no_label_in_pmc":108,"licence_unconfirmed":4,"missing_pmc_version":1},"errors":[]},{"name":"BMJ Open","counts":{},"errors":["待完成历史目录盘点"]},{"name":"European Heart Journal","counts":{"indexed":1385,"metadata_read":1385,"publisher_review":105,"outside_topic_filter":991,"article_type_excluded":47,"date_needs_confirmation":125,"candidate":29,"licence_unconfirmed":8,"missing_pmc_version":13,"image_unavailable_or_small":28,"outside_online_date":39},"errors":[]},{"name":"European Journal of Preventive Cardiology","counts":{"indexed":940,"metadata_read":940,"outside_topic_filter":348,"publisher_review":209,"article_type_excluded":194,"date_needs_confirmation":174,"licence_unconfirmed":7,"outside_online_date":6,"missing_pmc_version":2},"errors":[]},{"name":"European Heart Journal – Digital Health","counts":{"indexed":215,"metadata_read":215,"article_type_excluded":23,"outside_topic_filter":71,"outside_online_date":24,"candidate":37,"missing_pmc_version":1,"image_unavailable_or_small":58,"no_label_in_pmc":1},"errors":[]},{"name":"European Heart Journal Open","counts":{"indexed":210,"metadata_read":210,"outside_topic_filter":44,"article_type_excluded":24,"outside_online_date":13,"candidate":44,"no_label_in_pmc":27,"image_unavailable_or_small":58},"errors":[]},{"name":"European Heart Journal – Quality of Care and Clinical Outcomes","counts":{"indexed":234,"metadata_read":234,"outside_topic_filter":76,"publisher_review":13,"article_type_excluded":63,"date_needs_confirmation":50,"candidate":10,"licence_unconfirmed":2,"image_unavailable_or_small":13,"outside_online_date":7},"errors":[]},{"name":"JACC","counts":{"indexed":823,"metadata_read":823,"outside_topic_filter":274,"article_type_excluded":350,"publisher_review":128,"date_needs_confirmation":15,"outside_online_date":26,"licence_unconfirmed":20,"candidate":3,"image_unavailable_or_small":6,"missing_pmc_version":1},"errors":[]},{"name":"JACC: Advances","counts":{"indexed":928,"metadata_read":928,"publisher_review":51,"article_type_excluded":219,"outside_topic_filter":250,"date_needs_confirmation":8,"outside_online_date":30,"candidate":349,"no_label_in_pmc":7,"image_unavailable_or_small":14},"errors":[]},{"name":"JACC: CardioOncology","counts":{"indexed":101,"metadata_read":101,"outside_topic_filter":30,"article_type_excluded":47,"publisher_review":4,"candidate":18,"image_unavailable_or_small":1,"no_label_in_pmc":1},"errors":[]},{"name":"JACC: Heart Failure","counts":{"indexed":358,"metadata_read":358,"publisher_review":73,"outside_topic_filter":107,"article_type_excluded":140,"date_needs_confirmation":3,"outside_online_date":25,"licence_unconfirmed":8,"no_label_in_pmc":1,"image_unavailable_or_small":1},"errors":[]},{"name":"Circulation","counts":{"indexed":712,"metadata_read":712,"outside_topic_filter":244,"publisher_review":100,"article_type_excluded":274,"outside_online_date":18,"no_label_in_pmc":40,"missing_pmc_version":2,"licence_unconfirmed":34},"errors":[]},{"name":"Journal of the American Heart Association","counts":{"indexed":1357,"metadata_read":1357,"publisher_review":165,"article_type_excluded":82,"outside_topic_filter":372,"outside_online_date":54,"no_label_in_pmc":522,"image_unavailable_or_small":162},"errors":[]},{"name":"Heart","counts":{"indexed":425,"metadata_read":425,"article_type_excluded":87,"outside_topic_filter":134,"publisher_review":176,"licence_unconfirmed":6,"no_label_in_pmc":22},"errors":[]},{"name":"JAMA Cardiology","counts":{"indexed":311,"metadata_read":311,"publisher_review":2,"article_type_excluded":49,"outside_topic_filter":155,"date_needs_confirmation":5,"no_label_in_pmc":25,"missing_pmc_version":65,"licence_unconfirmed":7,"outside_online_date":3},"errors":[]},{"name":"JACC: Asia","counts":{"indexed":457,"metadata_read":457,"publisher_review":41,"article_type_excluded":190,"outside_topic_filter":112,"outside_online_date":14,"candidate":95,"image_unavailable_or_small":2,"no_label_in_pmc":3},"errors":[]},{"name":"JACC: Cardiovascular Imaging","counts":{"indexed":265,"metadata_read":265,"outside_topic_filter":24,"article_type_excluded":173,"publisher_review":41,"date_needs_confirmation":1,"outside_online_date":19,"licence_unconfirmed":6,"missing_pmc_version":1},"errors":[]},{"name":"JACC: Clinical Electrophysiology","counts":{"indexed":510,"metadata_read":510,"article_type_excluded":148,"publisher_review":84,"outside_topic_filter":254,"outside_online_date":22,"licence_unconfirmed":2},"errors":[]},{"name":"European Journal of Heart Failure","counts":{"indexed":367,"metadata_read":367,"article_type_excluded":78,"publisher_review":117,"outside_topic_filter":123,"date_needs_confirmation":48,"missing_pmc_version":1},"errors":[]},{"name":"Hypertension","counts":{"indexed":331,"metadata_read":331,"outside_topic_filter":151,"article_type_excluded":52,"publisher_review":47,"outside_online_date":29,"licence_unconfirmed":35,"no_label_in_pmc":16,"candidate":1},"errors":[]},{"name":"Circulation: Population Health and Outcomes","counts":{"indexed":147,"metadata_read":147,"outside_topic_filter":28,"publisher_review":40,"article_type_excluded":39,"outside_online_date":1,"licence_unconfirmed":31,"no_label_in_pmc":7,"missing_pmc_version":1},"errors":[]},{"name":"The Lancet Public Health","counts":{"indexed":156,"metadata_read":156,"outside_topic_filter":84,"article_type_excluded":35,"publisher_review":10,"date_needs_confirmation":19,"outside_online_date":2,"no_label_in_pmc":6},"errors":[]},{"name":"International Journal of Epidemiology","counts":{"indexed":274,"metadata_read":274,"outside_topic_filter":50,"date_needs_confirmation":78,"article_type_excluded":10,"no_label_in_pmc":115,"licence_unconfirmed":9,"missing_pmc_version":6,"outside_online_date":6},"errors":[]},{"name":"American Journal of Epidemiology","counts":{"indexed":471,"metadata_read":471,"outside_topic_filter":213,"publisher_review":47,"article_type_excluded":20,"date_needs_confirmation":54,"licence_unconfirmed":39,"no_label_in_pmc":40,"missing_pmc_version":29,"outside_online_date":29},"errors":[]},{"name":"Epidemiology","counts":{"indexed":145,"metadata_read":145,"outside_topic_filter":88,"publisher_review":22,"outside_online_date":12,"no_label_in_pmc":9,"licence_unconfirmed":14},"errors":[]},{"name":"European Journal of Epidemiology","counts":{"indexed":158,"metadata_read":158,"article_type_excluded":26,"publisher_review":42,"outside_topic_filter":39,"outside_online_date":7,"no_label_in_pmc":43,"candidate":1},"errors":[]},{"name":"Journal of Epidemiology and Community Health","counts":{"indexed":204,"metadata_read":204,"outside_topic_filter":100,"publisher_review":45,"article_type_excluded":34,"no_label_in_pmc":19,"licence_unconfirmed":6},"errors":[]},{"name":"BMJ Global Health","counts":{"indexed":444,"metadata_read":444,"outside_topic_filter":367,"publisher_review":1,"article_type_excluded":4,"no_label_in_pmc":68,"licence_unconfirmed":4},"errors":[]},{"name":"Social Science & Medicine","counts":{"indexed":1103,"metadata_read":1103,"publisher_review":160,"outside_topic_filter":846,"article_type_excluded":32,"outside_online_date":38,"licence_unconfirmed":17,"missing_pmc_version":2,"no_label_in_pmc":8},"errors":[]},{"name":"Journal of Clinical Epidemiology","counts":{"indexed":427,"metadata_read":427,"outside_topic_filter":288,"publisher_review":55,"article_type_excluded":68,"outside_online_date":14,"licence_unconfirmed":1,"no_label_in_pmc":1},"errors":[]},{"name":"JAMA Health Forum","counts":{"indexed":296,"metadata_read":296,"outside_topic_filter":243,"article_type_excluded":12,"publisher_review":2,"no_label_in_pmc":38,"licence_unconfirmed":1},"errors":[]},{"name":"Nature Health","counts":{"indexed":212,"metadata_read":212,"publisher_review":212},"errors":[]},{"name":"The Lancet Planetary Health","counts":{"indexed":142,"metadata_read":142,"outside_topic_filter":100,"publisher_review":15,"article_type_excluded":20,"outside_online_date":1,"no_label_in_pmc":5,"licence_unconfirmed":1},"errors":[]},{"name":"Environment International","counts":{"indexed":648,"metadata_read":648,"publisher_review":158,"outside_topic_filter":415,"article_type_excluded":28,"outside_online_date":19,"candidate":1,"no_label_in_pmc":21,"licence_unconfirmed":6},"errors":[]},{"name":"Environmental Health Perspectives","counts":{"indexed":57,"metadata_read":57,"outside_topic_filter":21,"article_type_excluded":4,"outside_online_date":9,"image_unavailable_or_small":14,"licence_unconfirmed":1,"candidate":2,"no_label_in_pmc":6},"errors":[]},{"name":"Exposome","counts":{"indexed":11,"metadata_read":11,"publisher_review":11},"errors":[]},{"name":"Environmental Epidemiology","counts":{"indexed":98,"metadata_read":98,"outside_topic_filter":3,"article_type_excluded":2,"outside_online_date":5,"no_label_in_pmc":81,"licence_unconfirmed":5,"missing_pmc_version":1,"image_unavailable_or_small":1},"errors":[]},{"name":"Journal of Exposure Science & Environmental Epidemiology","counts":{"indexed":216,"metadata_read":216,"publisher_review":46,"outside_topic_filter":99,"article_type_excluded":6,"outside_online_date":26,"no_label_in_pmc":26,"licence_unconfirmed":12,"image_unavailable_or_small":1},"errors":[]},{"name":"Environmental Health","counts":{"indexed":80,"metadata_read":80,"outside_topic_filter":26,"article_type_excluded":3,"no_label_in_pmc":49,"candidate":2},"errors":[]},{"name":"Environmental Research","counts":{"indexed":2770,"metadata_read":2770,"outside_topic_filter":2367,"publisher_review":244,"article_type_excluded":41,"outside_online_date":70,"licence_unconfirmed":35,"no_label_in_pmc":6,"missing_pmc_version":7},"errors":[]},{"name":"Environmental Science & Technology","counts":{"indexed":2845,"metadata_read":2845,"outside_topic_filter":2646,"article_type_excluded":72,"date_needs_confirmation":37,"publisher_review":52,"outside_online_date":6,"image_unavailable_or_small":26,"candidate":1,"missing_pmc_version":1,"licence_unconfirmed":4},"errors":[]},{"name":"Nature Aging","counts":{"indexed":250,"metadata_read":250,"outside_topic_filter":177,"article_type_excluded":29,"publisher_review":17,"date_needs_confirmation":2,"outside_online_date":4,"no_label_in_pmc":19,"licence_unconfirmed":2},"errors":[]},{"name":"The Lancet Healthy Longevity","counts":{"indexed":123,"metadata_read":123,"article_type_excluded":19,"outside_topic_filter":66,"publisher_review":31,"date_needs_confirmation":2,"outside_online_date":1,"no_label_in_pmc":3,"licence_unconfirmed":1},"errors":[]},{"name":"Age and Ageing","counts":{"indexed":360,"metadata_read":360,"date_needs_confirmation":82,"outside_topic_filter":144,"article_type_excluded":29,"no_label_in_pmc":98,"image_unavailable_or_small":3,"licence_unconfirmed":4},"errors":[]},{"name":"GeroScience","counts":{"indexed":954,"metadata_read":954,"publisher_review":302,"outside_topic_filter":363,"article_type_excluded":21,"outside_online_date":194,"missing_pmc_version":33,"no_label_in_pmc":31,"candidate":6,"image_unavailable_or_small":4},"errors":[]},{"name":"Aging Cell","counts":{"indexed":494,"metadata_read":494,"outside_topic_filter":353,"article_type_excluded":21,"date_needs_confirmation":1,"outside_online_date":11,"image_unavailable_or_small":108},"errors":[]},{"name":"npj Aging","counts":{"indexed":161,"metadata_read":161,"outside_topic_filter":87,"article_type_excluded":8,"no_label_in_pmc":66},"errors":[]},{"name":"Metabolism","counts":{"indexed":282,"metadata_read":282,"publisher_review":49,"outside_topic_filter":155,"article_type_excluded":62,"outside_online_date":14,"licence_unconfirmed":1,"no_label_in_pmc":1},"errors":[]},{"name":"Cell Metabolism","counts":{"indexed":263,"metadata_read":263,"article_type_excluded":80,"outside_topic_filter":169,"publisher_review":8,"outside_online_date":1,"missing_pmc_version":1,"licence_unconfirmed":2,"image_unavailable_or_small":1,"candidate":1},"errors":[]},{"name":"Nature Metabolism","counts":{"indexed":250,"metadata_read":250,"publisher_review":11,"article_type_excluded":31,"outside_topic_filter":198,"no_label_in_pmc":8,"licence_unconfirmed":2},"errors":[]},{"name":"The Lancet Diabetes & Endocrinology","counts":{"indexed":191,"metadata_read":191,"outside_topic_filter":91,"article_type_excluded":58,"publisher_review":30,"date_needs_confirmation":1,"outside_online_date":7,"licence_unconfirmed":1,"no_label_in_pmc":3},"errors":[]},{"name":"Diabetes Care","counts":{"indexed":467,"metadata_read":467,"article_type_excluded":179,"outside_topic_filter":165,"publisher_review":12,"date_needs_confirmation":37,"licence_unconfirmed":52,"missing_pmc_version":22},"errors":[]},{"name":"Alzheimer’s & Dementia","counts":{"indexed":946,"metadata_read":946,"date_needs_confirmation":1,"outside_topic_filter":309,"article_type_excluded":53,"no_label_in_pmc":567,"image_unavailable_or_small":12,"outside_online_date":4},"errors":[]},{"name":"JAMA Neurology","counts":{"indexed":256,"metadata_read":256,"outside_topic_filter":146,"article_type_excluded":35,"date_needs_confirmation":3,"missing_pmc_version":38,"no_label_in_pmc":25,"licence_unconfirmed":7,"outside_online_date":2},"errors":[]},{"name":"The Lancet Neurology","counts":{"indexed":267,"metadata_read":267,"article_type_excluded":82,"publisher_review":8,"date_needs_confirmation":22,"outside_topic_filter":149,"outside_online_date":1,"missing_pmc_version":1,"licence_unconfirmed":4},"errors":[]},{"name":"Thorax","counts":{"indexed":339,"metadata_read":339,"outside_topic_filter":149,"article_type_excluded":106,"publisher_review":55,"licence_unconfirmed":8,"no_label_in_pmc":21},"errors":[]},{"name":"European Respiratory Journal","counts":{"indexed":402,"metadata_read":402,"article_type_excluded":253,"publisher_review":28,"outside_topic_filter":96,"candidate":7,"no_label_in_pmc":5,"licence_unconfirmed":2,"image_unavailable_or_small":11},"errors":[]},{"name":"American Journal of Respiratory and Critical Care Medicine","counts":{"indexed":699,"metadata_read":699,"outside_topic_filter":490,"publisher_review":11,"article_type_excluded":151,"date_needs_confirmation":15,"no_label_in_pmc":14,"missing_pmc_version":12,"licence_unconfirmed":4,"outside_online_date":2},"errors":[]},{"name":"Emerging Infectious Diseases","counts":{"indexed":345,"metadata_read":345,"outside_topic_filter":269,"article_type_excluded":13,"date_needs_confirmation":52,"no_label_in_pmc":11},"errors":[]},{"name":"Clinical Infectious Diseases","counts":{"indexed":1079,"metadata_read":1079,"article_type_excluded":105,"outside_topic_filter":754,"publisher_review":40,"date_needs_confirmation":68,"candidate":7,"licence_unconfirmed":24,"missing_pmc_version":17,"no_label_in_pmc":32,"image_unavailable_or_small":8,"outside_online_date":24},"errors":[]},{"name":"The Lancet Digital Health","counts":{"indexed":138,"metadata_read":138,"outside_topic_filter":84,"publisher_review":30,"article_type_excluded":21,"licence_unconfirmed":1,"no_label_in_pmc":2},"errors":[]},{"name":"npj Digital Medicine","counts":{"indexed":883,"metadata_read":883,"publisher_review":5,"outside_topic_filter":610,"article_type_excluded":80,"no_label_in_pmc":188},"errors":[]},{"name":"PLOS Digital Health","counts":{"indexed":477,"metadata_read":477,"outside_topic_filter":361,"article_type_excluded":9,"no_label_in_pmc":107},"errors":[]},{"name":"Journal of Medical Internet Research","counts":{"indexed":1477,"metadata_read":1477,"outside_topic_filter":1099,"publisher_review":7,"article_type_excluded":94,"no_label_in_pmc":277},"errors":[]},{"name":"Nature Genetics","counts":{"indexed":398,"metadata_read":398,"outside_topic_filter":306,"publisher_review":17,"article_type_excluded":27,"outside_online_date":1,"no_label_in_pmc":40,"licence_unconfirmed":7},"errors":[]},{"name":"Cell Genomics","counts":{"indexed":165,"metadata_read":165,"outside_topic_filter":133,"publisher_review":3,"article_type_excluded":12,"outside_online_date":5,"image_unavailable_or_small":12},"errors":[]},{"name":"Genome Medicine","counts":{"indexed":177,"metadata_read":177,"outside_topic_filter":83,"article_type_excluded":2,"no_label_in_pmc":89,"candidate":3},"errors":[]},{"name":"Genome Biology","counts":{"indexed":368,"metadata_read":368,"outside_topic_filter":325,"article_type_excluded":6,"no_label_in_pmc":36,"candidate":1},"errors":[]},{"name":"Metabolomics","counts":{"indexed":168,"metadata_read":168,"outside_topic_filter":86,"article_type_excluded":3,"publisher_review":1,"no_label_in_pmc":69,"candidate":3,"image_unavailable_or_small":6},"errors":[]},{"name":"Journal of Proteome Research","counts":{"indexed":519,"metadata_read":519,"outside_topic_filter":356,"article_type_excluded":8,"date_needs_confirmation":40,"publisher_review":44,"outside_online_date":27,"image_unavailable_or_small":37,"missing_pmc_version":3,"candidate":2,"licence_unconfirmed":2},"errors":[]},{"name":"Nature","counts":{"indexed":4219,"metadata_read":4219,"outside_topic_filter":1311,"article_type_excluded":2812,"publisher_review":27,"outside_online_date":8,"no_label_in_pmc":58,"licence_unconfirmed":3},"errors":[]},{"name":"Science","counts":{"indexed":1844,"metadata_read":1844,"article_type_excluded":777,"outside_topic_filter":1042,"publisher_review":17,"licence_unconfirmed":6,"image_unavailable_or_small":1,"missing_pmc_version":1},"errors":[]},{"name":"Cell","counts":{"indexed":584,"metadata_read":584,"article_type_excluded":66,"outside_topic_filter":482,"publisher_review":20,"date_needs_confirmation":1,"outside_online_date":1,"licence_unconfirmed":9,"image_unavailable_or_small":2,"missing_pmc_version":3},"errors":[]},{"name":"Nature Communications","counts":{"indexed":11108,"metadata_read":11108,"outside_topic_filter":10074,"article_type_excluded":361,"publisher_review":5,"no_label_in_pmc":668},"errors":[]},{"name":"Science Advances","counts":{"indexed":3449,"metadata_read":3449,"outside_topic_filter":3270,"article_type_excluded":62,"no_label_in_pmc":117},"errors":[]},{"name":"The Innovation","counts":{"indexed":251,"metadata_read":251,"outside_topic_filter":211,"article_type_excluded":26,"outside_online_date":6,"image_unavailable_or_small":8},"errors":[]}],"candidates":593}}
@@ -189,7 +637,7 @@
     const [kind, journalName, year, title, , , url, image, credit, license, quality] = item;
     viewer.querySelector('#viewer-title').textContent = title;
     viewer.querySelector('#viewer-source').replaceChildren(link('原始出处 ↗', url), creditLine(credit, license));
-    viewerImage.alt = title + ' · ' + [types[kind], journalName, year].filter(Boolean).join(' · ');
+    viewerImage.alt = title + ' · ' + [types[kind], journalName, GallerySearch.formatDate(item)].filter(Boolean).join(' · ');
     viewerError.hidden = true;
     viewerImage.hidden = false;
     viewer.style.setProperty('--figure-aspect',quality.width / quality.height);
@@ -225,7 +673,7 @@
       box.append(preview);
     }
     const content = el('div','card-content');
-    content.append(el('p','meta',[types[kind],name,year].filter(Boolean).join(' · ')), el('h2','',title), el('p','note',note));
+    content.append(el('p','meta',[types[kind],name,GallerySearch.formatDate(item)].filter(Boolean).join(' · ')), el('h2','',title), el('p','note',note));
     const tags = el('ul','tags');
     for (const keyword of keywords.split('|')) tags.append(el('li','',keyword));
     content.append(tags);
