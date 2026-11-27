@@ -1,0 +1,2666 @@
+{
+  "mode": "backfill",
+  "start": "2026-01-01",
+  "end": "2026-11-27",
+  "stamp": "2026-11-27 15:29",
+  "results": [
+    {
+      "name": "eClinicalMedicine",
+      "counts": {
+        "indexed": 560,
+        "metadata_read": 560,
+        "outside_topic_filter": 266,
+        "article_type_excluded": 47,
+        "outside_online_date": 13,
+        "no_label_in_pmc": 232,
+        "licence_unconfirmed": 1,
+        "candidate": 1
+      },
+      "errors": []
+    },
+    {
+      "name": "BMJ Medicine",
+      "counts": {
+        "indexed": 62,
+        "metadata_read": 62,
+        "publisher_review": 1,
+        "outside_topic_filter": 21,
+        "article_type_excluded": 11,
+        "no_label_in_pmc": 29
+      },
+      "errors": []
+    },
+    {
+      "name": "eBioMedicine",
+      "counts": {
+        "indexed": 508,
+        "metadata_read": 508,
+        "publisher_review": 12,
+        "outside_topic_filter": 246,
+        "article_type_excluded": 30,
+        "outside_online_date": 11,
+        "no_label_in_pmc": 205,
+        "candidate": 1,
+        "licence_unconfirmed": 2,
+        "image_unavailable_or_small": 1
+      },
+      "errors": []
+    },
+    {
+      "name": "The Lancet Regional Health – Europe",
+      "counts": {
+        "indexed": 368,
+        "metadata_read": 368,
+        "outside_topic_filter": 171,
+        "article_type_excluded": 57,
+        "outside_online_date": 27,
+        "no_label_in_pmc": 107,
+        "candidate": 2,
+        "licence_unconfirmed": 3,
+        "missing_pmc_version": 1
+      },
+      "errors": []
+    },
+    {
+      "name": "The Lancet Regional Health – Americas",
+      "counts": {
+        "indexed": 373,
+        "metadata_read": 373,
+        "outside_topic_filter": 185,
+        "article_type_excluded": 54,
+        "outside_online_date": 21,
+        "no_label_in_pmc": 108,
+        "licence_unconfirmed": 4,
+        "missing_pmc_version": 1
+      },
+      "errors": []
+    },
+    {
+      "name": "JACC: Asia",
+      "counts": {
+        "indexed": 457,
+        "metadata_read": 457,
+        "publisher_review": 41,
+        "article_type_excluded": 190,
+        "outside_topic_filter": 112,
+        "outside_online_date": 14,
+        "candidate": 95,
+        "image_unavailable_or_small": 2,
+        "no_label_in_pmc": 3
+      },
+      "errors": []
+    },
+    {
+      "name": "JACC: Cardiovascular Imaging",
+      "counts": {
+        "indexed": 265,
+        "metadata_read": 265,
+        "outside_topic_filter": 24,
+        "article_type_excluded": 173,
+        "publisher_review": 41,
+        "date_needs_confirmation": 1,
+        "outside_online_date": 19,
+        "licence_unconfirmed": 6,
+        "missing_pmc_version": 1
+      },
+      "errors": []
+    },
+    {
+      "name": "JACC: Clinical Electrophysiology",
+      "counts": {
+        "indexed": 510,
+        "metadata_read": 510,
+        "article_type_excluded": 148,
+        "publisher_review": 84,
+        "outside_topic_filter": 254,
+        "outside_online_date": 22,
+        "licence_unconfirmed": 2
+      },
+      "errors": []
+    },
+    {
+      "name": "European Journal of Heart Failure",
+      "counts": {
+        "indexed": 367,
+        "metadata_read": 367,
+        "article_type_excluded": 78,
+        "publisher_review": 117,
+        "outside_topic_filter": 123,
+        "date_needs_confirmation": 48,
+        "missing_pmc_version": 1
+      },
+      "errors": []
+    },
+    {
+      "name": "Hypertension",
+      "counts": {
+        "indexed": 331,
+        "metadata_read": 331,
+        "outside_topic_filter": 151,
+        "article_type_excluded": 52,
+        "publisher_review": 47,
+        "outside_online_date": 29,
+        "licence_unconfirmed": 35,
+        "no_label_in_pmc": 16,
+        "candidate": 1
+      },
+      "errors": []
+    },
+    {
+      "name": "Circulation: Population Health and Outcomes",
+      "counts": {
+        "indexed": 147,
+        "metadata_read": 147,
+        "outside_topic_filter": 28,
+        "publisher_review": 40,
+        "article_type_excluded": 39,
+        "outside_online_date": 1,
+        "licence_unconfirmed": 31,
+        "no_label_in_pmc": 7,
+        "missing_pmc_version": 1
+      },
+      "errors": []
+    },
+    {
+      "name": "Journal of Clinical Epidemiology",
+      "counts": {
+        "indexed": 427,
+        "metadata_read": 427,
+        "outside_topic_filter": 288,
+        "publisher_review": 55,
+        "article_type_excluded": 68,
+        "outside_online_date": 14,
+        "licence_unconfirmed": 1,
+        "no_label_in_pmc": 1
+      },
+      "errors": []
+    },
+    {
+      "name": "JAMA Health Forum",
+      "counts": {
+        "indexed": 296,
+        "metadata_read": 296,
+        "outside_topic_filter": 243,
+        "article_type_excluded": 12,
+        "publisher_review": 2,
+        "no_label_in_pmc": 38,
+        "licence_unconfirmed": 1
+      },
+      "errors": []
+    },
+    {
+      "name": "Nature Health",
+      "counts": {
+        "indexed": 212,
+        "metadata_read": 212,
+        "publisher_review": 212
+      },
+      "errors": []
+    },
+    {
+      "name": "Environmental Science & Technology",
+      "counts": {
+        "indexed": 2845,
+        "metadata_read": 2845,
+        "outside_topic_filter": 2646,
+        "article_type_excluded": 72,
+        "date_needs_confirmation": 37,
+        "publisher_review": 52,
+        "outside_online_date": 6,
+        "image_unavailable_or_small": 26,
+        "candidate": 1,
+        "missing_pmc_version": 1,
+        "licence_unconfirmed": 4
+      },
+      "errors": []
+    },
+    {
+      "name": "GeroScience",
+      "counts": {
+        "indexed": 954,
+        "metadata_read": 954,
+        "publisher_review": 302,
+        "outside_topic_filter": 363,
+        "article_type_excluded": 21,
+        "outside_online_date": 194,
+        "missing_pmc_version": 33,
+        "no_label_in_pmc": 31,
+        "candidate": 6,
+        "image_unavailable_or_small": 4
+      },
+      "errors": []
+    },
+    {
+      "name": "Aging Cell",
+      "counts": {
+        "indexed": 494,
+        "metadata_read": 494,
+        "outside_topic_filter": 353,
+        "article_type_excluded": 21,
+        "date_needs_confirmation": 1,
+        "outside_online_date": 11,
+        "image_unavailable_or_small": 108
+      },
+      "errors": []
+    },
+    {
+      "name": "npj Aging",
+      "counts": {
+        "indexed": 161,
+        "metadata_read": 161,
+        "outside_topic_filter": 87,
+        "article_type_excluded": 8,
+        "no_label_in_pmc": 66
+      },
+      "errors": []
+    },
+    {
+      "name": "The Lancet Diabetes & Endocrinology",
+      "counts": {
+        "indexed": 191,
+        "metadata_read": 191,
+        "outside_topic_filter": 91,
+        "article_type_excluded": 58,
+        "publisher_review": 30,
+        "date_needs_confirmation": 1,
+        "outside_online_date": 7,
+        "licence_unconfirmed": 1,
+        "no_label_in_pmc": 3
+      },
+      "errors": []
+    },
+    {
+      "name": "Diabetes Care",
+      "counts": {
+        "indexed": 467,
+        "metadata_read": 467,
+        "article_type_excluded": 179,
+        "outside_topic_filter": 165,
+        "publisher_review": 12,
+        "date_needs_confirmation": 37,
+        "licence_unconfirmed": 52,
+        "missing_pmc_version": 22
+      },
+      "errors": []
+    },
+    {
+      "name": "JAMA Neurology",
+      "counts": {
+        "indexed": 256,
+        "metadata_read": 256,
+        "outside_topic_filter": 146,
+        "article_type_excluded": 35,
+        "date_needs_confirmation": 3,
+        "missing_pmc_version": 38,
+        "no_label_in_pmc": 25,
+        "licence_unconfirmed": 7,
+        "outside_online_date": 2
+      },
+      "errors": []
+    },
+    {
+      "name": "The Lancet Neurology",
+      "counts": {
+        "indexed": 267,
+        "metadata_read": 267,
+        "article_type_excluded": 82,
+        "publisher_review": 8,
+        "date_needs_confirmation": 22,
+        "outside_topic_filter": 149,
+        "outside_online_date": 1,
+        "missing_pmc_version": 1,
+        "licence_unconfirmed": 4
+      },
+      "errors": []
+    },
+    {
+      "name": "European Respiratory Journal",
+      "counts": {
+        "indexed": 402,
+        "metadata_read": 402,
+        "article_type_excluded": 253,
+        "publisher_review": 28,
+        "outside_topic_filter": 96,
+        "candidate": 7,
+        "no_label_in_pmc": 5,
+        "licence_unconfirmed": 2,
+        "image_unavailable_or_small": 11
+      },
+      "errors": []
+    },
+    {
+      "name": "American Journal of Respiratory and Critical Care Medicine",
+      "counts": {
+        "indexed": 699,
+        "metadata_read": 699,
+        "outside_topic_filter": 490,
+        "publisher_review": 11,
+        "article_type_excluded": 151,
+        "date_needs_confirmation": 15,
+        "no_label_in_pmc": 14,
+        "missing_pmc_version": 12,
+        "licence_unconfirmed": 4,
+        "outside_online_date": 2
+      },
+      "errors": []
+    },
+    {
+      "name": "Clinical Infectious Diseases",
+      "counts": {
+        "indexed": 1079,
+        "metadata_read": 1079,
+        "article_type_excluded": 105,
+        "outside_topic_filter": 754,
+        "publisher_review": 40,
+        "date_needs_confirmation": 68,
+        "candidate": 7,
+        "licence_unconfirmed": 24,
+        "missing_pmc_version": 17,
+        "no_label_in_pmc": 32,
+        "image_unavailable_or_small": 8,
+        "outside_online_date": 24
+      },
+      "errors": []
+    },
+    {
+      "name": "PLOS Digital Health",
+      "counts": {
+        "indexed": 477,
+        "metadata_read": 477,
+        "outside_topic_filter": 361,
+        "article_type_excluded": 9,
+        "no_label_in_pmc": 107
+      },
+      "errors": []
+    },
+    {
+      "name": "Journal of Medical Internet Research",
+      "counts": {
+        "indexed": 1477,
+        "metadata_read": 1477,
+        "outside_topic_filter": 1099,
+        "publisher_review": 7,
+        "article_type_excluded": 94,
+        "no_label_in_pmc": 277
+      },
+      "errors": []
+    }
+  ],
+  "candidates": 121,
+  "items": [
+    [
+      "abstract",
+      "eBioMedicine",
+      2026,
+      "Integrative analysis of genome-wide DNA methylation and gene expression profiles associated with incident chronic kidney disease: the longitudinal Pros-RODAM cohort study.",
+      "组学|人群研究",
+      "",
+      "https://doi.org/10.1016/j.ebiom.2026.106542",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13788660.1/figs1.webp",
+      "Mungamba 等 · PubMed Central 收录版",
+      "by",
+      {
+        "width": 1600,
+        "height": 1130,
+        "doi": "10.1016/j.ebiom.2026.106542",
+        "published": "2026-11-13"
+      }
+    ],
+    [
+      "abstract",
+      "European Respiratory Journal",
+      2026,
+      "Sputum and oral microbiota profiles are associated with long COVID severity and phenotype post-hospitalisation: a UK multicentre, prospective cohort study.",
+      "人群研究",
+      "",
+      "https://doi.org/10.1183/13993003.01162-2026",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13735185.1/ERJ-01162-2026.GA01.webp",
+      "Alferes de Lima Headley 等 · PubMed Central 收录版",
+      "by",
+      {
+        "width": 1600,
+        "height": 924,
+        "doi": "10.1183/13993003.01162-2026",
+        "published": "2026-11-05"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Prognostic Implication of CYP2C19 Genotype During Chronic Clopidogrel Monotherapy After Percutaneous Coronary Intervention.",
+      "心血管",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2026.08.034",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13750892.1/ga1.webp",
+      "Jo 等 · PubMed Central 收录版",
+      "by",
+      {
+        "width": 3446,
+        "height": 2233,
+        "doi": "10.1016/j.jacasi.2026.08.034",
+        "published": "2026-11-03",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374726008008-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Prevalence of Transthyretin Amyloidosis Among Older Taiwanese Patients With Heart Failure With Preserved Ejection Fraction: The PATCH-HFpEF Study.",
+      "心血管",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2026.07.048",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13750889.1/ga1.webp",
+      "Hung 等 · PubMed Central 收录版",
+      "by-nc-nd",
+      {
+        "width": 3446,
+        "height": 4431,
+        "doi": "10.1016/j.jacasi.2026.07.048",
+        "published": "2026-11-03",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374726007192-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "The Lancet Regional Health – Europe",
+      2026,
+      "Regional and national variation in donor and recipient characteristics, transplant practice, and outcomes after liver transplantation (the IMPROVEMENT collaborative): a multicentre cohort study.",
+      "人群研究",
+      "",
+      "https://doi.org/10.1016/j.lanepe.2026.101889",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13743410.1/ga1.webp",
+      "Avolio 等 · PubMed Central 收录版",
+      "by-nc-nd",
+      {
+        "width": 1292,
+        "height": 886,
+        "doi": "10.1016/j.lanepe.2026.101889",
+        "published": "2026-10-29"
+      }
+    ],
+    [
+      "abstract",
+      "Clinical Infectious Diseases",
+      2026,
+      "State-of-the-Art Review: Native Joint Septic Arthritis Epidemiology, Pathogenesis, Microbiology, Diagnosis, Management, and Outcomes.",
+      "人群研究",
+      "",
+      "https://doi.org/10.1093/cid/ciag473",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13715976.1/ciag473_ga.webp",
+      "Khodadadi 等 · PubMed Central 收录版",
+      "by",
+      {
+        "width": 1600,
+        "height": 1789,
+        "doi": "10.1093/cid/ciag473",
+        "published": "2026-10-28"
+      }
+    ],
+    [
+      "abstract",
+      "European Respiratory Journal",
+      2026,
+      "A self-controlled case series to evaluate the effects of clinical trial eligibility criteria on biologic-associated reductions in severe asthma exacerbations: an analysis of the CHRONICLE study.",
+      "人群研究",
+      "",
+      "https://doi.org/10.1183/13993003.02196-2025",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13687804.1/ERJ-02196-2025.GA01.webp",
+      "Boakye-Dankwa 等 · PubMed Central 收录版",
+      "by-nc",
+      {
+        "width": 1600,
+        "height": 595,
+        "doi": "10.1183/13993003.02196-2025",
+        "published": "2026-10-22"
+      }
+    ],
+    [
+      "abstract",
+      "European Respiratory Journal",
+      2026,
+      "Nasal nitric oxide combined with clinical features for preliminary screening of primary ciliary dyskinesia in bronchiectasis.",
+      "生命历程",
+      "",
+      "https://doi.org/10.1183/13993003.02796-2025",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13650444.1/ERJ-02796-2025.GA01.webp",
+      "Hu 等 · PubMed Central 收录版",
+      "by-nc",
+      {
+        "width": 1599,
+        "height": 924,
+        "doi": "10.1183/13993003.02796-2025",
+        "published": "2026-10-09"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Combined Effects of Biomarkers in NLRP3 Inflammasome Axis and Cardiovascular Outcomes in Multivessels Disease.",
+      "心血管|人群研究",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2026.06.040",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13654344.1/ga1a.webp",
+      "Li 等 · PubMed Central 收录版",
+      "by-nc-nd",
+      {
+        "width": 1600,
+        "height": 1863,
+        "doi": "10.1016/j.jacasi.2026.06.040",
+        "published": "2026-10-06"
+      }
+    ],
+    [
+      "abstract",
+      "European Respiratory Journal",
+      2026,
+      "Aberrant and ectopic cell populations in restrictive allograft syndrome after lung transplantation.",
+      "组学",
+      "",
+      "https://doi.org/10.1183/13993003.00537-2025",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13612983.1/ERJ-00537-2025.GA01.webp",
+      "Leiber 等 · PubMed Central 收录版",
+      "by-nc",
+      {
+        "width": 1600,
+        "height": 1111,
+        "doi": "10.1183/13993003.00537-2025",
+        "published": "2026-09-25"
+      }
+    ],
+    [
+      "abstract",
+      "Environmental Science & Technology",
+      2026,
+      "Maternal Epigenetic Signatures Linking Prenatal Serum PFAS Concentrations to Birth Size in an African American Maternal-Child Cohort.",
+      "生命历程|环境健康|人群研究",
+      "",
+      "https://doi.org/10.1021/acs.est.6c03113",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13648241.1/es6c03113_0008.webp",
+      "Tan 等 · PubMed Central 收录版",
+      "by",
+      {
+        "width": 1983,
+        "height": 1006,
+        "doi": "10.1021/acs.est.6c03113",
+        "published": "2026-09-23"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Monotherapy Versus Combination Therapy Beyond 12 Months After Coronary Intervention in Older Atrial Fibrillation Patients.",
+      "心血管|人群研究",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2026.08.010",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13750891.1/ga1.webp",
+      "Takita 等 · PubMed Central 收录版",
+      "by-nc-nd",
+      {
+        "width": 3446,
+        "height": 2597,
+        "doi": "10.1016/j.jacasi.2026.08.010",
+        "published": "2026-09-19",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374726007106-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Impact of Renal Dysfunction on FFR- or IVUS-Guided PCI for Intermediate Coronary Stenosis.",
+      "心血管",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2026.07.044",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13750907.1/ga1.webp",
+      "He 等 · PubMed Central 收录版",
+      "by-nc-nd",
+      {
+        "width": 3446,
+        "height": 2208,
+        "doi": "10.1016/j.jacasi.2026.07.044",
+        "published": "2026-09-19",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374726007040-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "Hypertension",
+      2026,
+      "Antihypertensive Treatment and Risk of Metabolic Associated Fatty Liver Disease: A Drug-Target Mendelian Randomization.",
+      "组学|心血管",
+      "",
+      "https://doi.org/10.1161/hypertensionaha.126.27526",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC7619608.1/EMS218174-f004.webp",
+      "Hu 等 · PubMed Central 收录版",
+      "by",
+      {
+        "width": 1600,
+        "height": 1616,
+        "doi": "10.1161/hypertensionaha.126.27526",
+        "published": "2026-09-18"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Osteosarcopenia as a Risk Factor for Atrial Fibrillation: A Multi-Cohort Study.",
+      "人群研究",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2026.08.006",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13750890.1/ga1.webp",
+      "Lee 等 · PubMed Central 收录版",
+      "by",
+      {
+        "width": 3446,
+        "height": 2858,
+        "doi": "10.1016/j.jacasi.2026.08.006",
+        "published": "2026-09-16",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374726007027-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Stroke Burden, Trends, and Inequalities in the Western Pacific Region, 1990-2021: A Population-Based Study.",
+      "暴露组|环境健康|老龄化|心血管|人群研究",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2026.07.034",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13750903.1/ga1.webp",
+      "Ge 等 · PubMed Central 收录版",
+      "by-nc-nd",
+      {
+        "width": 3446,
+        "height": 4295,
+        "doi": "10.1016/j.jacasi.2026.07.034",
+        "published": "2026-09-11",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374726006277-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "European Respiratory Journal",
+      2026,
+      "Distribution of blood eosinophil counts in the Chinese general population.",
+      "人群研究",
+      "",
+      "https://doi.org/10.1183/13993003.01570-2025",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13550824.1/ERJ-01570-2025.GA01.webp",
+      "Yao 等 · PubMed Central 收录版",
+      "by-nc",
+      {
+        "width": 1600,
+        "height": 827,
+        "doi": "10.1183/13993003.01570-2025",
+        "published": "2026-09-08"
+      }
+    ],
+    [
+      "abstract",
+      "European Respiratory Journal",
+      2026,
+      "The influence of HLA matching on graft survival in lung transplant recipients is indication specific: a UNOS database analysis.",
+      "人群研究",
+      "",
+      "https://doi.org/10.1183/13993003.01890-2025",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13550823.1/ERJ-01890-2025.GA01.webp",
+      "Otunla 等 · PubMed Central 收录版",
+      "by",
+      {
+        "width": 1599,
+        "height": 568,
+        "doi": "10.1183/13993003.01890-2025",
+        "published": "2026-09-08"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Temporal Trends and Outcomes in Low-Risk Patients Undergoing TAVI: Insights From the LAPLACE-TAVI Registry.",
+      "老龄化|人群研究",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2026.07.039",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13654435.1/ga1.webp",
+      "Higuchi 等 · PubMed Central 收录版",
+      "by",
+      {
+        "width": 3446,
+        "height": 2480,
+        "doi": "10.1016/j.jacasi.2026.07.039",
+        "published": "2026-09-05",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374726006915-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Prognostic Impact of Residual Thrombus After Aspiration Thrombectomy in ST-Elevation Myocardial Infarction.",
+      "心血管",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2026.07.023",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13654417.1/ga1.webp",
+      "Endo 等 · PubMed Central 收录版",
+      "by-nc-nd",
+      {
+        "width": 3446,
+        "height": 2023,
+        "doi": "10.1016/j.jacasi.2026.07.023",
+        "published": "2026-09-02",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374726006150-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Combined Left and Right Ventricular Dysfunction and 1-Year Outcomes After TAVR.",
+      "心血管",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2026.07.015",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13554779.1/ga1.webp",
+      "Liu 等 · PubMed Central 收录版",
+      "by-nc-nd",
+      {
+        "width": 3446,
+        "height": 4334,
+        "doi": "10.1016/j.jacasi.2026.07.015",
+        "published": "2026-09-01",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374726006009-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Physiological Patterns of Coronary Artery Disease and Drug-Coated Balloon Performance.",
+      "心血管|人群研究",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2026.06.043",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13654434.1/ga1.webp",
+      "Fezzi 等 · PubMed Central 收录版",
+      "by-nc-nd",
+      {
+        "width": 3446,
+        "height": 4233,
+        "doi": "10.1016/j.jacasi.2026.06.043",
+        "published": "2026-08-27",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374726006046-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Cost-Effectiveness of Polygenic Risk Score-Guided Statin Therapy for Cardiovascular Disease Prevention in Singapore.",
+      "心血管|人群研究",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2026.07.018",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13654358.1/ga1.webp",
+      "Ooi 等 · PubMed Central 收录版",
+      "by",
+      {
+        "width": 3446,
+        "height": 4116,
+        "doi": "10.1016/j.jacasi.2026.07.018",
+        "published": "2026-08-27",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374726006101-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Comprehensive Echocardiography Interpretation Using Video and Multiview Vision-Language AI.",
+      "人群研究",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2026.06.039",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13700026.1/ga1.webp",
+      "Takizawa 等 · PubMed Central 收录版",
+      "by",
+      {
+        "width": 3446,
+        "height": 2220,
+        "doi": "10.1016/j.jacasi.2026.06.039",
+        "published": "2026-08-27",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374726005557-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Oncologic Benefits and Cardiovascular Risks of Pembrolizumab: Insights From a Nationwide Lung Adenocarcinoma Cohort.",
+      "心血管|人群研究",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2026.07.019",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13654415.1/ga1.webp",
+      "Park 等 · PubMed Central 收录版",
+      "by-nc-nd",
+      {
+        "width": 3446,
+        "height": 2533,
+        "doi": "10.1016/j.jacasi.2026.07.019",
+        "published": "2026-08-27",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374726006113-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "European Respiratory Journal",
+      2026,
+      "Pleural fluid neutrophil extracellular traps are associated with disease severity and risk of 1-year mortality in pleural infection: an observational, international, multicohort study (TORPIDS-3).",
+      "人群研究",
+      "",
+      "https://doi.org/10.1183/13993003.00113-2026",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13519835.1/ERJ-00113-2026.GA01.webp",
+      "Chu 等 · PubMed Central 收录版",
+      "by",
+      {
+        "width": 1599,
+        "height": 953,
+        "doi": "10.1183/13993003.00113-2026",
+        "published": "2026-08-27"
+      }
+    ],
+    [
+      "abstract",
+      "Clinical Infectious Diseases",
+      2026,
+      "A New Paradigm for Clostridioides difficile Infection: Atypical Presentations Correlating to Acute Gastrointestinal Dysmotility Are Associated With Increased Mortality.",
+      "人群研究",
+      "",
+      "https://doi.org/10.1093/cid/ciag463",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13784503.1/ciag463_ga.webp",
+      "Bishop 等 · PubMed Central 收录版",
+      "by-nc-nd",
+      {
+        "width": 1600,
+        "height": 810,
+        "doi": "10.1093/cid/ciag463",
+        "published": "2026-08-25"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Adverse Events and ABC Pathway Adherence Across AF Clinical Phenotypes: APHRS-AF Registry Cluster Analysis Study.",
+      "老龄化|心血管",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2026.06.038",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13750906.1/ga1.webp",
+      "Bucci 等 · PubMed Central 收录版",
+      "by-nc-nd",
+      {
+        "width": 3446,
+        "height": 3236,
+        "doi": "10.1016/j.jacasi.2026.06.038",
+        "published": "2026-08-22",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374726005533-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Epidemiological Analysis and 2040 Projections of Atrial Fibrillation and Flutter in Asia.",
+      "老龄化|人群研究",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2026.06.037",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13750910.1/ga1.webp",
+      "Chen 等 · PubMed Central 收录版",
+      "by",
+      {
+        "width": 3446,
+        "height": 2636,
+        "doi": "10.1016/j.jacasi.2026.06.037",
+        "published": "2026-08-20",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S277237472600551X-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Lifestyle and Metabolic Health, Low-Grade to Clinically Elevated Albuminuria, and Cardiovascular-Renal Diseases.",
+      "心血管|人群研究",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2026.06.032",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13654428.1/ga1.webp",
+      "Ding 等 · PubMed Central 收录版",
+      "by-nc-nd",
+      {
+        "width": 3446,
+        "height": 2309,
+        "doi": "10.1016/j.jacasi.2026.06.032",
+        "published": "2026-08-12",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374726005338-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Plasma Proteins Associated With Incident Acute Myocardial Infarction in Asians With Type 2 Diabetes.",
+      "组学|心血管|人群研究",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2026.06.033",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13750878.1/ga1.webp",
+      "Gurung 等 · PubMed Central 收录版",
+      "by",
+      {
+        "width": 3446,
+        "height": 2856,
+        "doi": "10.1016/j.jacasi.2026.06.033",
+        "published": "2026-08-12",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S277237472600534X-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "GeroScience",
+      2026,
+      "Preserving joint healthspan in knee osteoarthritis: a geroscience-guided review of non-surgical therapies and genicular artery embolization.",
+      "老龄化",
+      "",
+      "https://doi.org/10.1007/s11357-026-02467-6",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13601406.1/11357_2026_2467_Figa_HTML.webp",
+      "Bérczi 等 · PubMed Central 收录版",
+      "by",
+      {
+        "width": 1600,
+        "height": 779,
+        "doi": "10.1007/s11357-026-02467-6",
+        "published": "2026-08-10"
+      }
+    ],
+    [
+      "abstract",
+      "eClinicalMedicine",
+      2026,
+      "Mediterranean lifestyle and risk of adverse cardiovascular events, all-cause and cardiovascular mortality among individuals with type 2 diabetes.",
+      "心血管|人群研究",
+      "",
+      "https://doi.org/10.1016/j.eclinm.2026.104134",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13475649.1/ga1.jpg",
+      "Aznar de la Riera 等 · PubMed Central 收录版",
+      "by",
+      {
+        "width": 1277,
+        "height": 886,
+        "doi": "10.1016/j.eclinm.2026.104134",
+        "published": "2026-08-07",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2589537026003871-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Impact of Device Position and Aortic Valve Prolapse on Outcomes After Transcatheter VSD Closure.",
+      "心血管|人群研究",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2026.06.027",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13654372.1/ga1.webp",
+      "Lin 等 · PubMed Central 收录版",
+      "by-nc-nd",
+      {
+        "width": 3446,
+        "height": 2553,
+        "doi": "10.1016/j.jacasi.2026.06.027",
+        "published": "2026-08-06",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374726005259-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Using AI-ECG to Stratify Long-Term Mortality Risk and Prognosis in TAVR Patients.",
+      "人群研究",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2026.05.034",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13700035.1/ga1.webp",
+      "Shi 等 · PubMed Central 收录版",
+      "by",
+      {
+        "width": 3446,
+        "height": 2476,
+        "doi": "10.1016/j.jacasi.2026.05.034",
+        "published": "2026-08-06",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374726004369-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "Clinical Infectious Diseases",
+      2026,
+      "The Effectiveness of Nirsevimab on Antibiotic Use in Children Using Target Trial Emulation.",
+      "人群研究",
+      "",
+      "https://doi.org/10.1093/cid/ciag406",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13644860.1/ciag406_ga.webp",
+      "Ahmed 等 · PubMed Central 收录版",
+      "by",
+      {
+        "width": 1599,
+        "height": 811,
+        "doi": "10.1093/cid/ciag406",
+        "published": "2026-08-06"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Prognostic Value of Right Ventricular Circumferential Strain in Patients Undergoing Isolated Tricuspid Valve Surgery.",
+      "心血管",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2026.06.025",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13554754.1/ga1.webp",
+      "Wu 等 · PubMed Central 收录版",
+      "by-nc-nd",
+      {
+        "width": 3446,
+        "height": 2955,
+        "doi": "10.1016/j.jacasi.2026.06.025",
+        "published": "2026-08-05",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374726005235-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Cardiometabolic Multimorbidity and Sympathetic Overactivity: Translational Rationale for Combined Hepatic-Renal Denervation.",
+      "老龄化|心血管",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2026.05.027",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13458912.1/ga1.jpg",
+      "Zhao 等 · PubMed Central 收录版",
+      "by-nc-nd",
+      {
+        "width": 3446,
+        "height": 2188,
+        "doi": "10.1016/j.jacasi.2026.05.027",
+        "published": "2026-08-04",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374726003686-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Angiography-Derived Index of Microcirculatory Resistance Predicts Microvascular Obstruction and Infarct Size in Patients With STEMI.",
+      "心血管",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2026.06.013",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13750908.1/ga1.webp",
+      "Sheng 等 · PubMed Central 收录版",
+      "by",
+      {
+        "width": 3446,
+        "height": 2296,
+        "doi": "10.1016/j.jacasi.2026.06.013",
+        "published": "2026-08-01",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S277237472600445X-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Paclitaxel-Coated Balloon for Coronary In-Stent Restenosis and De Novo Disease in Chinese Patients.",
+      "心血管|人群研究",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2026.06.008",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13554778.1/ga1.webp",
+      "Lu 等 · PubMed Central 收录版",
+      "by",
+      {
+        "width": 3446,
+        "height": 2444,
+        "doi": "10.1016/j.jacasi.2026.06.008",
+        "published": "2026-08-01",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374726004370-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Prognosis by Renal Function With or Without Percutaneous Coronary Intervention in Non-ST-Segment Elevation Myocardial Infarction.",
+      "心血管",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2026.06.010",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13554772.1/ga1.webp",
+      "Kim 等 · PubMed Central 收录版",
+      "by-nc-nd",
+      {
+        "width": 3446,
+        "height": 3006,
+        "doi": "10.1016/j.jacasi.2026.06.010",
+        "published": "2026-08-01",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374726004394-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Real-World Evaluation of a Nationally Mandated Risk Stratification Tool for Destination Therapy LVAD in Japan.",
+      "心血管|人群研究",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2026.06.017",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13750888.1/ga1.webp",
+      "Imamura 等 · PubMed Central 收录版",
+      "by",
+      {
+        "width": 3446,
+        "height": 3271,
+        "doi": "10.1016/j.jacasi.2026.06.017",
+        "published": "2026-07-24",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374726004576-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Non-ACS Presentation in Takotsubo Syndrome: A High-Risk Phenotype with Distinct Treatment Patterns and Worse Outcomes.",
+      "心血管",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2026.05.036",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13554753.1/ga1.webp",
+      "Li 等 · PubMed Central 收录版",
+      "by-nc-nd",
+      {
+        "width": 3446,
+        "height": 3439,
+        "doi": "10.1016/j.jacasi.2026.05.036",
+        "published": "2026-07-23",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374726004436-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Multimodality Imaging-Based Phenotyping and Prognostic Implications of Right Ventricular Involvement in Apical Hypertrophic Cardiomyopathy.",
+      "心血管",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2026.06.009",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13750905.1/ga1.webp",
+      "Kwak 等 · PubMed Central 收录版",
+      "by-nc-nd",
+      {
+        "width": 3446,
+        "height": 3311,
+        "doi": "10.1016/j.jacasi.2026.06.009",
+        "published": "2026-07-23",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374726004382-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "TNNT2 Mutation Affects the Progression of Dilated Cardiomyopathy in Children.",
+      "心血管",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2026.05.038",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13654378.1/ga1.webp",
+      "Liu 等 · PubMed Central 收录版",
+      "by",
+      {
+        "width": 3446,
+        "height": 3230,
+        "doi": "10.1016/j.jacasi.2026.05.038",
+        "published": "2026-07-23",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374726004461-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Transcatheter Edge-to-Edge Repair for Tricuspid Regurgitation: Design and Rationale of the TEER-CHINA Trial.",
+      "心血管",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2026.06.012",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13554751.1/ga1.webp",
+      "Ren 等 · PubMed Central 收录版",
+      "by-nc-nd",
+      {
+        "width": 3446,
+        "height": 3314,
+        "doi": "10.1016/j.jacasi.2026.06.012",
+        "published": "2026-07-23",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374726004412-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Radial Wall Strain for Predicting Severe Dissection After Drug-Coated Balloon.",
+      "心血管",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2026.05.035",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13554768.1/ga1.webp",
+      "Shi 等 · PubMed Central 收录版",
+      "by",
+      {
+        "width": 3446,
+        "height": 2256,
+        "doi": "10.1016/j.jacasi.2026.05.035",
+        "published": "2026-07-18",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374726004424-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Comparison of ASCVD Risk Prediction Models in STEMI: Insights From a South Asian Cohort.",
+      "心血管|人群研究",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2026.03.042",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13654348.1/ga1.webp",
+      "Gupta 等 · PubMed Central 收录版",
+      "by-nc-nd",
+      {
+        "width": 3446,
+        "height": 2928,
+        "doi": "10.1016/j.jacasi.2026.03.042",
+        "published": "2026-07-17",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374726003650-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "The Lancet Regional Health – Europe",
+      2026,
+      "Maternal and perinatal outcomes during successive and overlapping crises in Ukraine, 2019-2024: a nationwide population-based ecological study.",
+      "人群研究",
+      "",
+      "https://doi.org/10.1016/j.lanepe.2026.101774",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13382322.1/ga1.jpg",
+      "Mogilevkina 等 · PubMed Central 收录版",
+      "by",
+      {
+        "width": 1557,
+        "height": 886,
+        "doi": "10.1016/j.lanepe.2026.101774",
+        "published": "2026-07-14",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2666776226001869-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Clinical Usefulness of 8-F Sheathless Guiding Catheter for Transradial Approach in Complex Percutaneous Coronary Intervention.",
+      "心血管",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2026.04.033",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13350793.1/ga1.jpg",
+      "Matsuda 等 · PubMed Central 收录版",
+      "by-nc-nd",
+      {
+        "width": 2115,
+        "height": 886,
+        "doi": "10.1016/j.jacasi.2026.04.033",
+        "published": "2026-07-07",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374726003285-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Th1/Th17-Treg Imbalance in Asian Atrial Fibrillation: Subtype and Demographic Heterogeneity.",
+      "人群研究",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2026.04.041",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13350382.1/gr5.jpg",
+      "Liu 等 · PubMed Central 收录版",
+      "by-nc-nd",
+      {
+        "width": 1395,
+        "height": 1436,
+        "doi": "10.1016/j.jacasi.2026.04.041",
+        "published": "2026-07-07",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374726003431-gr5_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Safety and Efficacy of a Novel Rotational Atherectomy System in Coronary Calcifications: The CORECT Trial.",
+      "心血管",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2026.04.035",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13350386.1/ga1.jpg",
+      "Li 等 · PubMed Central 收录版",
+      "by-nc-nd",
+      {
+        "width": 3446,
+        "height": 2503,
+        "doi": "10.1016/j.jacasi.2026.04.035",
+        "published": "2026-07-07",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374726003303-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "XGBoost Model With CMR Features for Prognostic Assessment in Patients With ST-Segment Elevation Myocardial Infarction.",
+      "心血管",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2026.05.019",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13700034.1/ga1.webp",
+      "Zhang 等 · PubMed Central 收录版",
+      "by-nc-nd",
+      {
+        "width": 3446,
+        "height": 4717,
+        "doi": "10.1016/j.jacasi.2026.05.019",
+        "published": "2026-07-02",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374726003583-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Race and Ethnicity in Cardiovascular Disease Risk Prediction for Multiethnic Populations: Insights From Global Guidelines.",
+      "心血管|人群研究",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2025.10.027",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13491071.1/ga1.webp",
+      "Ching 等 · PubMed Central 收录版",
+      "by",
+      {
+        "width": 3446,
+        "height": 2441,
+        "doi": "10.1016/j.jacasi.2025.10.027",
+        "published": "2026-07-01",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S277237472500657X-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Multimorbidity Status Worsening and Clinical Outcomes of Patients With Atrial Fibrillation.",
+      "老龄化|心血管",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2026.05.016",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13554776.1/ga1.webp",
+      "Pumprueg 等 · PubMed Central 收录版",
+      "by-nc-nd",
+      {
+        "width": 3446,
+        "height": 3087,
+        "doi": "10.1016/j.jacasi.2026.05.016",
+        "published": "2026-07-01",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374726003558-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Low-Density Lipoprotein Cholesterol Goal Attainment in Indian Patients With Coronary Artery Disease: A Nationwide Study.",
+      "心血管",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2026.04.020",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13491081.1/ga1.webp",
+      "Puri 等 · PubMed Central 收录版",
+      "by-nc-nd",
+      {
+        "width": 3446,
+        "height": 2817,
+        "doi": "10.1016/j.jacasi.2026.04.020",
+        "published": "2026-06-29",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374726003145-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Cardiorespiratory Fitness Reference Standards and Prognostic Stratification in Chinese Patients With Cardiovascular Disease.",
+      "心血管|人群研究",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2026.05.008",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13491062.1/ga1.webp",
+      "Cui 等 · PubMed Central 收录版",
+      "by-nc-nd",
+      {
+        "width": 3446,
+        "height": 3534,
+        "doi": "10.1016/j.jacasi.2026.05.008",
+        "published": "2026-06-25",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374726003455-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Hemodynamic Responses to Exercise and Predictors of Exercise Capacity in Mitral Stenosis: Exercise Catheterization Study.",
+      "心血管",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2026.04.040",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13458926.1/ga1.jpg",
+      "Kim 等 · PubMed Central 收录版",
+      "by",
+      {
+        "width": 3446,
+        "height": 2158,
+        "doi": "10.1016/j.jacasi.2026.04.040",
+        "published": "2026-06-25",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374726003376-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Multicenter Experience of Aortic Valve Leaflet Modification in TAVR: From the Asia-Pacific Electrosurgery Working Group.",
+      "心血管",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2026.04.017",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13350379.1/ga1.jpg",
+      "Wong 等 · PubMed Central 收录版",
+      "by",
+      {
+        "width": 3446,
+        "height": 2281,
+        "doi": "10.1016/j.jacasi.2026.04.017",
+        "published": "2026-06-24",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374726002747-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Understanding Outcomes in Hemodialysis Patients Who Underwent Transcatheter Aortic Valve Replacement With the Latest Devices.",
+      "心血管|人群研究",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2026.04.032",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13458928.1/ga1.jpg",
+      "Iwata 等 · PubMed Central 收录版",
+      "by",
+      {
+        "width": 3446,
+        "height": 2548,
+        "doi": "10.1016/j.jacasi.2026.04.032",
+        "published": "2026-06-17",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374726003273-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Cardiac Rehabilitation Improves Outcomes After Thoracic Aortic Aneurysm Repair.",
+      "心血管|人群研究",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2026.04.018",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13554771.1/ga1.webp",
+      "Yamazaki 等 · PubMed Central 收录版",
+      "by-nc-nd",
+      {
+        "width": 3446,
+        "height": 2141,
+        "doi": "10.1016/j.jacasi.2026.04.018",
+        "published": "2026-06-12",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374726002759-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Clopidogrel Vs Aspirin Monotherapy for Secondary Prevention After Percutaneous Coronary Intervention: A Nationwide Cohort Study.",
+      "心血管|人群研究",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2026.03.041",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13458962.1/ga1.jpg",
+      "Cho 等 · PubMed Central 收录版",
+      "by-nc-nd",
+      {
+        "width": 3446,
+        "height": 2980,
+        "doi": "10.1016/j.jacasi.2026.03.041",
+        "published": "2026-06-12",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374726002760-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Novel Transcatheter Edge-to-Edge Repair System for Degenerative Mitral Regurgitation: 1-Year Outcomes.",
+      "心血管",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2026.04.013",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13554755.1/ga1.webp",
+      "Zhu 等 · PubMed Central 收录版",
+      "by",
+      {
+        "width": 3446,
+        "height": 4242,
+        "doi": "10.1016/j.jacasi.2026.04.013",
+        "published": "2026-06-12",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S277237472600270X-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Right Ventricular-to-Pulmonary Artery Uncoupling Following Transcatheter Edge-to-Edge Repair in Ventricular Functional Mitral Regurgitation.",
+      "心血管",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2026.03.040",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13554777.1/ga1.webp",
+      "Miyahara 等 · PubMed Central 收录版",
+      "by",
+      {
+        "width": 3446,
+        "height": 2605,
+        "doi": "10.1016/j.jacasi.2026.03.040",
+        "published": "2026-06-05",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374726002620-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "7-Year Outcomes of Balloon-Expandable Versus Self-Expanding Valves in Women Undergoing Transcatheter Aortic Valve Replacement.",
+      "心血管",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2026.03.022",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13458811.1/ga1.jpg",
+      "Iwata 等 · PubMed Central 收录版",
+      "by-nc-nd",
+      {
+        "width": 3446,
+        "height": 3505,
+        "doi": "10.1016/j.jacasi.2026.03.022",
+        "published": "2026-05-30",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S277237472600181X-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "Clinical Infectious Diseases",
+      2026,
+      "Early Discontinuation of Empiric Antibiotics in Pediatric Haploidentical Hematopoietic Cell Transplant Recipients With Febrile Neutropenia.",
+      "生命历程",
+      "",
+      "https://doi.org/10.1093/cid/ciag327",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13671421.2/ciag327_ga.webp",
+      "Castejon-Ramirez 等 · PubMed Central 收录版",
+      "by-nc-nd",
+      {
+        "width": 1599,
+        "height": 809,
+        "doi": "10.1093/cid/ciag327",
+        "published": "2026-05-26"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Postprocedural Anticoagulation After Primary Percutaneous Coronary Intervention: 1-Year Results From the RIGHT Trial and Meta-analyses.",
+      "心血管",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2026.04.003",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13350653.1/ga1.jpg",
+      "Yan 等 · PubMed Central 收录版",
+      "by",
+      {
+        "width": 3446,
+        "height": 2604,
+        "doi": "10.1016/j.jacasi.2026.04.003",
+        "published": "2026-05-22",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374726002516-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Vutrisiran in East Asian Patients With Transthyretin Amyloidosis With Cardiomyopathy: Post-Hoc Analysis of HELIOS-B.",
+      "心血管",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2026.03.031",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13458925.1/ga1.jpg",
+      "Endo 等 · PubMed Central 收录版",
+      "by-nc-nd",
+      {
+        "width": 3446,
+        "height": 3802,
+        "doi": "10.1016/j.jacasi.2026.03.031",
+        "published": "2026-05-21",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374726001924-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Association Between Serum Atherogenic Index and Cardiovascular Disease in Early Adulthood: A Cohort Study.",
+      "心血管|人群研究",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2026.03.036",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13491096.1/ga1.webp",
+      "He 等 · PubMed Central 收录版",
+      "by-nc-nd",
+      {
+        "width": 3446,
+        "height": 4442,
+        "doi": "10.1016/j.jacasi.2026.03.036",
+        "published": "2026-05-21",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374726002474-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Impact of Angiography-Derived Physiological Patterns of CAD and Optimal Hemodynamics Post-PCI on Residual Angina.",
+      "心血管",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2026.03.023",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13350794.1/ga1.jpg",
+      "Miyashita 等 · PubMed Central 收录版",
+      "by",
+      {
+        "width": 3446,
+        "height": 4039,
+        "doi": "10.1016/j.jacasi.2026.03.023",
+        "published": "2026-05-16",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374726001821-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Defecation Patterns and Cardiovascular Outcomes in Acute Coronary Syndrome: The Influence of Stimulant Laxative Use.",
+      "心血管",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2026.01.035",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13350099.1/ga1.jpg",
+      "Matsuzawa 等 · PubMed Central 收录版",
+      "by",
+      {
+        "width": 3446,
+        "height": 3543,
+        "doi": "10.1016/j.jacasi.2026.01.035",
+        "published": "2026-05-16",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S277237472600116X-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "Clinical Infectious Diseases",
+      2026,
+      "Health-Related Quality of Life in Well-treated People With HIV and Comparators Over an 8-year Period: A Longitudinal Analysis From the Prospective AGEhIV Cohort Study.",
+      "人群研究",
+      "",
+      "https://doi.org/10.1093/cid/ciag281",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13537125.1/ciag281_ga.webp",
+      "Moody 等 · PubMed Central 收录版",
+      "by",
+      {
+        "width": 1599,
+        "height": 809,
+        "doi": "10.1093/cid/ciag281",
+        "published": "2026-05-14"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Diagnostic Accuracy of Artificial Intelligence-Enhanced Ultrasonic Flow Ratio for On-Site Assessment of Coronary Stenosis.",
+      "心血管",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2026.04.011",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13700036.1/ga1.webp",
+      "Liu 等 · PubMed Central 收录版",
+      "by-nc-nd",
+      {
+        "width": 3446,
+        "height": 4320,
+        "doi": "10.1016/j.jacasi.2026.04.011",
+        "published": "2026-05-11",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374726002681-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Long-Term Survival of Balloon Pulmonary Angioplasty for Inoperable Chronic Thromboembolic Pulmonary Hypertension: A Multicenter Study.",
+      "人群研究",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2026.03.029",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13458813.1/ga1.jpg",
+      "Zhou 等 · PubMed Central 收录版",
+      "by-nc-nd",
+      {
+        "width": 3446,
+        "height": 2437,
+        "doi": "10.1016/j.jacasi.2026.03.029",
+        "published": "2026-05-06",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374726001882-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Incremental Impact of Standard Modifiable Cardiovascular Risk Factors on Long-Term Outcomes After Acute Myocardial Infarction.",
+      "心血管",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2026.03.030",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13350681.1/ga1.jpg",
+      "Okita 等 · PubMed Central 收录版",
+      "by",
+      {
+        "width": 3446,
+        "height": 2473,
+        "doi": "10.1016/j.jacasi.2026.03.030",
+        "published": "2026-05-06",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374726001900-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Cardio-Kidney-Metabolic Phenotypes and Adverse Clinical Outcomes in Patients With Atrial Fibrillation.",
+      "心血管|人群研究",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2026.02.017",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13153914.1/ga1.jpg",
+      "Hsu 等 · PubMed Central 收录版",
+      "by-nc-nd",
+      {
+        "width": 3446,
+        "height": 2281,
+        "doi": "10.1016/j.jacasi.2026.02.017",
+        "published": "2026-05-05",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374726001158-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Development of a Noninvasive Prediction Score for Post-Capillary Pulmonary Hypertension in a Multi-Ethnic Asian Population.",
+      "人群研究",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2026.03.012",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13153881.1/ga1.jpg",
+      "Jiang 等 · PubMed Central 收录版",
+      "by",
+      {
+        "width": 3446,
+        "height": 3012,
+        "doi": "10.1016/j.jacasi.2026.03.012",
+        "published": "2026-05-05",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374726001717-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Persistent Atrial Fibrillation With Conduction System Pacing or Pulmonary Vein Isolation: A Prospective Cohort Study.",
+      "心血管|人群研究",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2026.01.036",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13153886.1/ga1.jpg",
+      "Wu 等 · PubMed Central 收录版",
+      "by-nc-nd",
+      {
+        "width": 3446,
+        "height": 3727,
+        "doi": "10.1016/j.jacasi.2026.01.036",
+        "published": "2026-05-05",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374726001572-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Long-Term Impact of Clinical Obesity on Heart Failure Development and Prognosis: New Insights.",
+      "心血管|人群研究",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2026.01.031",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13350098.1/ga1.jpg",
+      "Liu 等 · PubMed Central 收录版",
+      "by",
+      {
+        "width": 3446,
+        "height": 2366,
+        "doi": "10.1016/j.jacasi.2026.01.031",
+        "published": "2026-05-02",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374726001080-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Patient Characteristics and Diagnosis of Transthyretin Amyloid Cardiomyopathy in Japan: Baseline Analysis of J-COSSA.",
+      "人群研究",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2026.03.007",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13458800.1/ga1.jpg",
+      "Endo 等 · PubMed Central 收录版",
+      "by-nc-nd",
+      {
+        "width": 3446,
+        "height": 2196,
+        "doi": "10.1016/j.jacasi.2026.03.007",
+        "published": "2026-04-25",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374726001626-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "OCT-Guided PCI According to Lesion Length and Vessel Diameter: Post Hoc Analysis of OCCUPI Trial.",
+      "心血管",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2026.02.023",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13350392.1/ga1.jpg",
+      "Roh 等 · PubMed Central 收录版",
+      "by-nc-nd",
+      {
+        "width": 3446,
+        "height": 2758,
+        "doi": "10.1016/j.jacasi.2026.02.023",
+        "published": "2026-04-18",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374726001584-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Design of MOSAAIC (Multi-Ethnic Observational Study in American Asian and Pacific Islander Communities).",
+      "心血管|人群研究",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2026.02.027",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13491069.1/ga1.webp",
+      "Ahn 等 · PubMed Central 收录版",
+      "by-nc-nd",
+      {
+        "width": 3446,
+        "height": 2168,
+        "doi": "10.1016/j.jacasi.2026.02.027",
+        "published": "2026-04-17",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374726001687-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Association Between Complete Right Bundle Branch Block and Vascular Endothelial Function.",
+      "心血管",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2026.02.016",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13350101.1/ga1.jpg",
+      "Mizobuchi 等 · PubMed Central 收录版",
+      "by",
+      {
+        "width": 3446,
+        "height": 2623,
+        "doi": "10.1016/j.jacasi.2026.02.016",
+        "published": "2026-04-11",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374726001134-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Prediction of Paroxysmal Atrial Fibrillation With Incorporating Genomic Information Into AI-Based ECG Analysis.",
+      "组学",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2025.10.009",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13700029.1/ga1.webp",
+      "Ihara 等 · PubMed Central 收录版",
+      "by-nc-nd",
+      {
+        "width": 3446,
+        "height": 3276,
+        "doi": "10.1016/j.jacasi.2025.10.009",
+        "published": "2026-04-09",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374725005873-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "Clinical Infectious Diseases",
+      2026,
+      "Empirical Antibiotic Activity and Outcomes in Pediatric Gram-negative Bloodstream Infections: A Rank-based Composite Outcome Analysis.",
+      "人群研究",
+      "",
+      "https://doi.org/10.1093/cid/ciag234",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13537164.1/ciag234_ga.webp",
+      "Wen 等 · PubMed Central 收录版",
+      "by",
+      {
+        "width": 1599,
+        "height": 809,
+        "doi": "10.1093/cid/ciag234",
+        "published": "2026-04-09"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Prognostic Value of Left Ventricular Kinetic Energy for Predicting Major Adverse Events in Hypertrophic Cardiomyopathy.",
+      "心血管",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2025.10.013",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13080750.1/ga1.jpg",
+      "Hu 等 · PubMed Central 收录版",
+      "by-nc-nd",
+      {
+        "width": 3446,
+        "height": 4205,
+        "doi": "10.1016/j.jacasi.2025.10.013",
+        "published": "2026-04-07",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374725005927-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Transcatheter Aortic Valve Replacement in Functionally Dependent Patients: Analysis Using a Government-Adjudicated Long-Term Care Certification.",
+      "老龄化|心血管",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2026.01.032",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13244107.1/ga1.jpg",
+      "Harashima 等 · PubMed Central 收录版",
+      "by-nc-nd",
+      {
+        "width": 3446,
+        "height": 2508,
+        "doi": "10.1016/j.jacasi.2026.01.032",
+        "published": "2026-04-01",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374726001092-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Comparison of Clinical Outcomes Between Incomplete and Complete Revascularization in NSTEMI Patients With Multivessel Disease.",
+      "心血管",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2026.01.029",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13153890.1/ga1.jpg",
+      "Kim 等 · PubMed Central 收录版",
+      "by-nc-nd",
+      {
+        "width": 3446,
+        "height": 3619,
+        "doi": "10.1016/j.jacasi.2026.01.029",
+        "published": "2026-04-01",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374726000979-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Prognostic Value of Murray's Law-Based Quantitative Flow Ratio in Multi-Arterial Coronary Artery Bypass Grafting.",
+      "心血管",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2026.01.033",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13153873.1/ga1.jpg",
+      "Qi 等 · PubMed Central 收录版",
+      "by-nc-nd",
+      {
+        "width": 3446,
+        "height": 4881,
+        "doi": "10.1016/j.jacasi.2026.01.033",
+        "published": "2026-04-01",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374726001109-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Design and Rationale of GPS-CAD: Global Pretest Probability Study of Coronary Artery Disease.",
+      "心血管",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2025.11.016",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13700019.1/ga1.webp",
+      "Baskaran 等 · PubMed Central 收录版",
+      "by-nc-nd",
+      {
+        "width": 3446,
+        "height": 4138,
+        "doi": "10.1016/j.jacasi.2025.11.016",
+        "published": "2026-03-28",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374725006957-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Postoperative New-Onset Heart Block in Noncardiac Surgery: Model Development, Validation, and Long-Term Prognostic Analysis.",
+      "人群研究",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2026.01.018",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13153885.1/ga1.jpg",
+      "Zhang 等 · PubMed Central 收录版",
+      "by",
+      {
+        "width": 3446,
+        "height": 2111,
+        "doi": "10.1016/j.jacasi.2026.01.018",
+        "published": "2026-03-20",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374726000785-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Myocardial Infarction Without Standard Modifiable Risk Factors From 2025-2040: Forecast Analysis of Multinational, Population-Based Study.",
+      "人群研究",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2026.01.027",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13244099.1/ga1.jpg",
+      "Cao 等 · PubMed Central 收录版",
+      "by",
+      {
+        "width": 3446,
+        "height": 4146,
+        "doi": "10.1016/j.jacasi.2026.01.027",
+        "published": "2026-03-20",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374726000943-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "The Associations Between Heart Rate, Deformational Echocardiographic Parameters, and Outcomes in Patients With Atrial Fibrillation.",
+      "心血管",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2026.01.015",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13153893.1/ga1.jpg",
+      "Liao 等 · PubMed Central 收录版",
+      "by-nc-nd",
+      {
+        "width": 3446,
+        "height": 3297,
+        "doi": "10.1016/j.jacasi.2026.01.015",
+        "published": "2026-03-14",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374726000530-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Ten-Year Clinical Outcomes and Valve Durability After Transcatheter Aortic Valve Implantation With Balloon-Expandable Valves.",
+      "老龄化",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2026.02.003",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13554770.1/ga1.webp",
+      "Ikuta 等 · PubMed Central 收录版",
+      "by",
+      {
+        "width": 3446,
+        "height": 2504,
+        "doi": "10.1016/j.jacasi.2026.02.003",
+        "published": "2026-03-14",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S277237472600089X-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Association Between Cardiovascular-Kidney-Metabolic Syndrome and Myocardial Injury After Noncardiac Surgery: A Retrospective Cohort Study.",
+      "心血管|人群研究",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2026.01.023",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13244111.1/ga1.jpg",
+      "Liao 等 · PubMed Central 收录版",
+      "by",
+      {
+        "width": 3446,
+        "height": 2935,
+        "doi": "10.1016/j.jacasi.2026.01.023",
+        "published": "2026-03-14",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374726000839-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Chinese Population-Wide Lipid Trajectories From Age 20 to 85 Years: Sex- and Adiposity-Specific Patterns.",
+      "生命历程|心血管|人群研究",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2026.01.013",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13491077.1/ga1.webp",
+      "Zhang 等 · PubMed Central 收录版",
+      "by-nc-nd",
+      {
+        "width": 3446,
+        "height": 4565,
+        "doi": "10.1016/j.jacasi.2026.01.013",
+        "published": "2026-03-06",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374726000499-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "CRP Cutoff Value in East Asians With Coronary Heart Disease: A Systematic Review and Meta-Analysis.",
+      "心血管",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2026.01.005",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13153915.1/ga1.jpg",
+      "Xiong 等 · PubMed Central 收录版",
+      "by-nc-nd",
+      {
+        "width": 3446,
+        "height": 2746,
+        "doi": "10.1016/j.jacasi.2026.01.005",
+        "published": "2026-03-06",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374726000402-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Suitability for Transcarotid Transcatheter Aortic Valve Replacement in the Japanese Population.",
+      "心血管",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2025.10.018",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC12959277.1/ga1.jpg",
+      "Nakashima 等 · PubMed Central 收录版",
+      "by",
+      {
+        "width": 3446,
+        "height": 2287,
+        "doi": "10.1016/j.jacasi.2025.10.018",
+        "published": "2026-03-03",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374725005976-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Medication Adherence and Antithrombotic Therapy Outcomes: Insights From a Post Hoc Analysis of the AFIRE Trial.",
+      "心血管",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2025.11.018",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC12959300.1/ga1.jpg",
+      "Chiba 等 · PubMed Central 收录版",
+      "by-nc-nd",
+      {
+        "width": 3446,
+        "height": 3657,
+        "doi": "10.1016/j.jacasi.2025.11.018",
+        "published": "2026-03-03",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374725007045-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Asia at the Epicenter of the Global Cardiometabolic Shift.",
+      "环境健康|心血管|人群研究",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2026.01.001",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC12959306.1/ga1.jpg",
+      "Khanna 等 · PubMed Central 收录版",
+      "by",
+      {
+        "width": 3446,
+        "height": 2935,
+        "doi": "10.1016/j.jacasi.2026.01.001",
+        "published": "2026-03-03",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374726000311-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Sex-Based Differences in Clinical Outcomes With Edoxaban Therapy: A Prespecified Analysis of the EPIC-CAD Trial.",
+      "心血管",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2025.12.022",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13153895.1/ga1.jpg",
+      "Kim 等 · PubMed Central 收录版",
+      "by",
+      {
+        "width": 3446,
+        "height": 3410,
+        "doi": "10.1016/j.jacasi.2025.12.022",
+        "published": "2026-02-28",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374726000475-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Comparison of Flow Ratio Derived From IVUS With CAG in Complex Lesions: Correlation With FFR.",
+      "心血管",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2025.12.019",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13153880.1/ga1.jpg",
+      "Xu 等 · PubMed Central 收录版",
+      "by-nc-nd",
+      {
+        "width": 3446,
+        "height": 3844,
+        "doi": "10.1016/j.jacasi.2025.12.019",
+        "published": "2026-02-28",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374726000359-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Artificial Intelligence and Digital Innovation in Cardiovascular Medicine.",
+      "心血管|人群研究",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2025.12.010",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13700039.1/ga1.webp",
+      "Suzuki 等 · PubMed Central 收录版",
+      "by-nc-nd",
+      {
+        "width": 3446,
+        "height": 2289,
+        "doi": "10.1016/j.jacasi.2025.12.010",
+        "published": "2026-02-26",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374725007100-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "Clinical Infectious Diseases",
+      2026,
+      "Respiratory Syncytial Virus Hospitalizations in Adults ≥50 Years of Age and Those With Congestive Heart Failure or Chronic Obstructive Pulmonary Disease Exacerbations, 2018-2020.",
+      "心血管|人群研究",
+      "",
+      "https://doi.org/10.1093/cid/ciag134",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13537122.1/ciag134_ga.webp",
+      "Tippett 等 · PubMed Central 收录版",
+      "by-nc-nd",
+      {
+        "width": 1600,
+        "height": 866,
+        "doi": "10.1093/cid/ciag134",
+        "published": "2026-02-24"
+      }
+    ],
+    [
+      "abstract",
+      "GeroScience",
+      2026,
+      "Whole blood transcriptional signatures of age and survival identified in long life family and integrative longevity omics studies.",
+      "组学|老龄化",
+      "",
+      "https://doi.org/10.1007/s11357-025-02090-x",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13638853.1/11357_2025_2090_Figa_HTML.webp",
+      "Li 等 · PubMed Central 收录版",
+      "by",
+      {
+        "width": 1600,
+        "height": 803,
+        "doi": "10.1007/s11357-025-02090-x",
+        "published": "2026-02-21"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Validation and Recalibration of PCE, China-PAR, and PREVENT Models for Estimating ASCVD Risk in China.",
+      "心血管|人群研究",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2025.12.015",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13153916.1/ga1.jpg",
+      "Li 等 · PubMed Central 收录版",
+      "by",
+      {
+        "width": 3446,
+        "height": 3526,
+        "doi": "10.1016/j.jacasi.2025.12.015",
+        "published": "2026-02-20",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374726000281-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Family History and ASCVD Risk Among Different Age Groups: Cohort Study in China and the United Kingdom.",
+      "心血管|人群研究",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2025.10.031",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13491090.1/ga1.webp",
+      "Yuan 等 · PubMed Central 收录版",
+      "by",
+      {
+        "width": 3446,
+        "height": 3452,
+        "doi": "10.1016/j.jacasi.2025.10.031",
+        "published": "2026-02-20",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374725006908-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Design of IKISS-LM Randomized Controlled Trial: Impact of Kissing Balloon Inflation on Provisional Left-Main Bifurcation PCI.",
+      "心血管",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2025.12.017",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13244100.1/ga1.jpg",
+      "Gupta 等 · PubMed Central 收录版",
+      "by-nc-nd",
+      {
+        "width": 3446,
+        "height": 2770,
+        "doi": "10.1016/j.jacasi.2025.12.017",
+        "published": "2026-02-14",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S277237472600030X-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Temporal Trends in Age Profile and Safety of Balloon Pulmonary Angioplasty for CTEPH.",
+      "心血管",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2025.12.016",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13080740.1/ga1.jpg",
+      "Takano 等 · PubMed Central 收录版",
+      "by-nc-nd",
+      {
+        "width": 3446,
+        "height": 3531,
+        "doi": "10.1016/j.jacasi.2025.12.016",
+        "published": "2026-02-07",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374726000293-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "GeroScience",
+      2026,
+      "Extracellular exosome signature links hypertension and Alzheimer's disease.",
+      "组学",
+      "",
+      "https://doi.org/10.1007/s11357-026-02097-y",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13638816.1/11357_2026_2097_Figa_HTML.webp",
+      "Bastrup 等 · PubMed Central 收录版",
+      "by",
+      {
+        "width": 1394,
+        "height": 1190,
+        "doi": "10.1007/s11357-026-02097-y",
+        "published": "2026-02-04"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Biological Age Acceleration and All-Cause Mortality in Moderate to Severe Aortic Valve Stenosis: A Prospective Cohort Study.",
+      "老龄化|人群研究",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2025.11.019",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13080748.1/ga1.jpg",
+      "Zheng 等 · PubMed Central 收录版",
+      "by-nc-nd",
+      {
+        "width": 3446,
+        "height": 3741,
+        "doi": "10.1016/j.jacasi.2025.11.019",
+        "published": "2026-01-31",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374725007069-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Procedural Pattern, Clinical Outcomes, and Cost Analysis of Transcatheter Aortic Valve Replacement in Korea.",
+      "心血管",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2025.11.020",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13244113.1/ga1.jpg",
+      "Lee 等 · PubMed Central 收录版",
+      "by-nc-nd",
+      {
+        "width": 3446,
+        "height": 1625,
+        "doi": "10.1016/j.jacasi.2025.11.020",
+        "published": "2026-01-31",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374725007082-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Early Safety and Feasibility Study of a Novel Transcatheter Aortic Valve With Polymeric Leaflets.",
+      "心血管",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2025.10.032",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13080745.1/ga1.jpg",
+      "Zhang 等 · PubMed Central 收录版",
+      "by-nc-nd",
+      {
+        "width": 3446,
+        "height": 2378,
+        "doi": "10.1016/j.jacasi.2025.10.032",
+        "published": "2026-01-31",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374725006994-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Profiles of Comprehensive Morphological Phenotypes and Outcomes in Functional Mitral Regurgitation.",
+      "心血管",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2025.11.014",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13080753.1/ga1.jpg",
+      "Lien 等 · PubMed Central 收录版",
+      "by",
+      {
+        "width": 3446,
+        "height": 3534,
+        "doi": "10.1016/j.jacasi.2025.11.014",
+        "published": "2026-01-21",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374725006921-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Sleep Patterns and Blood Pressure Among Chinese Adults in Different Ethnic Groups Across Varied Altitudes.",
+      "人群研究",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2025.08.019",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC12904830.1/ga1.jpg",
+      "Yang 等 · PubMed Central 收录版",
+      "by-nc-nd",
+      {
+        "width": 3446,
+        "height": 3974,
+        "doi": "10.1016/j.jacasi.2025.08.019",
+        "published": "2026-01-20",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374725004648-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "GeroScience",
+      2026,
+      "Metacontrol-related aperiodic and periodic neural activity in cognitive aging: enhancing the neural signal-to-noise ratio through anodal transcranial direct current stimulation.",
+      "老龄化",
+      "",
+      "https://doi.org/10.1007/s11357-025-02077-8",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13638896.1/11357_2025_2077_Figa_HTML.webp",
+      "Pi 等 · PubMed Central 收录版",
+      "by",
+      {
+        "width": 1600,
+        "height": 1111,
+        "doi": "10.1007/s11357-025-02077-8",
+        "published": "2026-01-16"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Left Atrial Strain Outperforms Ventricular Strains in Cardiovascular Outcome Association Across Echocardiography and Magnetic Resonance.",
+      "心血管",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2025.11.013",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13080744.1/ga1.jpg",
+      "Chiang 等 · PubMed Central 收录版",
+      "by",
+      {
+        "width": 3446,
+        "height": 3724,
+        "doi": "10.1016/j.jacasi.2025.11.013",
+        "published": "2026-01-10",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S277237472500691X-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Holistic Lifestyle Framework to Longitudinally Evaluate Cardiovascular Disparities and Post-Diagnosis Changes Among Older Thai Adults.",
+      "老龄化|心血管|人群研究",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2025.10.022",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13491091.1/ga1.webp",
+      "Ali 等 · PubMed Central 收录版",
+      "by-nc",
+      {
+        "width": 3446,
+        "height": 4771,
+        "doi": "10.1016/j.jacasi.2025.10.022",
+        "published": "2026-01-09",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374725006416-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2026,
+      "Transcatheter Electrosurgery in the Asia-Pacific: Implementation and Innovations.",
+      "心血管",
+      "",
+      "https://doi.org/10.1016/j.jacasi.2025.10.025",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC12833607.1/ga1.jpg",
+      "Wong 等 · PubMed Central 收录版",
+      "by",
+      {
+        "width": 3446,
+        "height": 2776,
+        "doi": "10.1016/j.jacasi.2025.10.025",
+        "published": "2026-01-06",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2772374725006519-ga1_lrg.jpg"
+      }
+    ],
+    [
+      "abstract",
+      "GeroScience",
+      2026,
+      "Heart failure with preserved ejection fraction shows no excess mortality in older patients: a population-matched relative survival analysis.",
+      "心血管|人群研究",
+      "",
+      "https://doi.org/10.1007/s11357-025-02063-0",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13638804.1/11357_2025_2063_Figa_HTML.webp",
+      "de Terwangne 等 · PubMed Central 收录版",
+      "by",
+      {
+        "width": 1600,
+        "height": 1625,
+        "doi": "10.1007/s11357-025-02063-0",
+        "published": "2026-01-06"
+      }
+    ],
+    [
+      "abstract",
+      "GeroScience",
+      2026,
+      "Skeletal muscle metabolomic markers underlying the enhanced exercise-induced hypertrophy response to resistance training in older adults.",
+      "组学|老龄化",
+      "",
+      "https://doi.org/10.1007/s11357-025-02074-x",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13638854.1/11357_2025_2074_Figa_HTML.webp",
+      "Lim 等 · PubMed Central 收录版",
+      "by",
+      {
+        "width": 1600,
+        "height": 700,
+        "doi": "10.1007/s11357-025-02074-x",
+        "published": "2026-01-05"
+      }
+    ]
+  ]
+}
