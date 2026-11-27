@@ -76,11 +76,28 @@ jobs:
         env:
           REVIEW_DOIS: ${{ inputs.review_dois }}
           REPORT_RUN: ${{ inputs.report_run }}
+          PUBLISH_REPORT: ${{ inputs.publish }}
         run: |
           archive="data/history-2026-11-27.json"
           report="$archive"
           if [[ -n "$REPORT_RUN" ]]; then report="$RUNNER_TEMP/gallery-history/scan-result.json"; fi
           python3 tools/promote_history.py --report "$report" --selection "$REVIEW_DOIS"
+          if [[ -n "$REPORT_RUN" && "$PUBLISH_REPORT" == 'true' ]]; then
+            SCAN_REPORT="$report" python3 - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          path = Path('data/history-supplement-2026-11-27.json')
+          supplement = json.loads(path.read_text(encoding='utf-8'))
+          report = json.loads(Path(os.environ['SCAN_REPORT']).read_text(encoding='utf-8'))
+          results = {row['name']: row for row in supplement['results']}
+          results.update({row['name']: row for row in report['results'] if not row['errors']})
+          candidates = {row[10]['doi'].casefold(): row for row in supplement['items'] + report['items']}
+          supplement.update(results=list(results.values()), items=list(candidates.values()), candidates=len(candidates))
+          path.write_text(json.dumps(supplement, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+          PY
+          fi
       - name: Store scan report
         if: always()
         uses: actions/upload-artifact@v4
