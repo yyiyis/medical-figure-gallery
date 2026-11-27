@@ -4,7 +4,7 @@ on:
     - cron: "20 1 * * 1"
   push:
     branches: [main]
-    paths: [index.html, .github/workflows/figure-gallery.yml, assets/gallery-search.js, assets/gallery-style.css, tools/update_site.py]
+    paths: [index.html, .github/workflows/figure-gallery.yml, assets/gallery-search.js, assets/gallery-style.css, tools/update_site.py, tools/promote_history.py]
   workflow_dispatch:
     inputs:
       mode:
@@ -105,6 +105,9 @@ jobs:
         run: |
           cp "$RUNNER_TEMP/gallery-supplement/supplement-2026.json" data/history-supplement-2026-11-27.json
           python3 tools/promote_history.py
+      - name: Add new individually reviewed images
+        if: github.event_name == 'push' && steps.supplement.outputs.needed != 'true'
+        run: python3 tools/promote_history.py --if-new
       - name: Validate embedded gallery data
         if: github.event_name == 'schedule' || github.event_name == 'push' || inputs.publish || inputs.mode == 'deploy'
         run: |
