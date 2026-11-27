@@ -2,6 +2,7 @@
 from pathlib import Path
 import json
 import re
+from preview_gallery import improve_previews
 
 root = Path(__file__).resolve().parent.parent
 page = root / 'index.html'
@@ -152,4 +153,5 @@ old_innovation = 'https://data.the-innovation.org//innovation-data/medicine/2026
 if old_innovation in document:
     replace_once(old_innovation, old_innovation.replace('.org//', '.org/'))
 
+document = improve_previews(document, root)
 page.write_text(document, encoding='utf-8')
