@@ -2,345 +2,250 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="医学期刊封面、图文摘要和正文组图。按期刊和作图用途查找可追溯的参考。">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="医学期刊的封面、图文摘要和正文组图。查看原图、作图思路及出处。">
 <title>医学期刊图集</title>
 <style>
-:root{color-scheme:light;--paper:#f5f4ef;--white:#fffefb;--ink:#182820;--muted:#4d6056;--line:#d8dfd5;--green:#175447;--forest:#173a31;--highlight:#e5eddf;font-family:system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.6}
-*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink)}a{color:var(--green);text-decoration-thickness:.075em;text-underline-offset:.22em}a:hover{text-decoration-thickness:.13em}button,input,select{font:inherit}button,select{cursor:pointer}:focus-visible{outline:3px solid #a55930;outline-offset:3px}.wrap{max-width:1200px;margin:0 auto;padding-inline:clamp(18px,5vw,54px)}
-header{background:var(--forest);color:#fffdf5;border-bottom:4px solid #a9c19c}.hero{padding-block:clamp(34px,6vw,70px);position:relative}.hero h1{font-family:"Songti SC","Noto Serif CJK SC",serif;font-size:clamp(2.4rem,5.7vw,4.2rem);line-height:1.15;letter-spacing:.04em;font-weight:750;margin:0}.hero p{max-width:43em;margin:16px 0 0;color:#e2eee4;font-size:clamp(1rem,1.6vw,1.15rem)}
-main{padding-block:27px 40px}.controls{display:grid;gap:16px;margin-bottom:12px}.tabs,.filters{display:flex;align-items:center;flex-wrap:wrap;gap:9px}.tab,#reset{border:1px solid #a7b6ab;background:transparent;color:#284436;border-radius:100px;padding:.49rem .89rem;white-space:nowrap}.tab[aria-pressed=true]{background:var(--green);border-color:var(--green);color:#fff}.tab:hover:not([aria-pressed=true]),#reset:hover{background:var(--highlight)}.filters{gap:10px 14px}.field{display:flex;align-items:center;gap:8px}.field span,.check{font-size:.9rem;font-weight:650;color:#354d40}.field input,.field select{background:var(--white);border:1px solid #a7b6ab;color:var(--ink);border-radius:8px;padding:.52rem .7rem;min-width:0}.field input{width:min(20rem,60vw)}.field select{max-width:min(21rem,64vw)}.check{display:flex;align-items:center;gap:7px;cursor:pointer}.check input{accent-color:var(--green);width:17px;height:17px}#reset{font-size:.875rem}.count{margin:12px 0 15px;color:var(--muted);font-size:.88rem}
-.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;align-items:stretch}.card{background:var(--white);overflow:hidden;border:1px solid var(--line);border-radius:13px;display:flex;flex-direction:column}.cover{--tile:#e5e9db;--line-accent:#799265}.abstract{--tile:#eeebf4;--line-accent:#88779f}.figures{--tile:#e3edf0;--line-accent:#5f8993}.media{height:148px;display:flex;align-items:center;justify-content:center;color:#263d32;font-size:.92rem;font-weight:650;text-align:center;background:var(--tile);border-bottom:1px solid var(--line);border-top:3px solid var(--line-accent)}.media.pictured{background:#fefdf9;padding:9px;height:148px}.media img{display:block;width:100%;height:100%;object-fit:contain}.card-content{padding:14px 16px 16px;display:flex;flex-direction:column;flex:1}.meta{color:#496352;margin:0 0 7px;font-weight:650;font-size:.82rem}.card h2{font-size:1.15rem;line-height:1.4;margin:0 0 9px}.note{font-size:1rem;line-height:1.62;margin:0 0 11px;color:#34483d}.tags{display:flex;flex-wrap:wrap;gap:5px;list-style:none;margin:0 0 14px;padding:0}.tags li{padding:1px 7px;font-size:.78rem;background:#edf0e9;border-radius:5px;color:#395245}.source{border-top:1px solid #e0e6db;margin-top:auto;padding-top:10px;font-size:.9rem}.credit{font-size:.78rem;color:var(--muted);margin-top:5px;line-height:1.5}.empty{grid-column:1/-1;padding:25px 12px;color:var(--muted)}footer{border-top:1px solid var(--line);padding:17px 0 26px;color:#41574a}footer p{margin:0;font-size:.9rem}
-@media(max-width:900px){.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:580px){.gallery{grid-template-columns:1fr;gap:13px}.filters .field{width:100%}.field input,.field select{flex:1;width:auto;max-width:none}.hero p{margin-top:11px}.tab{padding:.4rem .7rem}.media,.media.pictured{height:155px}}
+  :root {color-scheme:light; --paper:#f6f7f2; --ink:#171f1b; --muted:#56625a; --edge:#d7ddd5; --accent:#1b563f; --panel:#fff}
+  * {box-sizing:border-box}
+  body {margin:0; background:var(--paper); color:var(--ink); font:16px/1.6 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+  .wrap {width:min(100% - 44px,1180px); margin-inline:auto}
+  header {padding:42px 0 22px; border-bottom:1px solid var(--edge)}
+  h1 {margin:0; font-size:clamp(33px,5vw,53px); line-height:1.14; letter-spacing:-.045em}
+  header p {margin:9px 0 0; color:var(--muted)}
+  main {padding:18px 0 64px}
+  button,input,select {font:inherit}
+  button {cursor:pointer}
+  a {color:var(--accent); text-underline-offset:3px}
+  :focus-visible {outline:2px solid #226747; outline-offset:3px}
+  .controls,.filters,.nav,.view-options {display:flex; flex-wrap:wrap; gap:9px 12px; align-items:center}
+  .controls {justify-content:space-between; gap:12px; margin-bottom:12px}
+  .tab,.plain,select,input[type=search] {min-height:40px; border:1px solid var(--edge); border-radius:8px; background:white; color:var(--ink); padding:5px 11px}
+  .tab[aria-pressed=true] {background:var(--accent); border-color:var(--accent); color:#fff}
+  input[type=search] {width:min(29ch,100%)}
+  select {max-width:min(38ch,100%)}
+  input[type=checkbox] {accent-color:var(--accent); width:16px; height:16px; vertical-align:-3px}
+  .view-options {color:var(--muted); font-size:14px}
+  #status {margin:13px 0 8px; font-size:14px; color:var(--muted)}
+  #gallery {display:grid; grid-template-columns:minmax(0,1fr); gap:20px}
+  #gallery.compact {grid-template-columns:repeat(2,minmax(0,1fr))}
+  .card {min-width:0; overflow:hidden; background:white; border:1px solid var(--edge); border-radius:12px}
+  .preview {position:relative; display:block; width:100%; height:clamp(330px,59vh,640px); padding:12px; border:0; border-bottom:1px solid var(--edge); background:white; cursor:zoom-in}
+  .compact .preview {height:clamp(250px,38vw,450px)}
+  .preview:focus-visible {outline-offset:-4px}
+  .preview img {display:block; width:100%; height:100%; object-fit:contain}
+  .zoom {position:absolute; right:13px; bottom:13px; padding:4px 9px; border:1px solid var(--edge); border-radius:6px; background:#fff; color:var(--accent); font-size:13px; font-weight:650}
+  .preview:hover .zoom {border-color:var(--accent)}
+  .card-content {padding:14px 18px 16px}
+  .meta,.credit {font-size:13px; color:var(--muted)}
+  .meta {margin:0 0 4px}
+  h2 {font-size:20px; line-height:1.35; margin:0}
+  .note {margin:5px 0 9px; color:var(--muted)}
+  .tags {list-style:none; display:flex; flex-wrap:wrap; gap:5px 8px; padding:0; margin:0 0 9px}
+  .tags li {background:#edf1eb; border-radius:5px; padding:2px 7px; font-size:13px}
+  .source {display:flex; flex-wrap:wrap; gap:5px 12px; align-items:baseline; font-size:14px}
+  .empty,.image-error {padding:12px 16px; margin:0; color:var(--muted)}
+  dialog {width:min(1400px,calc(100% - 22px)); max-height:calc(100dvh - 18px); padding:0; border:1px solid var(--edge); border-radius:12px; color:var(--ink); background:white}
+  dialog::backdrop {background:rgba(15,25,20,.78)}
+  .viewer-bar {display:flex; justify-content:space-between; align-items:center; gap:14px; padding:10px 14px; border-bottom:1px solid var(--edge)}
+  .viewer-bar h2 {font-size:18px}
+  .viewer-bar form {margin:0; flex:none}
+  #viewer img {display:block; width:100%; height:min(82dvh,1050px); object-fit:contain; padding:6px}
+  #viewer img[hidden] {display:none}
+  #viewer-source {padding:8px 14px 11px; border-top:1px solid var(--edge)}
+  @media (max-width:700px) {
+    .wrap {width:calc(100% - 24px)}
+    header {padding-top:25px}
+    #gallery.compact {grid-template-columns:minmax(0,1fr)}
+    .view-options label:has(#compact) {display:none}
+    .preview,.compact .preview {height:clamp(240px,90vw,490px); padding:6px}
+    .tab {padding:5px 8px; font-size:14px}
+    .card-content {padding:12px}
+    #viewer img {height:min(72dvh,680px)}
+  }
 </style>
 </head>
 <body>
-<header><div class="wrap hero"><h1>医学期刊图集</h1><p>从期刊封面、图文摘要和正文组图里，找适合手头研究的配图参考。</p></div></header>
+<header><div class="wrap"><h1>医学期刊图集</h1><p>浏览封面、图文摘要和正文组图。点图可在本页放大。</p></div></header>
 <main class="wrap">
   <div class="controls">
-    <nav id="categories" class="tabs" aria-label="图片类别"></nav>
-    <div class="filters" role="group" aria-label="筛选样例">
-      <label class="field"><span>搜索</span><input id="search" type="search" placeholder="例如：研究设计、时间轴、衰老"></label>
-      <label class="field"><span>期刊</span><select id="journal"><option value="">全部期刊</option></select></label>
-      <label class="check"><input id="previews" type="checkbox">只看有预览</label>
-      <button id="reset" type="button">清除筛选</button>
+    <nav id="categories" class="nav" aria-label="图片类别"></nav>
+    <div class="filters">
+      <input id="search" type="search" aria-label="搜索图集" placeholder="搜索研究主题、期刊或作图方式">
+      <select id="journal" aria-label="筛选期刊"><option value="">全部期刊</option></select>
+      <button class="plain" id="reset" type="button">清除筛选</button>
     </div>
   </div>
-  <p id="status" class="count" role="status"></p>
-  <div id="gallery" class="gallery" aria-label="期刊配图样例"></div>
-  <noscript><p>请启用 JavaScript 以浏览和筛选图集。</p></noscript>
+  <div class="view-options">
+    <label><input id="all-sources" type="checkbox">包含仅有出处的条目</label>
+    <label><input id="compact" type="checkbox">并排浏览</label>
+  </div>
+  <p id="status" role="status"></p>
+  <section id="gallery" aria-label="医学期刊图片"></section>
 </main>
-<footer><div class="wrap"><p>用于非商业科研绘图参考。图像许可和署名见对应条目，所有条目均附原始出处。</p></div></footer>
-<script id="catalog" type="application/json">[
-  [
-    "abstract",
-    "European Heart Journal",
-    2026,
-    "联合生物标志物与 SCORE2",
-    "风险预测|心血管",
-    "左侧交代队列和指标组合，右侧用两个并排的点区间图比较筛查识别人数和模型估计的用药效率。",
-    "https://academic.oup.com/eurheartj/article/47/15/1861/8379858",
-    "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/b208/13079997/4175d60cb951/ehaf947_sga.jpg",
-    "Ritchie 等",
-    "by"
-  ],
-  [
-    "figures",
-    "Nature Aging",
-    2026,
-    "按年龄比较死亡与失能负担",
-    "多面板|衰老",
-    "两列共用年龄轴和疾病组配色，读者可以直接比较死亡与失能出现在生命历程的哪个阶段。",
-    "https://www.nature.com/articles/s43587-026-01210-2/figures/2",
-    "https://media.springernature.com/lw685/springer-static/image/art%3A10.1038%2Fs43587-026-01210-2/MediaObjects/43587_2026_1210_Fig2_HTML.png",
-    "Ashwin 等，Figure 2",
-    "by"
-  ],
-  [
-    "cover",
-    "PLOS Medicine",
-    2025,
-    "东非基层高血压照护",
-    "心血管|卫生服务",
-    "用接近实际照护场景的视觉素材，把基层医疗可及性这个抽象问题落到具体的人和地点。",
-    "https://journals.plos.org/plosmedicine/article?id=10.1371%2Fimage.pmed.v22.i06",
-    "https://journals.plos.org/plosmedicine/article/figure/image?id=10.1371%2Fimage.pmed.v22.i06.g001&size=inline",
-    "PLOS Medicine，改编自 Absalom Robinson、Julian Vera Film（Pexels）及 Myriams-Fotos（Pixabay）",
-    "by"
-  ],
-  [
-    "abstract",
-    "European Heart Journal",
-    2026,
-    "CRP 与一般人群的心血管风险",
-    "风险预测|心血管",
-    "把人群与测量放在左栏。右侧三列依次交代累积发病、调整后风险和增量预测价值。",
-    "https://academic.oup.com/eurheartj/article/47/15/1799/8377304"
-  ],
-  [
-    "figures",
-    "Nature Medicine",
-    2026,
-    "更年期研究的方法与结果概览",
-    "研究设计|时间轴|衰老",
-    "用小曲线先说明个体时间差异怎样把群体变化变平，再显示按距绝经时间对齐的实例。",
-    "https://www.nature.com/articles/s41591-026-04614-0/figures/1",
-    "https://media.springernature.com/lw1200/springer-static/image/art%3A10.1038%2Fs41591-026-04614-0/MediaObjects/41591_2026_4614_Fig1_HTML.png",
-    "Pridham 等，Figure 1",
-    "by-nc-nd"
-  ],
-  [
-    "cover",
-    "Nature Medicine",
-    2025,
-    "用树木年轮画生命历程",
-    "视觉隐喻|衰老",
-    "把生命阶段变成年轮，再用像钟表指针的裂缝表现生物年龄偏离。一个画面承载两层概念。",
-    "https://www.nature.com/nm/volumes/31/issues/12"
-  ],
-  [
-    "abstract",
-    "JACC",
-    2025,
-    "久坐与未来心血管疾病",
-    "队列设计|剂量反应|心血管",
-    "Central Illustration 把腕戴加速度计、人群和结局放在同一区域，给剂量–反应和时间替代结果各留出位置。",
-    "https://pubmed.ncbi.nlm.nih.gov/39545903/#figures"
-  ],
-  [
-    "figures",
-    "The BMJ",
-    2020,
-    "多病共存指标的分类图",
-    "分类图|多病共存",
-    "从疾病、药物等主干向外分叉，沿每条线标出如何组合与加权，在末端标出代表研究。",
-    "https://www.bmj.com/content/368/bmj.m160#F2"
-  ],
-  [
-    "cover",
-    "Nature Medicine",
-    2025,
-    "机器人眼中的生物年龄",
-    "视觉隐喻|衰老",
-    "让机器人给人画肖像，把实际看到的人与模型描绘的生物年龄放进同一场景。",
-    "https://www.nature.com/nm/volumes/31/issues/9"
-  ],
-  [
-    "abstract",
-    "European Journal of Preventive Cardiology",
-    2025,
-    "体力活动与心血管病患者死亡风险",
-    "队列设计|体力活动|心血管",
-    "把加速度计测量接到随访设计和不同死因的结果，适合作为设备测量型队列的摘要图参考。",
-    "https://academic.oup.com/eurjpc/article/32/1/20/7725534"
-  ],
-  [
-    "figures",
-    "npj Digital Medicine",
-    2025,
-    "全身 MRI 队列的样本与数据构建",
-    "研究设计|时间轴|风险预测",
-    "左栏用双时间轴画清事件窗口与对照定义，右栏把影像和非影像数据各自组织成块。",
-    "https://www.nature.com/articles/s41746-025-01771-3/figures/1"
-  ],
-  [
-    "cover",
-    "Nature Aging",
-    2026,
-    "健康老龄化的社会决定因素",
-    "视觉隐喻|衰老",
-    "把社会条件画成需要由人共同建设的雕像，让读者先看到健康老龄化的社会背景。",
-    "https://www.nature.com/nataging/volumes/6/issues/11"
-  ],
-  [
-    "abstract",
-    "JAMA",
-    2021,
-    "STEP 4 随机试验的体重变化",
-    "临床试验|组间比较",
-    "第一屏先交代问题和结论，下方三列分别给人群、干预和结果。组间差单独留出显眼位置。",
-    "https://cdn.jamanetwork.com/ImageLibrary/JamaNetwork/visual-abstracts/220107-va-2777886-720.png?versionId=85793"
-  ],
-  [
-    "figures",
-    "Metabolism",
-    2026,
-    "代谢年龄建模与验证",
-    "研究设计|风险预测|衰老",
-    "把模型开发、全样本应用、和 PREVENT 的预测比较拆成三层。每一层读完就知道产出了什么。",
-    "https://www.metabolismjournal.com/article/S0026-0495%2825%2900337-3/fulltext"
-  ],
-  [
-    "cover",
-    "PLOS Medicine",
-    2024,
-    "超加工食品的公共讨论",
-    "营养|公共卫生",
-    "用日常食品图像引出现实场景，适合比较期刊如何用封面图切入有争议的健康议题。",
-    "https://journals.plos.org/plosmedicine/article?id=10.1371%2Fimage.pmed.v21.i10",
-    "https://journals.plos.org/plosmedicine/article/figure/image?id=10.1371%2Fimage.pmed.v21.i10.g001&size=inline",
-    "PLOS Medicine，图像来自 cottonbro studio（Pexels）、Daniel Albany 和 Sofia Terzoni（Pixabay）",
-    "by"
-  ],
-  [
-    "abstract",
-    "The Lancet",
-    2024,
-    "痴呆风险因素的生命历程信息图",
-    "生命历程|衰老|公共卫生",
-    "用早年、中年、晚年三段配色组织风险因素，最后汇到一个醒目的总体归因估计。",
-    "https://www.thelancet.com/infographics-do/dementia-risk"
-  ],
-  [
-    "figures",
-    "The Innovation Medicine",
-    2025,
-    "空气污染与 COPD、胃肠疾病的转归",
-    "研究设计|多状态模型|环境健康",
-    "Figure 1 左侧交代样本怎么筛，右侧画出不同疾病状态之间如何转移，一页回答两个方法问题。",
-    "https://the-innovation.org/article/doi/10.59717/j.xinn-med.2025.100175"
-  ],
-  [
-    "abstract",
-    "The Innovation Medicine",
-    2024,
-    "PM₂.₅ 组分与心血管疾病",
-    "环境健康|心血管",
-    "把图文摘要和正文五张图连起来看。摘要负责压缩问题，正文再展开地域分布、暴露–反应和分层结果。",
-    "https://www.the-innovation.org/article/id/66355e8352bf657b0f62aa78"
-  ],
-  [
-    "figures",
-    "Science Advances",
-    2026,
-    "美国野火烟雾与死亡的结果组图",
-    "环境健康|地图|亚组",
-    "地图负责交代空间差异，结果面板展开不同死因和亚组。适合看空间研究的证据如何分配到几张图。",
-    "https://pmc.ncbi.nlm.nih.gov/articles/PMC12871454/"
-  ],
-  [
-    "abstract",
-    "Thorax",
-    2026,
-    "北京清洁空气行动与肺癌生存",
-    "环境健康|队列设计",
-    "三栏依次交代研究设计、关联结果和模型估计的收益。用栏标题明确标出最右侧数字的来源。",
-    "https://bmjjournals-chicken.bmj.com/thorax/wp-content/uploads/sites/15/2026/09/thorax-2026-225199-inline-supplementary-material-2-1.png"
-  ],
-  [
-    "figures",
-    "NEJM",
-    null,
-    "临床试验设计与数据图样例",
-    "临床试验|多面板|森林图",
-    "官方选集里可连着看试验设计图、森林图和多面板结果图，适合比较同一期刊怎样处理不同信息密度。",
-    "https://onepub-media.nejmgroup-production.org/nejm-media-review/DataGraphicsExamples/data_graphic_examples.html"
-  ],
-  [
-    "abstract",
-    "Cell Reports Medicine",
-    2025,
-    "中国成人肥胖指标与风险阈值",
-    "队列设计|分层|心血管",
-    "用独立区块交代人群、肥胖指标和结局，把最容易混淆的几种测量名称提前放在同一区域。",
-    "https://pmc.ncbi.nlm.nih.gov/articles/PMC12490207/#abs0002"
-  ]
-]</script>
-<script>(function () {
-  const categories = { all: '全部', cover: '期刊封面', abstract: '图文摘要', figures: '正文组图' };
-  const licenses = { by: 'CC BY 4.0', 'by-nc-nd': 'CC BY-NC-ND 4.0' };
+<dialog id="viewer" aria-labelledby="viewer-title">
+  <div class="viewer-bar"><h2 id="viewer-title"></h2><form method="dialog"><button class="plain" autofocus>关闭</button></form></div>
+  <img alt="" referrerpolicy="no-referrer">
+  <p class="image-error" hidden>图片暂时无法加载，可打开原始出处。</p>
+  <div id="viewer-source" class="source"></div>
+</dialog>
+<script id="catalog" type="application/json">
+[
+  ["abstract","European Heart Journal",2026,"CRP 与一般人群的心血管风险","风险预测|心血管","左栏交代人群和测量，右侧三列依次展示累积发病、调整后风险和增量预测价值。","https://academic.oup.com/eurheartj/article/47/15/1799/8377304","https://cdn.ncbi.nlm.nih.gov/pmc/blobs/5e6c/13101082/5d1756bad390/ehaf937_sga.jpg","Kurt 等","by"],
+  ["abstract","European Heart Journal",2026,"联合生物标志物与 SCORE2","风险预测|心血管","左侧交代队列和指标组合，右侧用两个并排的点区间图比较筛查识别人数和估计的用药效率。","https://academic.oup.com/eurheartj/article/47/15/1861/8379858","https://cdn.ncbi.nlm.nih.gov/pmc/blobs/b208/13079997/4175d60cb951/ehaf947_sga.jpg","Ritchie 等","by"],
+  ["abstract","JACC: Advances",2026,"老年人心血管健康轨迹与结局","生命历程|心血管|队列设计","Central Illustration 把长期健康轨迹和随访结局放进一张图，适合参考重复测量队列的叙述顺序。","https://pmc.ncbi.nlm.nih.gov/articles/PMC12804104/","https://cdn.ncbi.nlm.nih.gov/pmc/blobs/a831/12804104/abc9bf513e6c/gr4.jpg","Li 等，Central Illustration","by-nc-nd"],
+  ["abstract","The Innovation Medicine",2024,"PM₂.₅ 组分与心血管疾病","环境健康|心血管","图文摘要压缩研究问题，正文再展开地域分布、暴露–反应和分层结果。","https://www.the-innovation.org/article/id/66355e8352bf657b0f62aa78","https://data.the-innovation.org//innovation-data/medicine/2024/3/PIC/XINNMEDICINE-2023-0103-Abstract.jpg","Cai 等","by"],
+  ["abstract","Cell Reports Medicine",2025,"中国成人肥胖指标与风险阈值","队列设计|分层|心血管","用独立区块交代人群、肥胖指标和结局，把几种容易混淆的测量放在同一区域。","https://pmc.ncbi.nlm.nih.gov/articles/PMC12490207/#abs0002","https://cdn.ncbi.nlm.nih.gov/pmc/blobs/3c09/12490207/ea1b730d008b/fx1.jpg","Jia 等","by-nc-nd"],
+  ["figures","The Innovation Medicine",2025,"空气污染与 COPD、胃肠疾病的转归","研究设计|多状态模型|环境健康","左侧交代样本怎么筛，右侧画出不同疾病状态之间如何转移。","https://the-innovation.org/article/doi/10.59717/j.xinn-med.2025.100175","https://data.the-innovation.org//innovation-data/medicine/2025/4/PIC/XINNMEDICINE-2025-0036-1.jpg","Shi 等，Figure 1","by"],
+  ["figures","Nature Aging",2026,"按年龄比较死亡与失能负担","多面板|衰老","两列共用年龄轴和疾病组配色，读者可以直接比较死亡与失能出现在生命历程的哪个阶段。","https://www.nature.com/articles/s43587-026-01210-2/figures/2","https://media.springernature.com/lw685/springer-static/image/art%3A10.1038%2Fs43587-026-01210-2/MediaObjects/43587_2026_1210_Fig2_HTML.png","Ashwin 等，Figure 2","by"],
+  ["figures","Nature Medicine",2026,"更年期研究的方法与结果概览","研究设计|时间轴|衰老","用小曲线先说明个体时间差异怎样把群体变化变平，再显示按距绝经时间对齐的实例。","https://www.nature.com/articles/s41591-026-04614-0/figures/1","https://media.springernature.com/lw1200/springer-static/image/art%3A10.1038%2Fs41591-026-04614-0/MediaObjects/41591_2026_4614_Fig1_HTML.png","Pridham 等，Figure 1","by-nc-nd"],
+  ["figures","Science Advances",2026,"美国野火烟雾与不同死因的暴露–反应曲线","环境健康|剂量反应|多面板","各面板用同一暴露范围展示曲线与不确定性，方便比较不同死因的曲线形状。","https://pmc.ncbi.nlm.nih.gov/articles/PMC12871454/","https://cdn.ncbi.nlm.nih.gov/pmc/blobs/4f10/12871454/4205032a14b0/sciadv.adw5890-f2.jpg","Zhang 等，Figure 2","by-nc"],
+  ["cover","PLOS Medicine",2025,"东非基层高血压照护","心血管|卫生服务","用接近实际照护场景的视觉素材，让人先看到基层医疗服务发生的地点和情境。","https://journals.plos.org/plosmedicine/article?id=10.1371%2Fimage.pmed.v22.i06","https://journals.plos.org/plosmedicine/article/figure/image?id=10.1371%2Fimage.pmed.v22.i06.g001&size=inline","PLOS Medicine，改编自 Absalom Robinson、Julian Vera Film（Pexels）及 Myriams-Fotos（Pixabay）","by"],
+  ["cover","PLOS Medicine",2024,"超加工食品的公共讨论","营养|公共卫生","用日常食品图像引出公共健康议题。","https://journals.plos.org/plosmedicine/article?id=10.1371%2Fimage.pmed.v21.i10","https://journals.plos.org/plosmedicine/article/figure/image?id=10.1371%2Fimage.pmed.v21.i10.g001&size=inline","PLOS Medicine，图像来自 cottonbro studio（Pexels）、Daniel Albany 和 Sofia Terzoni（Pixabay）","by"],
+  ["cover","PLOS Digital Health",2024,"多模态神经认知研究的期次配图","数字健康|认知","从论文中选取一张研究概念图作为期次配图。","https://journals.plos.org/digitalhealth/article?id=10.1371%2Fimage.pdig.v03.i08","https://journals.plos.org/digitalhealth/article/figure/image?id=10.1371%2Fimage.pdig.v03.i08.g001&size=inline","Park 等","by"],
+  ["abstract","The Lancet",2024,"痴呆风险因素的生命历程信息图","生命历程|衰老|公共卫生","用早年、中年、晚年三段配色组织风险因素，最后汇到总体归因估计。","https://www.thelancet.com/infographics-do/dementia-risk"],
+  ["abstract","JACC",2025,"久坐与未来心血管疾病","队列设计|剂量反应|心血管","Central Illustration 把腕戴加速度计、人群和结局放在同一区域，给剂量–反应和时间替代结果各留出位置。","https://pubmed.ncbi.nlm.nih.gov/39545903/#figures"],
+  ["abstract","European Journal of Preventive Cardiology",2025,"体力活动与心血管病患者死亡风险","队列设计|体力活动|心血管","把加速度计测量接到随访设计和不同死因的结果。","https://academic.oup.com/eurjpc/article/32/1/20/7725534"],
+  ["abstract","JAMA",2021,"STEP 4 随机试验的体重变化","临床试验|组间比较","先交代问题和结论，下方三列给人群、干预和结果。组间差留出显眼位置。","https://cdn.jamanetwork.com/ImageLibrary/JamaNetwork/visual-abstracts/220107-va-2777886-720.png?versionId=85793"],
+  ["abstract","Thorax",2026,"北京清洁空气行动与肺癌生存","环境健康|队列设计","三栏依次交代研究设计、关联结果和模型估计的收益。","https://bmjjournals-chicken.bmj.com/thorax/wp-content/uploads/sites/15/2026/09/thorax-2026-225199-inline-supplementary-material-2-1.png"],
+  ["figures","The BMJ",2020,"多病共存指标的分类图","分类图|多病共存","从疾病、药物等主干向外分叉，标出如何组合与加权，在末端列代表研究。","https://www.bmj.com/content/368/bmj.m160#F2"],
+  ["figures","npj Digital Medicine",2025,"全身 MRI 队列的样本与数据构建","研究设计|时间轴|风险预测","左栏用双时间轴画清事件窗口和对照定义，右栏把影像和非影像数据各自组织成块。","https://www.nature.com/articles/s41746-025-01771-3/figures/1"],
+  ["figures","Metabolism",2026,"代谢年龄建模与验证","研究设计|风险预测|衰老","把模型开发、全样本应用和 PREVENT 的预测比较拆成三层。","https://www.metabolismjournal.com/article/S0026-0495%2825%2900337-3/fulltext"],
+  ["figures","NEJM",null,"临床试验设计与数据图样例","临床试验|多面板|森林图","在官方选集中比较试验设计图、森林图和多面板结果图的信息密度。","https://onepub-media.nejmgroup-production.org/nejm-media-review/DataGraphicsExamples/data_graphic_examples.html"],
+  ["cover","Nature Medicine",2025,"用树木年轮画生命历程","视觉隐喻|衰老","把生命阶段变成年轮，用像钟表指针的裂缝表现生物年龄偏离。","https://www.nature.com/nm/volumes/31/issues/12"],
+  ["cover","Nature Medicine",2025,"机器人眼中的生物年龄","视觉隐喻|衰老","让机器人给人画肖像，把实际看到的人和模型描绘的生物年龄放进同一场景。","https://www.nature.com/nm/volumes/31/issues/9"],
+  ["cover","Nature Aging",2026,"健康老龄化的社会决定因素","视觉隐喻|衰老","把社会条件画成需要由人共同建设的雕像。","https://www.nature.com/nataging/volumes/6/issues/11"]
+]
+</script>
+<script>(function gallery() {
+  const types = {all:'全部', cover:'期刊封面', abstract:'图文摘要', figures:'正文组图'};
+  const licenses = {by:'CC BY 4.0', 'by-nc':'CC BY-NC 4.0', 'by-nc-nd':'CC BY-NC-ND 4.0'};
   const items = JSON.parse(document.querySelector('#catalog').textContent);
-  const grid = document.querySelector('#gallery');
   const search = document.querySelector('#search');
   const journal = document.querySelector('#journal');
-  const previews = document.querySelector('#previews');
+  const allSources = document.querySelector('#all-sources');
+  const compact = document.querySelector('#compact');
+  const grid = document.querySelector('#gallery');
   const status = document.querySelector('#status');
-  const tabs = [];
-  let active = 'all';
+  const viewer = document.querySelector('#viewer');
+  const viewerImage = viewer.querySelector('img');
+  const viewerError = viewer.querySelector('.image-error');
+  const tabs = new Map();
+  let category = 'all';
 
-  function el(tag, classname, text) {
-    const node = document.createElement(tag);
-    if (classname) node.className = classname;
-    if (text) node.textContent = text;
-    return node;
+  function el(tag, name, text) {
+    const element = document.createElement(tag);
+    if (name) element.className = name;
+    if (text) element.textContent = text;
+    return element;
   }
-  function external(label, url, classname) {
-    const a = el('a', classname, label);
-    a.href = url;
-    a.target = '_blank';
-    a.rel = 'noopener noreferrer';
-    return a;
+  function link(text, url) {
+    const element = el('a', '', text);
+    element.href = url;
+    element.target = '_blank';
+    element.rel = 'noopener noreferrer';
+    return element;
+  }
+  function creditLine(credit, license) {
+    const line = el('span','credit');
+    line.append(credit + ' · ', link(licenses[license], 'https://creativecommons.org/licenses/' + license + '/4.0/'), ' · 图像未修改');
+    return line;
+  }
+  function openImage(item) {
+    const [kind, journalName, year, title, , , url, image, credit, license] = item;
+    viewer.querySelector('#viewer-title').textContent = title;
+    viewer.querySelector('#viewer-source').replaceChildren(link('原始出处 ↗', url), creditLine(credit, license));
+    viewerImage.alt = title + ' · ' + [types[kind], journalName, year].filter(Boolean).join(' · ');
+    viewerError.hidden = true;
+    viewerImage.hidden = false;
+    viewerImage.src = image;
+    viewer.showModal();
   }
   function card(item) {
     const [kind, name, year, title, keywords, note, url, image, credit, license] = item;
-    const box = el('article', 'card ' + kind);
-    const link = external(image ? '' : '去期刊查看', url, 'media' + (image ? ' pictured' : ''));
-    link.setAttribute('aria-label', '查看原始出处：' + title);
+    const box = el('article','card');
     if (image) {
+      const preview = el('button','preview');
+      preview.type = 'button';
+      preview.setAttribute('aria-label','放大查看：' + title);
       const img = el('img');
-      img.alt = title + ' · ' + categories[kind];
+      img.alt = title;
       img.loading = 'lazy';
       img.decoding = 'async';
       img.referrerPolicy = 'no-referrer';
       img.addEventListener('error', () => {
-        link.classList.remove('pictured');
-        link.textContent = '去期刊查看';
-      }, { once: true });
+        preview.remove();
+        box.prepend(el('p','image-error','图片暂时无法加载，可打开原始出处。'));
+      }, {once:true});
+      preview.append(img,el('span','zoom','放大查看'));
       img.src = image;
-      link.append(img);
+      preview.addEventListener('click', () => openImage(item));
+      box.append(preview);
     }
-    const content = el('div', 'card-content');
-    content.append(el('p','meta',[categories[kind],name,year].filter(Boolean).join(' · ')), el('h2','',title), el('p','note',note));
-    const tags = el('ul', 'tags');
+    const content = el('div','card-content');
+    content.append(el('p','meta',[types[kind],name,year].filter(Boolean).join(' · ')), el('h2','',title), el('p','note',note));
+    const tags = el('ul','tags');
     for (const keyword of keywords.split('|')) tags.append(el('li','',keyword));
     content.append(tags);
     const source = el('div','source');
-    source.append(external('原始出处', url));
-    if (image && license) {
-      const line = el('div','credit');
-      line.append(document.createTextNode(credit + ' · '), external(licenses[license], 'https://creativecommons.org/licenses/' + license + '/4.0/'), document.createTextNode(' · 图像未修改'));
-      source.append(line);
-    }
+    source.append(link('原始出处 ↗',url));
+    if (image) source.append(creditLine(credit,license));
+    else source.append(el('span','credit','仅收录出处'));
     content.append(source);
-    box.append(link, content);
+    box.append(content);
     return box;
   }
-  function normalized(value) { return value.normalize('NFKC').toLocaleLowerCase(); }
-  function update() {
+  function scope() {
+    return allSources.checked ? items : items.filter(item => item[7]);
+  }
+  function updateJournals() {
+    const previous = journal.value;
+    const names = [...new Set(scope().map(item => item[1]))].sort((a,b) => a.localeCompare(b,'en'));
+    journal.replaceChildren(new Option('全部期刊',''), ...names.map(name => new Option(name,name)));
+    journal.value = names.includes(previous) ? previous : '';
+  }
+  function normalized(text) {
+    return text.normalize('NFKC').toLocaleLowerCase();
+  }
+  function render() {
+    const available = scope();
     const words = normalized(search.value).trim().split(/\s+/).filter(Boolean);
-    const results = items.filter(item => {
-      const [kind, name, year, title, keywords, note, , image] = item;
-      const haystack = normalized([categories[kind], name, year, title, keywords, note].join(' '));
-      return (active === 'all' || kind === active) && (!journal.value || journal.value === name) && (!previews.checked || Boolean(image)) && words.every(word => haystack.includes(word));
+    const results = available.filter(item => {
+      const [kind, name, year, title, keywords, note] = item;
+      const matches = normalized([types[kind], name, year, title, keywords, note].join(' '));
+      return (category === 'all' || kind === category) && (!journal.value || journal.value === name) && words.every(word => matches.includes(word));
     });
-    for (const [kind, button] of tabs) button.setAttribute('aria-pressed', String(kind === active));
-    status.textContent = '显示 ' + results.length + ' / ' + items.length + ' 个样例';
+    for (const [type, tab] of tabs) {
+      const count = type === 'all' ? available.length : available.filter(item => item[0] === type).length;
+      tab.textContent = types[type] + ' ' + count;
+      tab.setAttribute('aria-pressed',String(type === category));
+    }
+    status.textContent = '显示 ' + results.length + ' / ' + available.length + (allSources.checked ? ' 条记录' : ' 张图片');
     grid.replaceChildren(...results.map(card));
     if (!results.length) grid.append(el('p','empty','没找到匹配的样例。可以换个关键词或清除筛选。'));
   }
-  for (const [kind, label] of Object.entries(categories)) {
-    const count = kind === 'all' ? items.length : items.filter(item => item[0] === kind).length;
-    const button = el('button','tab',label + ' ' + count);
-    button.type = 'button';
-    button.addEventListener('click', () => { active = kind; update(); });
-    tabs.push([kind, button]);
-    document.querySelector('#categories').append(button);
+  for (const type of Object.keys(types)) {
+    const tab = el('button','tab');
+    tab.type = 'button';
+    tab.addEventListener('click', () => {category = type; render();});
+    tabs.set(type,tab);
+    document.querySelector('#categories').append(tab);
   }
-  for (const name of [...new Set(items.map(item => item[1]))].sort((a,b) => a.localeCompare(b,'en'))) {
-    journal.add(new Option(name,name));
-  }
-  search.addEventListener('input',update);
-  journal.addEventListener('change',update);
-  previews.addEventListener('change',update);
-  document.querySelector('#reset').addEventListener('click',() => {
-    active = 'all';
+  search.addEventListener('input',render);
+  journal.addEventListener('change',render);
+  allSources.addEventListener('change', () => {updateJournals(); render();});
+  compact.addEventListener('change', () => grid.classList.toggle('compact',compact.checked));
+  document.querySelector('#reset').addEventListener('click', () => {
+    category = 'all';
     search.value = '';
     journal.value = '';
-    previews.checked = false;
-    update();
+    render();
     search.focus();
   });
-  update();
+  viewer.addEventListener('click', event => {if (event.target === viewer) viewer.close();});
+  viewerImage.addEventListener('error', () => {viewerImage.hidden = true; viewerError.hidden = false;});
+  updateJournals();
+  render();
 })();</script>
 </body>
 </html>
