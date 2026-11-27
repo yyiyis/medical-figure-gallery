@@ -4,6 +4,7 @@
 import argparse
 import html
 import json
+import http.client
 import re
 import time
 import urllib.error
@@ -49,7 +50,7 @@ def request(url, *, part=False, limit=None):
                 raise
             delay = error.headers.get('Retry-After', '')
             time.sleep(min(int(delay), 40) if delay.isdigit() else 2 ** (attempt + 1))
-        except (urllib.error.URLError, TimeoutError):
+        except (urllib.error.URLError, TimeoutError, http.client.HTTPException):
             if attempt == 2:
                 raise
             time.sleep(2 ** (attempt + 1))
@@ -268,7 +269,7 @@ def licensed_graphic(article):
             preview = PMC + urllib.parse.quote(key, safe='/')
             try:
                 before = inspect_image(preview)
-            except (urllib.error.URLError, TimeoutError):
+            except (urllib.error.URLError, TimeoutError, http.client.HTTPException):
                 continue
             if not before:
                 continue
@@ -282,7 +283,7 @@ def licensed_graphic(article):
                     high = inspect_image(direct)
                     if high and high[0] > before[0] and abs(high[0]/high[1] - before[0]/before[1]) < .02:
                         size, original = high, direct
-                except (urllib.error.URLError, TimeoutError):
+                except (urllib.error.URLError, TimeoutError, http.client.HTTPException):
                     pass
             if size[0] < 1200:
                 continue
@@ -394,7 +395,7 @@ def innovation_article(item, journal, start, end):
 def safe_graphic(article):
     try:
         return licensed_graphic(article)
-    except (OSError, ET.ParseError, ValueError, KeyError) as error:
+    except (OSError, http.client.HTTPException, ET.ParseError, ValueError, KeyError) as error:
         print(f"[figure] {article['doi']}: {type(error).__name__} {error}",flush=True)
         return None, 'figure_check_failed'
 
@@ -437,10 +438,10 @@ def scan_journal(journal, start, end):
                     continue
                 try:
                     add(*innovation_article(article,journal,start,end))
-                except (OSError, ET.ParseError, ValueError, KeyError) as error:
+                except (OSError, http.client.HTTPException, ET.ParseError, ValueError, KeyError) as error:
                     counts['figure_check_failed'] += 1
                     errors.append(f"{article.get('DOI','')}: {type(error).__name__}")
-    except (OSError, ET.ParseError, ValueError, KeyError) as error:
+    except (OSError, http.client.HTTPException, ET.ParseError, ValueError, KeyError) as error:
         errors.append(f'{type(error).__name__}: {error}')
     result = {'name':journal['name'],'counts':dict(counts),'errors':errors}
     print(json.dumps(result,ensure_ascii=False),flush=True)
