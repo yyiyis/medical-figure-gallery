@@ -26,6 +26,18 @@
   select {max-width:min(38ch,100%)}
   input[type=checkbox] {accent-color:var(--accent); width:16px; height:16px; vertical-align:-3px}
   .view-options {color:var(--muted); font-size:14px}
+  .scope {margin:0 0 14px; background:#fff; border:1px solid var(--edge); border-radius:10px}
+  .scope summary {cursor:pointer; padding:10px 14px; color:var(--accent)}
+  .scope-summary {margin-inline-start:10px; font-size:14px; color:var(--muted)}
+  .scope[open] summary {border-bottom:1px solid var(--edge)}
+  .scope-body {padding:12px 14px 16px}
+  .scope-body > p {margin:0 0 8px; font-size:14px; color:var(--muted)}
+  .scope-grid {display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr)); gap:16px 20px; margin-top:16px}
+  .scope-grid section {min-width:0}
+  .scope-grid h2 {font-size:16px; margin:0 0 5px}
+  .scope-grid ul {margin:0; padding:0; list-style:none}
+  .scope-grid li {font-size:14px; padding:4px 0; overflow-wrap:anywhere}
+  .scope-badge {display:inline-block; margin-inline-start:6px; color:var(--accent); background:#edf1eb; border-radius:4px; padding:0 5px; font-size:12px}
   #status {margin:13px 0 8px; font-size:14px; color:var(--muted)}
   #gallery {column-width:480px; column-gap:20px}
   #gallery.single-column, #gallery:has(> .card:only-child), #gallery:has(> .empty) {column-count:1; column-width:auto; max-width:1180px; margin-inline:auto}
@@ -70,6 +82,14 @@
 <body>
 <header><div class="wrap"><h1>医学期刊图集</h1><p>浏览图文摘要、正文组图和期刊封面。点图可在本页放大。</p></div></header>
 <main class="wrap">
+  <details class="scope" id="journal-scope">
+    <summary><strong>期刊范围</strong><span id="scope-summary" class="scope-summary"></span></summary>
+    <div class="scope-body">
+      <p id="coverage-status">拟回填 <time datetime="2026-01-01">2026-01-01</time> 至 <time datetime="2026-11-27">2026-11-27</time> 首次线上发表的文章。图数为目前可在站内预览的收录量。</p>
+      <p>关注人群和临床研究、长期与累积环境暴露，以及代谢组、蛋白组、遗传组和多组学整合。优先收录正式图文摘要，精选正文组图与封面。</p>
+      <div id="scope-groups" class="scope-grid"></div>
+    </div>
+  </details>
   <div class="controls">
     <nav id="categories" class="nav" aria-label="图片类别"></nav>
     <div class="filters">
@@ -99,6 +119,314 @@
   </div>
   <div id="viewer-source" class="source"></div>
 </dialog>
+<script id="journal-registry" type="application/json">
+{
+  "start": "2026-01-01",
+  "end": "2026-11-27",
+  "groups": [
+    {
+      "title": "心血管",
+      "journals": [
+        {
+          "name": "European Heart Journal",
+          "pubmed": "Eur Heart J"
+        },
+        {
+          "name": "European Journal of Preventive Cardiology",
+          "pubmed": "Eur J Prev Cardiol"
+        },
+        {
+          "name": "European Heart Journal – Digital Health",
+          "pubmed": "Eur Heart J Digit Health"
+        },
+        {
+          "name": "European Heart Journal Open",
+          "pubmed": "Eur Heart J Open"
+        },
+        {
+          "name": "European Heart Journal – Quality of Care and Clinical Outcomes",
+          "pubmed": "Eur Heart J Qual Care Clin Outcomes"
+        },
+        {
+          "name": "JACC",
+          "pubmed": "J Am Coll Cardiol"
+        },
+        {
+          "name": "JACC: Advances",
+          "pubmed": "JACC Adv"
+        },
+        {
+          "name": "JACC: CardioOncology",
+          "pubmed": "JACC CardioOncol"
+        },
+        {
+          "name": "JACC: Heart Failure",
+          "pubmed": "JACC Heart Fail"
+        },
+        {
+          "name": "Circulation",
+          "pubmed": "Circulation"
+        },
+        {
+          "name": "Journal of the American Heart Association",
+          "pubmed": "J Am Heart Assoc"
+        },
+        {
+          "name": "Heart",
+          "pubmed": "Heart"
+        }
+      ]
+    },
+    {
+      "title": "综合医学与临床",
+      "journals": [
+        {
+          "name": "NEJM",
+          "pubmed": "N Engl J Med"
+        },
+        {
+          "name": "The Lancet",
+          "pubmed": "Lancet"
+        },
+        {
+          "name": "JAMA",
+          "pubmed": "JAMA"
+        },
+        {
+          "name": "The BMJ",
+          "pubmed": "BMJ"
+        },
+        {
+          "name": "JAMA Network Open",
+          "pubmed": "JAMA Netw Open"
+        },
+        {
+          "name": "JAMA Internal Medicine",
+          "pubmed": "JAMA Intern Med"
+        },
+        {
+          "name": "JAMA Cardiology",
+          "pubmed": "JAMA Cardiol"
+        },
+        {
+          "name": "NEJM Evidence",
+          "pubmed": "NEJM Evid"
+        },
+        {
+          "name": "Annals of Internal Medicine",
+          "pubmed": "Ann Intern Med"
+        },
+        {
+          "name": "Thorax",
+          "pubmed": "Thorax"
+        }
+      ]
+    },
+    {
+      "title": "流行病学与公共卫生",
+      "journals": [
+        {
+          "name": "The Lancet Public Health",
+          "pubmed": "Lancet Public Health"
+        },
+        {
+          "name": "The Lancet Regional Health – Western Pacific",
+          "pubmed": "Lancet Reg Health West Pac"
+        },
+        {
+          "name": "International Journal of Epidemiology",
+          "pubmed": "Int J Epidemiol"
+        },
+        {
+          "name": "American Journal of Epidemiology",
+          "pubmed": "Am J Epidemiol"
+        },
+        {
+          "name": "Epidemiology",
+          "pubmed": "Epidemiology"
+        },
+        {
+          "name": "European Journal of Epidemiology",
+          "pubmed": "Eur J Epidemiol"
+        },
+        {
+          "name": "Journal of Epidemiology and Community Health",
+          "pubmed": "J Epidemiol Community Health"
+        },
+        {
+          "name": "BMJ Global Health",
+          "pubmed": "BMJ Glob Health"
+        },
+        {
+          "name": "PLOS Medicine",
+          "pubmed": "PLoS Med"
+        },
+        {
+          "name": "Social Science & Medicine",
+          "pubmed": "Soc Sci Med"
+        },
+        {
+          "name": "Emerging Infectious Diseases",
+          "pubmed": "Emerg Infect Dis"
+        }
+      ]
+    },
+    {
+      "title": "暴露组与生命历程环境",
+      "journals": [
+        {
+          "name": "The Lancet Planetary Health",
+          "pubmed": "Lancet Planet Health"
+        },
+        {
+          "name": "Environment International",
+          "pubmed": "Environ Int"
+        },
+        {
+          "name": "Environmental Health Perspectives",
+          "pubmed": "Environ Health Perspect"
+        },
+        {
+          "name": "Exposome",
+          "pubmed": null,
+          "issn": "2635-2265",
+          "archive": "https://academic.oup.com/exposome/issue-archive/2026"
+        },
+        {
+          "name": "Environmental Epidemiology",
+          "pubmed": "Environ Epidemiol"
+        },
+        {
+          "name": "Journal of Exposure Science & Environmental Epidemiology",
+          "pubmed": "J Expo Sci Environ Epidemiol"
+        },
+        {
+          "name": "Environmental Health",
+          "pubmed": "Environ Health"
+        },
+        {
+          "name": "Environmental Research",
+          "pubmed": "Environ Res"
+        }
+      ]
+    },
+    {
+      "title": "老龄化、代谢与数字医学",
+      "journals": [
+        {
+          "name": "Nature Medicine",
+          "pubmed": "Nat Med"
+        },
+        {
+          "name": "Nature Aging",
+          "pubmed": "Nat Aging"
+        },
+        {
+          "name": "The Lancet Healthy Longevity",
+          "pubmed": "Lancet Healthy Longev"
+        },
+        {
+          "name": "Age and Ageing",
+          "pubmed": "Age Ageing"
+        },
+        {
+          "name": "Alzheimer’s & Dementia",
+          "pubmed": "Alzheimers Dement"
+        },
+        {
+          "name": "The Lancet Digital Health",
+          "pubmed": "Lancet Digit Health"
+        },
+        {
+          "name": "npj Digital Medicine",
+          "pubmed": "NPJ Digit Med"
+        },
+        {
+          "name": "Cell Reports Medicine",
+          "pubmed": "Cell Rep Med"
+        },
+        {
+          "name": "Metabolism",
+          "pubmed": "Metabolism"
+        }
+      ]
+    },
+    {
+      "title": "组学与多组学",
+      "journals": [
+        {
+          "name": "Cell Metabolism",
+          "pubmed": "Cell Metab"
+        },
+        {
+          "name": "Nature Metabolism",
+          "pubmed": "Nat Metab"
+        },
+        {
+          "name": "Nature Genetics",
+          "pubmed": "Nat Genet"
+        },
+        {
+          "name": "Cell Genomics",
+          "pubmed": "Cell Genom"
+        },
+        {
+          "name": "Genome Medicine",
+          "pubmed": "Genome Med"
+        },
+        {
+          "name": "Genome Biology",
+          "pubmed": "Genome Biol"
+        },
+        {
+          "name": "Metabolomics",
+          "pubmed": "Metabolomics"
+        },
+        {
+          "name": "Journal of Proteome Research",
+          "pubmed": "J Proteome Res"
+        }
+      ]
+    },
+    {
+      "title": "综合科学与跨学科",
+      "journals": [
+        {
+          "name": "Nature",
+          "pubmed": "Nature"
+        },
+        {
+          "name": "Science",
+          "pubmed": "Science"
+        },
+        {
+          "name": "Cell",
+          "pubmed": "Cell"
+        },
+        {
+          "name": "Nature Communications",
+          "pubmed": "Nat Commun"
+        },
+        {
+          "name": "Science Advances",
+          "pubmed": "Sci Adv"
+        },
+        {
+          "name": "The Innovation",
+          "pubmed": "Innovation (Camb)"
+        },
+        {
+          "name": "The Innovation Medicine",
+          "pubmed": null,
+          "issn": "2959-8745",
+          "archive": "https://www.the-innovation.org/medicine/archive",
+          "track": true
+        }
+      ]
+    }
+  ]
+}
+</script>
 <script id="catalog" type="application/json">
 [
   ["abstract","European Heart Journal",2026,"CRP 与一般人群的心血管风险","风险预测|心血管","左栏交代人群和测量，右侧三列依次展示累积发病、调整后风险和增量预测价值。","https://academic.oup.com/eurheartj/article/47/15/1799/8377304","https://cdn.ncbi.nlm.nih.gov/pmc/blobs/5e6c/13101082/5d1756bad390/ehaf937_sga.jpg","Kurt 等","by",{"width":4200,"height":4763,"url":"https://oup.silverchair-cdn.com/oup/backfile/Content_public/Journal/eurheartj/47/15/10.1093_eurheartj_ehaf937/1/ehaf937_sga.jpeg?Expires=2147483647&Signature=PmmQWYcJkmhVaqm7RsFJJ~7jV18VGn2yHzLGLvsIN2xlYukpar5JjbVLEFCnXlLcBKDxJNa8dCLaKKOz57itUdWvgdYczIG32ThNoHLw3wZ9QWovIwdD5f5smiKMcvplDw4kgdJzOOMNmUD06MztnK~g1hN0f7QT5iw9fLcWLZzQupxRIPYQyrz3E8L~CmaEVRs9EIqTkIuBdM~RYIpBPB6gGHU8AIvKOuUcJqYiTmLK8gwAjOcyC9crQUKvZrzUho4Kp7PLW6IGKOQV8vnNQwSeHeBVUhzdPQ0WJ40eEdyJxV4GBrSolK-Ul2PnaI~5Hayk5gIHtC7Tfeh8-2oE4A__&Key-Pair-Id=APKAIE5G5CRDK6RD3PGA"}],
@@ -114,7 +442,7 @@
   ["figures","JAMA Network Open",2026,"老龄人群纵向数据建设中的挑战与应对","桑基图|健康老龄化|定性研究","把访谈结果排成四列，从数据建设阶段连到挑战、应对做法和政策优先项。流线让同一种做法能回应多个问题这一层关系可见。","https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2847871","https://pmc-oa-opendata.s3.amazonaws.com/PMC13090843.1/jamanetwopen-e267536-g001.jpg","Tang 等（美国国家医学图书馆收录版）","by-nc-nd",{"width":3892,"height":2651}],
   ["figures","JAMA Network Open",2026,"膀胱癌治疗后的分组与临床转归","桑基图|临床队列|结局","用两张桑基图从不同起点追踪同一队列。左图按维持治疗分组，右图按既往治疗暴露类型分组，二者共用结局分类。","https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2847804","https://pmc-oa-opendata.s3.amazonaws.com/PMC13087816.1/jamanetwopen-e267470-g001.jpg","Giatsoglou 等（美国国家医学图书馆收录版）","by-nc-nd",{"width":3897,"height":2450}],
   ["abstract","European Heart Journal – Digital Health",2024,"从心脏影像定义表型到比较风险","风险预测|影像流行病学|队列设计","用同一组心脏示意图贯穿表型定义和风险对照，四格分别交代测量、临床结局、遗传信号和风险评分。","https://academic.oup.com/ehjdh/article/5/5/591/7730212","https://oup.silverchair-cdn.com/oup/backfile/Content_public/Journal/ehjdh/5/5/10.1093_ehjdh_ztae060/1/ztae060_ga.jpeg?Expires=2147483647&Signature=bMHpUVNKLlbU5ECCzJonJOjT9ZhyaKqU7PZk7IUWUKEjmLuU35NRAXrY~E8rM9WwrWIHvrZWsVzIvm~e11H12Uq9O8RydJiFZA5hABQvCJdT9SjWtRV2hZ-Lij-WU1cLTGLx8Urzu~qqctbbNHQG5M0BsiveucynffomQ4hzA4wErgEizCACgoBuXhTCNB6rndKVEzmn2HtQJMCz6aENSA4C2d0POeW6yP10Oavuge0SwBtKoKKsFgnTKcdKqKIyVkxzV87vLeuOYumun6DRvzxXThvxpAOlbTCjCeGO5zSiu7MIlE5~DDLWkKXgENtRVDrVWF1MbAkDihyTFuuejQ__&Key-Pair-Id=APKAIE5G5CRDK6RD3PGA","Yuan 等，解剖插画由 Servier Medical Art 提供（CC BY 3.0）","by",{"width":2125,"height":1450}],
-  ["abstract","European Journal of Preventive Cardiology",2025,"日常活动与久坐的联合暴露","联合暴露|体力活动|森林图","上半用两组日常活动图标和天平解释为什么要联合看暴露。下半用对应位置的森林图回答不同暴露组合的风险。","https://academic.oup.com/eurjpc/article/32/1/77/7777149","https://oup.silverchair-cdn.com/oup/backfile/Content_public/Journal/eurjpc/32/1/10.1093_eurjpc_zwae316/1/zwae316_ga.jpeg?Expires=2147483647&Signature=hudulFt~q6oYFApd2NUTmNnXFmtg1ee32fwqw535DyyrHpZlQMxEFWwOL0gSY7gkGEGyWAl05xKv4-TLm5SWd8NnV0-ugKVWQxNIgf-g7Xj1VgPu6dexrw6P2i4t70WQaJ9vTbCxq6pra~eI-nsdMvy7vJ5iK8AUzj5WD2KZU-aKygZmTxFTr41ZUah0F-8~Bw~qlQhDqrUkklMSaHstbhx2RB3u7bbHeM9Hn6QQBSJ1Pv5DgvOmsnnueKG8sqzsoTv4gURCt4JARJZQXKJNrrrgnoMy2C0EGqX3GwV5QzYXG1Z1HRFtJP8lR9zGoohvMApa1Oq1B1721Hq7A2enmQ__&Key-Pair-Id=APKAIE5G5CRDK6RD3PGA","Koemel 等","by",{"width":4000,"height":2250}],
+  ["abstract","European Journal of Preventive Cardiology",2025,"日常活动与久坐的联合暴露","联合暴露|体力活动|森林图","上半用两组日常活动图标和天平解释为什么要联合看暴露。下半用对应位置的森林图回答不同暴露组合的风险。","https://academic.oup.com/eurjpc/article/32/1/77/7777149","https://oup.silverchair-cdn.com/oup/backfile/Content_public/Journal/eurjpc/32/1/10.1093_eurjpc_zwae316/1/zwae316_ga.jpeg?Expires=2147483647&Signature=hudulFt~q6oYFApd2NUTmNnXFmtg1ee32fwqw535DyyrHpZlQMxEFWwOL0gSY7gkGEGyWAl05xKv4-TLm5SWd8NnV0-ugKVWQx NIgf-g7Xj1VgPu6dexrw6P2i4t70WQaJ9vTbCxq6pra~eI-nsdMvy7vJ5iK8AUzj5WD2KZU-aKygZmTxFTr41ZUah0F-8~Bw~qlQhDqrUkklMSaHstbhx2RB3u7bbHeM9Hn6QQBSJ1Pv5DgvOmsnnueKG8sqzsoTv4gURCt4JARJZQXKJNrrrgnoMy2C0EGqX3GwV5QzYXG1Z1HRFtJP8lR9zGoohvMApa1Oq1B1721Hq7A2enmQ__&Key-Pair-Id=APKAIE5G5CRDK6RD3PGA","Koemel 等","by",{"width":4000,"height":2250}],
   ["abstract","JACC: CardioOncology",2024,"空气污染、心血管病和癌症的共同风险","环境健康|综述|概念框架","左栏用重叠关系画心血管病和癌症的共享风险，右栏从室内外暴露沿着人体图引向共同机制。","https://pmc.ncbi.nlm.nih.gov/articles/PMC11229557/","https://ars.els-cdn.com/content/image/1-s2.0-S2666087324001479-gr5_lrg.jpg","Zhu 等，Central Illustration","by-nc-nd",{"width":3446,"height":3808}],
   ["abstract","JACC: Advances",2025,"换用 PREVENT 后的风险分层变化","风险预测|桑基图|再分类","把旧模型和新模型的风险组画在两边，用流线标出人群往上或往下移动，再用旁注解释最重要的变化。","https://pmc.ncbi.nlm.nih.gov/articles/PMC11734013/","https://ars.els-cdn.com/content/image/1-s2.0-S2772963X24006525-gr3_lrg.jpg","Shetty 等，Central Illustration","by-nc-nd",{"width":3446,"height":3305}],
   ["abstract","JACC: Advances",2026,"久坐行为与心肾代谢结局","体力活动|连续暴露|风险预测","先用两张色块图展示不同久坐时长与活动水平的组合，再用结局图展开对各类疾病的比较。","https://pmc.ncbi.nlm.nih.gov/articles/PMC13091349/","https://ars.els-cdn.com/content/image/1-s2.0-S2772963X26001389-ga1_lrg.jpg","Ajufo 等，Central Illustration","by-nc-nd",{"width":3446,"height":2893}],
@@ -244,6 +572,34 @@
     box.append(content);
     return box;
   }
+  function renderJournalScope() {
+    const registry = JSON.parse(document.querySelector('#journal-registry').textContent);
+    const imagesPerJournal = new Map();
+    for (const [,name,,,,,,image] of items) {
+      if (image) imagesPerJournal.set(name,(imagesPerJournal.get(name) || 0) + 1);
+    }
+    const count = registry.groups.reduce((total,group) => total + group.journals.length,0);
+    document.querySelector('#scope-summary').textContent = count + ' 刊拟盘点 · ' + imagesPerJournal.size + ' 刊可预览';
+    const groups = registry.groups.map(group => {
+      const section = el('section');
+      const list = el('ul');
+      section.append(el('h2','',group.title),list);
+      for (const journal of group.journals) {
+        const entry = el('li','',journal.name);
+        const previewCount = imagesPerJournal.get(journal.name);
+        if (previewCount) entry.append(el('span','scope-badge',previewCount + ' 张图'));
+        if (journal.archive && !journal.track) {
+          const archive = link('2026 原刊归档',journal.archive);
+          archive.className = 'scope-badge';
+          entry.append(archive);
+        }
+        list.append(entry);
+      }
+      return section;
+    });
+    document.querySelector('#scope-groups').replaceChildren(...groups);
+  }
+  renderJournalScope();
   function scope() {
     return allSources.checked ? items : items.filter(item => item[7]);
   }
