@@ -147,4 +147,9 @@ if previous_detect in document:
     )
     replace_once(previous_detect, detect_fields + updated_detect)
 
+# Use the canonical path for the reviewed Innovation Medicine original.
+old_innovation = 'https://data.the-innovation.org//innovation-data/medicine/2026/3/PIC/TIME-2026-0039-Abstract.jpg'
+if old_innovation in document:
+    replace_once(old_innovation, old_innovation.replace('.org//', '.org/'))
+
 page.write_text(document, encoding='utf-8')
