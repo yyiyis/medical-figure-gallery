@@ -4,7 +4,7 @@ on:
     - cron: "20 1 * * 1"
   push:
     branches: [main]
-    paths: [index.html, .github/workflows/figure-gallery.yml, assets/gallery-search.js, assets/gallery-style.css, tools/update_site.py, tools/promote_history.py, tools/update_weekly.py]
+    paths: [index.html, .github/workflows/figure-gallery.yml, assets/gallery-search.js, assets/gallery-style.css, tools/update_site.py, tools/promote_history.py, tools/update_weekly.py, tools/publish_2025.py, data/reviews/2025-figures.json]
   workflow_dispatch:
     inputs:
       mode:
@@ -110,6 +110,23 @@ jobs:
         if: github.event_name == 'push'
         run: |
           if [[ -f tools/update_site.py ]]; then python3 tools/update_site.py; fi
+          python3 tools/publish_2025.py
+          python3 - <<'PY'
+          from pathlib import Path
+
+          path = Path('assets/gallery-search.js')
+          source = path.read_text(encoding='utf-8')
+          if 'if (extra?.titleEn) exact.set(item[3], extra.titleEn);' not in source:
+              anchor = '  for (const [source, translation] of reviewed2026Translations) exact.set(source, translation);'
+              translation_rows = '''  for (const item of JSON.parse(document.querySelector('#catalog')?.textContent ?? '[]')) {
+              const extra = item[10];
+              if (extra?.titleEn) exact.set(item[3], extra.titleEn);
+              if (extra?.noteEn) exact.set(item[5], extra.noteEn);
+            }'''
+              if source.count(anchor) != 1:
+                  raise ValueError('Missing gallery translation registration')
+              path.write_text(source.replace(anchor, anchor + '\n' + translation_rows, 1), encoding='utf-8')
+          PY
       - name: Check whether the completed 2026 supplement has been archived
         id: supplement
         if: github.event_name == 'push'
@@ -149,7 +166,7 @@ jobs:
       - name: Commit updated gallery
         if: github.event_name == 'push' || github.event_name == 'schedule' || (inputs.publish && inputs.mode != 'deploy')
         run: |
-          git add index.html
+          git add index.html assets/gallery-search.js
           if [[ -f data/history-2026-11-27.json ]]; then git add data/history-2026-11-27.json; fi
           if [[ -f data/history-supplement-2026-11-27.json ]]; then git add data/history-supplement-2026-11-27.json; fi
           if [[ -f data/weekly-review.json ]]; then git add data/weekly-review.json; fi
