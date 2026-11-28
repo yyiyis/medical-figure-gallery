@@ -1656,6 +1656,11 @@
   ]
 ];
   for (const [source, translation] of reviewed2026Translations) exact.set(source, translation);
+  for (const item of JSON.parse(document.querySelector('#catalog')?.textContent ?? '[]')) {
+    const extra = item[10];
+    if (extra?.titleEn) exact.set(item[3], extra.titleEn);
+    if (extra?.noteEn) exact.set(item[5], extra.noteEn);
+  }
 
   globalThis.GalleryLanguage = {
     searchText(item) {
