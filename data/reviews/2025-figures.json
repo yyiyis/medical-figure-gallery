@@ -1,0 +1,118 @@
+{
+  "coverage": {
+    "start": "2025-01-01",
+    "end": "2025-12-31",
+    "basis": "First online publication for articles. Issue month for covers.",
+    "workflow": "https://github.com/yyiyis/medical-figure-gallery/actions/runs/46147150433",
+    "review": "Initial individually reviewed figures. The journal scan and candidate review are ongoing."
+  },
+  "dateCorrections": [
+    {
+      "source": "https://academic.oup.com/eurheartj/article/47/15/1799/8377304",
+      "doi": "10.1093/eurheartj/ehaf937",
+      "published": "2025-12-11",
+      "evidence": "https://api.crossref.org/works/10.1093/eurheartj/ehaf937"
+    },
+    {
+      "source": "https://academic.oup.com/eurheartj/article/47/15/1861/8379858",
+      "doi": "10.1093/eurheartj/ehaf947",
+      "published": "2025-12-15",
+      "evidence": "https://api.crossref.org/works/10.1093/eurheartj/ehaf947"
+    }
+  ],
+  "figures": [
+    [
+      "figures",
+      "Nature Aging",
+      2025,
+      "三队列如何验证器官蛋白组年龄",
+      "老龄化|蛋白组|组学|风险预测|外部验证|多国多队列|UK Biobank|China Kadoorie Biobank|Nurses’ Health Study|热图|多面板组图",
+      "图 1 按固定的器官顺序展示三个队列的模型表现，由上方的预测对照过渡到下方的疾病关联和贡献。",
+      "https://www.nature.com/articles/s43587-025-01016-8/figures/1",
+      "https://media.springernature.com/original/springer-static/image/art%3A10.1038%2Fs43587-025-01016-8/MediaObjects/43587_2025_1016_Fig1_HTML.png",
+      "Wang 等 · Nature Aging 图 1",
+      "by",
+      {
+        "doi": "10.1038/s43587-025-01016-8",
+        "published": "2025-11-26",
+        "width": 2167,
+        "height": 2404,
+        "titleEn": "Validating organ-specific proteomic clocks across three cohorts",
+        "noteEn": "Figure 1 keeps the organs in a consistent order across three cohorts. Model comparisons at the top lead into disease associations and their relative contributions below.",
+        "rightsSource": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12823432/"
+      }
+    ],
+    [
+      "figures",
+      "Nature Medicine",
+      2025,
+      "把多种暴露与衰老结局对齐在热图上",
+      "暴露组|组学|蛋白组|老龄化|UK Biobank|队列研究|热图|多面板组图",
+      "图 4 用同一列顺序排列暴露，纵向匹配生物标志物、蛋白组年龄和慢性病。每组保留自己的色标和图例。",
+      "https://www.nature.com/articles/s41591-024-03483-9/figures/4",
+      "https://media.springernature.com/original/springer-static/image/art%3A10.1038%2Fs41591-024-03483-9/MediaObjects/41591_2024_3483_Fig4_HTML.png",
+      "Argentieri 等 · Nature Medicine 图 4",
+      "by",
+      {
+        "doi": "10.1038/s41591-024-03483-9",
+        "published": "2025-02-19",
+        "width": 1805,
+        "height": 1706,
+        "titleEn": "Aligning environmental exposures with aging outcomes in a heatmap",
+        "noteEn": "Figure 4 keeps exposure columns aligned across biomarkers, proteomic age and chronic conditions. Each block has its own color scale and legend.",
+        "rightsSource": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11922759/"
+      }
+    ],
+    [
+      "cover",
+      "Emerging Infectious Diseases",
+      2025,
+      "用百年前的科幻明信片做耐药专题封面",
+      "封面设计|视觉隐喻|医学史|公共卫生",
+      "封面把一张 1900 年的明信片嵌入期刊版式。画中被放大的微生物把视线引向耐药专题。",
+      "https://wwwnc.cdc.gov/eid/article/31/1/ac-3101_article",
+      "https://wwwnc.cdc.gov/eid/images/AC-3101-F.jpg",
+      "Jean-Marc Côté · La Chasse aux Microbes（1900）· Emerging Infectious Diseases",
+      "pd",
+      {
+        "doi": "10.3201/eid3101.ac3101",
+        "issueDate": "2025-01-01",
+        "width": 685,
+        "height": 895,
+        "titleEn": "A century-old postcard on an antimicrobial resistance issue",
+        "noteEn": "A postcard from 1900 frames the cover. Its projected view of microbes draws the eye to the issue’s antimicrobial resistance theme.",
+        "rightsSource": "https://wwwnc.cdc.gov/eid/article/31/1/ac-3101_article"
+      }
+    ]
+  ],
+  "withheld": [
+    {
+      "doi": "10.1038/s41591-025-03808-2",
+      "figure": "Figure 1",
+      "status": "licence",
+      "reason": "Version of record lists a text and data mining licence. Figure redistribution permission was not confirmed.",
+      "source": "https://api.crossref.org/works/10.1038/s41591-025-03808-2"
+    },
+    {
+      "doi": "10.1038/s41591-024-03483-9",
+      "figure": "Figure 1",
+      "status": "third-party credit",
+      "reason": "Specific BioRender redistribution terms for this figure were not resolved. The article’s Figure 4 was selected.",
+      "source": "https://www.nature.com/articles/s41591-024-03483-9/figures/1"
+    },
+    {
+      "doi": "10.1016/j.envint.2025.109668",
+      "figure": "Figure 1",
+      "status": "original pending",
+      "reason": "The publisher PDF verifies the design and CC BY licence. The independent image endpoint did not return a verified original.",
+      "source": "https://www.sciencedirect.com/science/article/pii/S0160412025004192/pdf"
+    },
+    {
+      "doi": "10.1001/jamanetworkopen.2025.2013",
+      "figure": "Visual Abstract",
+      "status": "original pending",
+      "reason": "The publisher lists a visual abstract. The open PMC archive did not supply the matching image.",
+      "source": "https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2833029"
+    }
+  ]
+}
