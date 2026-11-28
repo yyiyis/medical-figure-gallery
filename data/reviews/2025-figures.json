@@ -4,7 +4,19 @@
     "end": "2025-12-31",
     "basis": "First online publication for articles. Issue month for covers.",
     "workflow": "https://github.com/yyiyis/medical-figure-gallery/actions/runs/46147150433",
-    "review": "Initial review of selected figures and publication dates. The annual candidate review is ongoing."
+    "review": "The full candidate list was screened by title and scope. Visual review prioritized distinct ways of showing population studies, environmental and life-course exposures, cohorts and omics. Selected article figures and issue covers were reviewed separately. Unselected records remain in the annual scan.",
+    "archive": "https://github.com/yyiyis/medical-figure-gallery/blob/main/data/history-2025.json",
+    "scanCompleted": "2026-11-28 21:52",
+    "journalsScanned": 94,
+    "metadataRecords": 74648,
+    "graphicalAbstractCandidates": 494,
+    "visuallyReviewedScanCandidates": 54,
+    "candidatesOutsideVisualReview": 440,
+    "selectedByFigureType": {
+      "figures": 4,
+      "cover": 1,
+      "abstract": 23
+    }
   },
   "dateCorrections": [
     {
@@ -203,6 +215,468 @@
         "noteEn": "The left panel arranges data layers from micro to macro, using a recurring icon grid for variables. The right panel outlines how these layers could feed into personalized models.",
         "rightsSource": "https://www.nature.com/articles/s41467-025-67448-3"
       }
+    ],
+    [
+      "abstract",
+      "Genome Medicine",
+      2025,
+      "按细胞亚群对齐调控网络与基因变化",
+      "组学|转录组|多面板组图|时间序列|队列研究",
+      "图文摘要把细胞亚群排成中间一行，在上方和下方分别挂出调控网络和基因。统一的颜色帮助读者沿同一列追踪对应关系。",
+      "https://doi.org/10.1186/s13073-025-01574-x",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC12751217.1/13073_2025_1574_Figa_HTML.jpg",
+      "Biradar 等 · PubMed Central 收录版",
+      "by",
+      {
+        "doi": "10.1186/s13073-025-01574-x",
+        "published": "2025-12-29",
+        "width": 1985,
+        "height": 1188,
+        "titleEn": "Aligning regulatory networks and gene changes by cell subtype",
+        "noteEn": "Cell subtypes form a central row. Regulatory networks sit above it and genes below it. Repeated colors help readers trace each column.",
+        "rightsSource": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12751217/",
+        "scanCandidate": 4
+      }
+    ],
+    [
+      "abstract",
+      "GeroScience",
+      2025,
+      "多病共存的遗传分析怎样从五个结局展开",
+      "老龄化|多病共存|组学|基因组|多面板组图",
+      "左侧用分支将五个疾病性状汇到共同遗传因子，再用右侧独立栏列出复现和后续分析。",
+      "https://doi.org/10.1007/s11357-025-02044-3",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13601487.1/11357_2025_2044_Figa_HTML.webp",
+      "Dinh 等 · PubMed Central 收录版",
+      "by",
+      {
+        "doi": "10.1007/s11357-025-02044-3",
+        "published": "2025-12-17",
+        "width": 1600,
+        "height": 697,
+        "titleEn": "Framing a genetic analysis of multimorbidity across five traits",
+        "noteEn": "Branches on the left bring five disease traits into a shared genetic factor. A separate column on the right lists replication and follow-up analyses.",
+        "rightsSource": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13601487/",
+        "scanCandidate": 18
+      }
+    ],
+    [
+      "abstract",
+      "GeroScience",
+      2025,
+      "并列两个登记队列的房颤与衰弱比较",
+      "心血管|衰弱|队列研究|多国多队列|多病共存|组间比较",
+      "欧洲和亚洲登记并排，入组范围与随访年限留在上方。下面沿患病率、处方和结局三栏继续比较。",
+      "https://doi.org/10.1007/s11357-025-02026-5",
+      "https://pmc-oa-opendata.s3.amazonaws.com/PMC13601450.1/11357_2025_2026_Figa_HTML.webp",
+      "Mei 等 · PubMed Central 收录版",
+      "by",
+      {
+        "doi": "10.1007/s11357-025-02026-5",
+        "published": "2025-12-04",
+        "width": 1599,
+        "height": 1115,
+        "titleEn": "Comparing frailty and atrial fibrillation across two registries",
+        "noteEn": "The European and Asian registries sit side by side, with enrollment and follow-up above aligned panels on prevalence, prescribing and outcomes.",
+        "rightsSource": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13601450/",
+        "scanCandidate": 32
+      }
+    ],
+    [
+      "abstract",
+      "eClinicalMedicine",
+      2025,
+      "用两条路径区分病理模型开发与外部验证",
+      "数字健康|医学影像|外部验证|研究流程图|多面板组图",
+      "左侧并行画开发队列和外部验证队列，用组织切片和局部放大交代模型输入及读出，再把评价汇到右侧。",
+      "https://doi.org/10.1016/j.eclinm.2025.103658",
+      "https://ars.els-cdn.com/content/image/1-s2.0-S2589537025005929-ga1_lrg.jpg",
+      "Iacucci 等 · 出版社原图",
+      "by-nc-nd",
+      {
+        "doi": "10.1016/j.eclinm.2025.103658",
+        "published": "2025-11-25",
+        "width": 1588,
+        "height": 886,
+        "titleEn": "Showing development and external validation of a pathology model",
+        "noteEn": "Parallel paths distinguish the development and external validation cohorts. Tissue images and close-ups show model inputs and outputs before the paths converge on evaluation.",
+        "rightsSource": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12702044/",
+        "scanCandidate": 42
+      }
+    ],
+    [
+      "abstract",
+      "Environment International",
+      2025,
+      "两个孕期暴露测量时点如何接到出生时甲基化",
+      "暴露组|孕期|生命历程|组学|表观遗传|时间轴",
+      "横轴标出两次孕期采样和出生时测量。下方的连线把每个暴露窗口接到对应的分析结果。",
+      "https://doi.org/10.1016/j.envint.2025.109946",
+      "https://ars.els-cdn.com/content/image/1-s2.0-S016041202500697X-ga1_lrg.jpg",
+      "Vespalcova 等 · 出版社原图",
+      "by-nc-nd",
+      {
+        "doi": "10.1016/j.envint.2025.109946",
+        "published": "2025-11-19",
+        "width": 2207,
+        "height": 886,
+        "titleEn": "Linking two prenatal exposure windows to methylation at birth",
+        "noteEn": "The timeline places two prenatal sampling windows alongside measurement at birth. Connectors below align each exposure window with its analysis results.",
+        "rightsSource": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12696147/",
+        "scanCandidate": 55
+      }
+    ],
+    [
+      "abstract",
+      "Environment International",
+      2025,
+      "从孕期到儿童期排查汞暴露的不同关联",
+      "暴露组|生命历程|队列研究|多国多队列|HELIX|时间轴|多面板组图",
+      "左侧的人体轮廓和地图交代年龄阶段、样本来源。右侧按同一顺序分行呈现产前、产后和端粒指标对应的关联。",
+      "https://doi.org/10.1016/j.envint.2025.109880",
+      "https://ars.els-cdn.com/content/image/1-s2.0-S0160412025006312-ga1_lrg.jpg",
+      "Lozano 等 · 出版社原图",
+      "by-nc",
+      {
+        "doi": "10.1016/j.envint.2025.109880",
+        "published": "2025-10-30",
+        "width": 2053,
+        "height": 886,
+        "titleEn": "Tracing mercury exposure associations from pregnancy through childhood",
+        "noteEn": "Silhouettes and a map establish timing and cohort geography. Aligned rows on the right compare associations for prenatal exposure, postnatal exposure and telomere measures.",
+        "rightsSource": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12634486/",
+        "scanCandidate": 88
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Advances",
+      2025,
+      "把遗传评分和临床评分放在同一批老年参与者中比较",
+      "心血管|老龄化|基因组|风险预测|队列研究|ASPREE|多面板组图",
+      "在共同样本和随访信息下面，并列遗传评分、临床风险因素和临床评分。底部同时放模型表现和分组发病曲线。",
+      "https://doi.org/10.1016/j.jacadv.2025.102245",
+      "https://ars.els-cdn.com/content/image/1-s2.0-S2772963X25006738-ga1_lrg.jpg",
+      "Fransquet 等 · 出版社原图",
+      "by",
+      {
+        "doi": "10.1016/j.jacadv.2025.102245",
+        "published": "2025-10-21",
+        "width": 3446,
+        "height": 3357,
+        "titleEn": "Comparing genetic and clinical risk scores within one older cohort",
+        "noteEn": "Genetic scores, clinical factors and clinical scores share a cohort header. Model performance and incidence curves by risk group appear below.",
+        "rightsSource": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12589920/",
+        "scanCandidate": 114
+      }
+    ],
+    [
+      "abstract",
+      "Environment International",
+      2025,
+      "把不同尺度的孕期绿地、脐血指标和儿童认知放在一张图上",
+      "生命历程|孕期|环境健康|暴露组|ENVIRONAGE|队列研究|多面板组图",
+      "上排按测量时间组织队列、绿地、脐血和认知。下排划分绿地类别与距离尺度，并用连线标出中介分析。",
+      "https://doi.org/10.1016/j.envint.2025.109849",
+      "https://ars.els-cdn.com/content/image/1-s2.0-S0160412025006002-ga1_lrg.jpg",
+      "Soerensen 等 · 出版社原图",
+      "by-nc-nd",
+      {
+        "doi": "10.1016/j.envint.2025.109849",
+        "published": "2025-10-09",
+        "width": 2213,
+        "height": 852,
+        "titleEn": "Connecting prenatal green space, cord blood and childhood cognition",
+        "noteEn": "The top row follows the timing of measurements. Below, categories and buffer distances organize the green space measures before the mediation comparison.",
+        "rightsSource": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12634485/",
+        "scanCandidate": 121
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Advances",
+      2025,
+      "用流向图表达长期多病累积",
+      "多病共存|疾病轨迹|UK Biobank|队列研究|桑基图|体力活动",
+      "左侧把基线心肺适能分组连到随访疾病数。右侧用三个图标分开代谢、心血管和神经精神结局。",
+      "https://doi.org/10.1016/j.jacadv.2025.102198",
+      "https://ars.els-cdn.com/content/image/1-s2.0-S2772963X25006246-ga1_lrg.jpg",
+      "Xu 等 · 出版社原图",
+      "by",
+      {
+        "doi": "10.1016/j.jacadv.2025.102198",
+        "published": "2025-10-08",
+        "width": 3446,
+        "height": 2197,
+        "titleEn": "Using a flow diagram to show long-term accumulation of chronic disease",
+        "noteEn": "Flows connect baseline fitness groups with disease counts at follow-up. On the right, separate icons distinguish metabolic, cardiovascular and neuropsychiatric outcomes.",
+        "rightsSource": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12805149/",
+        "scanCandidate": 124
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2025,
+      "队列、暴露和结局如何接到点区间图和中介图",
+      "China Kadoorie Biobank|队列研究|心血管|森林图与点区间图|多面板组图",
+      "上排交代队列、体型指标和结局。下排把各结局的风险估计和假设的中介路径放在两个相邻面板。",
+      "https://doi.org/10.1016/j.jacasi.2025.05.014",
+      "https://ars.els-cdn.com/content/image/1-s2.0-S2772374725002868-ga1_lrg.jpg",
+      "Zhao 等 · 出版社原图",
+      "by",
+      {
+        "doi": "10.1016/j.jacasi.2025.05.014",
+        "published": "2025-07-22",
+        "width": 3446,
+        "height": 2689,
+        "titleEn": "Connecting cohort, exposure and outcomes to effect and mediation panels",
+        "noteEn": "The top row introduces the cohort, body measure and outcomes. The lower panels place outcome-specific estimates alongside the hypothesized mediation paths.",
+        "rightsSource": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12794001/",
+        "scanCandidate": 261
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Advances",
+      2025,
+      "让癌症治疗史和血管测量在同一幅插画上相遇",
+      "生命历程|肿瘤|心血管|队列研究|医学插画|多面板组图",
+      "血管插画承接儿童癌症治疗史，局部放大连到血管相关标志物。右侧独立列出成年后的血管功能指标。",
+      "https://doi.org/10.1016/j.jacadv.2025.101820",
+      "https://ars.els-cdn.com/content/image/1-s2.0-S2772963X25002388-ga1_lrg.jpg",
+      "Berkman 等 · 出版社原图",
+      "by-nc-nd",
+      {
+        "doi": "10.1016/j.jacadv.2025.101820",
+        "published": "2025-05-29",
+        "width": 3446,
+        "height": 2511,
+        "titleEn": "Linking childhood cancer treatment to adult vascular measurements",
+        "noteEn": "A vessel illustration connects treatment history to a close-up of vascular biomarkers. The separate right panel lists adult vascular function measures.",
+        "rightsSource": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12166415/",
+        "scanCandidate": 325
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Advances",
+      2025,
+      "在同个随访框架中并排比较道路噪声与空气污染",
+      "环境健康|空气污染|队列研究|时间轴|组间比较",
+      "上方时间轴共用暴露和随访框架。两个暴露的风险估计分两行放，列标题固定临床事件和死亡，使同列比较更直接。",
+      "https://doi.org/10.1016/j.jacadv.2025.101787",
+      "https://ars.els-cdn.com/content/image/1-s2.0-S2772963X25002054-ga1_lrg.jpg",
+      "Mayntz 等 · 出版社原图",
+      "by",
+      {
+        "doi": "10.1016/j.jacadv.2025.101787",
+        "published": "2025-05-21",
+        "width": 3446,
+        "height": 2074,
+        "titleEn": "Comparing road noise and air pollution within one follow-up framework",
+        "noteEn": "A shared timeline introduces follow-up. Exposure estimates occupy two aligned rows, with consistent columns for clinical events and mortality.",
+        "rightsSource": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12150041/",
+        "scanCandidate": 339
+      }
+    ],
+    [
+      "abstract",
+      "Environment International",
+      2025,
+      "把十个欧洲出生队列的地图和儿童随访时间放在一起",
+      "空气污染|生命历程|暴露组|多国多队列|LifeCycle|地理地图|时间轴",
+      "左侧地图交代队列分布。右侧把暴露按产前和产后分段，并沿同一条箭头接到不同年龄的儿童结局。",
+      "https://doi.org/10.1016/j.envint.2025.109527",
+      "https://ars.els-cdn.com/content/image/1-s2.0-S0160412025002788-ga1_lrg.jpg",
+      "Warkentin 等 · 出版社原图",
+      "by-nc",
+      {
+        "doi": "10.1016/j.envint.2025.109527",
+        "published": "2025-05-11",
+        "width": 1602,
+        "height": 886,
+        "titleEn": "Combining a map of ten European birth cohorts with a childhood timeline",
+        "noteEn": "A map locates the cohorts. The timeline distinguishes prenatal and postnatal exposures and leads to outcomes at several childhood ages.",
+        "rightsSource": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12134048/",
+        "scanCandidate": 357
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Advances",
+      2025,
+      "在孕周轴上标注采血和预测窗口",
+      "孕期|生命历程|心血管|风险预测|队列研究|时间轴",
+      "上半图标出孕三期和生物标志物测量位置。下半图用同一指标颜色区分短期和较长期比较。",
+      "https://doi.org/10.1016/j.jacadv.2025.101671",
+      "https://ars.els-cdn.com/content/image/1-s2.0-S2772963X25000882-ga1_lrg.jpg",
+      "Bacmeister 等 · 出版社原图",
+      "by",
+      {
+        "doi": "10.1016/j.jacadv.2025.101671",
+        "published": "2025-03-19",
+        "width": 3446,
+        "height": 2534,
+        "titleEn": "Placing blood sampling and prediction windows on a pregnancy timeline",
+        "noteEn": "The upper panel marks trimesters and biomarker measurement. The lower panel uses the same biomarker colors for shorter- and longer-horizon comparisons.",
+        "rightsSource": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11968266/",
+        "scanCandidate": 409
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Advances",
+      2025,
+      "把风险计算器的输入和队列校准并列",
+      "心血管|风险预测|外部验证|ARIC|MESA|多面板组图",
+      "左侧像计算器一样列出输入字段，右侧单独安排判别指标和校准图。读者既能看懂模型需要什么，也能看怎么评估。",
+      "https://doi.org/10.1016/j.jacadv.2024.101542",
+      "https://ars.els-cdn.com/content/image/1-s2.0-S2772963X24008226-ga1_lrg.jpg",
+      "Zhou 等 · 出版社原图",
+      "by-nc-nd",
+      {
+        "doi": "10.1016/j.jacadv.2024.101542",
+        "published": "2025-01-15",
+        "width": 3446,
+        "height": 3059,
+        "titleEn": "Pairing risk calculator inputs with cohort calibration",
+        "noteEn": "A calculator-like form lists the inputs. Separate panels report discrimination and calibration, showing how the tool is populated and how performance is evaluated.",
+        "rightsSource": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11786660/",
+        "scanCandidate": 472
+      }
+    ],
+    [
+      "abstract",
+      "JACC: CardioOncology",
+      2025,
+      "从匹配队列接到卒中和出血两类结局",
+      "心血管|队列研究|肿瘤|研究流程图|多面板组图",
+      "上半图用重复人物图标说明匹配。下半图用两行固定位置比较卒中和出血，风险估计紧贴相应的结局。",
+      "https://doi.org/10.1016/j.jaccao.2024.10.014",
+      "https://ars.els-cdn.com/content/image/1-s2.0-S2666087324004253-ga1_lrg.jpg",
+      "El-Rayes 等 · 出版社原图",
+      "by-nc-nd",
+      {
+        "doi": "10.1016/j.jaccao.2024.10.014",
+        "published": "2025-01-14",
+        "width": 3446,
+        "height": 2529,
+        "titleEn": "Connecting a matched cohort to stroke and bleeding outcomes",
+        "noteEn": "Repeated participant icons explain matching above. The lower panel aligns stroke and bleeding in two rows, each with its risk estimate beside it.",
+        "rightsSource": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11866432/",
+        "scanCandidate": 473
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Advances",
+      2025,
+      "把妊娠相关心梗的病因放到一张环形图上",
+      "孕期|心血管|人群研究|医学插画|环形图",
+      "人形轮廓把目光留在中心，环绕文字摆出各病因的比例。图上方另放数据来源和病例数。",
+      "https://doi.org/10.1016/j.jacadv.2024.101554",
+      "https://ars.els-cdn.com/content/image/1-s2.0-S2772963X24008354-ga1_lrg.jpg",
+      "Gibson 等 · 出版社原图",
+      "by-nc-nd",
+      {
+        "doi": "10.1016/j.jacadv.2024.101554",
+        "published": "2025-01-08",
+        "width": 3446,
+        "height": 3089,
+        "titleEn": "Arranging the causes of pregnancy-associated myocardial infarction in a ring",
+        "noteEn": "A silhouette anchors the ring of cause proportions. A separate block above keeps the data source and case count visible.",
+        "rightsSource": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11780083/",
+        "scanCandidate": 486
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2025,
+      "用一条曲线解释从童年到中年的血压达标时间",
+      "生命历程|心血管|队列研究|时间轴|概念与方法示意图",
+      "中段用示意曲线和色带解释血压处于目标范围的时间。上方区分儿童和成人阈值，下方接到中年血管指标。",
+      "https://doi.org/10.1016/j.jacasi.2024.10.021",
+      "https://ars.els-cdn.com/content/image/1-s2.0-S2772374724004563-ga1_lrg.jpg",
+      "Wang 等 · 出版社原图",
+      "by-nc-nd",
+      {
+        "doi": "10.1016/j.jacasi.2024.10.021",
+        "published": "2025-01-07",
+        "width": 3446,
+        "height": 2847,
+        "titleEn": "Explaining time in blood pressure target range from childhood to midlife",
+        "noteEn": "A schematic curve and shaded band show time in range. Childhood and adult thresholds appear above, with midlife vascular measures below.",
+        "rightsSource": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11775792/",
+        "scanCandidate": 492
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Advances",
+      2025,
+      "用四格矩阵展示两类心血管风险分组",
+      "老龄化|心血管|代谢健康|队列研究|组间比较|概念与方法示意图",
+      "四格矩阵交叉排出心肾代谢分期和血管老化。样本与随访放右栏，下方图标再提示两类分组的含义。",
+      "https://doi.org/10.1016/j.jacadv.2025.102242",
+      "https://ars.els-cdn.com/content/image/1-s2.0-S2772963X25006702-ga1_lrg.jpg",
+      "Shi 等 · 出版社原图",
+      "by-nc-nd",
+      {
+        "doi": "10.1016/j.jacadv.2025.102242",
+        "published": "2025-10-29",
+        "width": 3446,
+        "height": 2491,
+        "titleEn": "Crossing two cardiovascular risk groupings in a four-cell matrix",
+        "noteEn": "A four-cell matrix crosses cardiovascular–kidney–metabolic stages with vascular aging. Cohort and follow-up details sit beside it, with icons below.",
+        "rightsSource": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12805181/",
+        "scanCandidate": 92
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Advances",
+      2025,
+      "把不同诊断分组的风险曲线对齐",
+      "心血管|队列研究|多病共存|多面板组图|组间比较",
+      "左侧交代研究样本与随访，中央标出诊断分组。底部用并排的小图对照各组风险曲线和不确定性。",
+      "https://doi.org/10.1016/j.jacadv.2025.102362",
+      "https://ars.els-cdn.com/content/image/1-s2.0-S2772963X25007926-ga1_lrg.jpg",
+      "Morsy 等 · 出版社原图",
+      "by",
+      {
+        "doi": "10.1016/j.jacadv.2025.102362",
+        "published": "2025-11-26",
+        "width": 3446,
+        "height": 2561,
+        "titleEn": "Aligning risk curves across diagnostic groups",
+        "noteEn": "The left column establishes the cohort and follow-up. A central panel labels diagnostic groups, followed by aligned risk curves and uncertainty bands.",
+        "rightsSource": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12702164/",
+        "scanCandidate": 39
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2025,
+      "把达到的血脂水平和斑块变化放在同一水平轴",
+      "心血管|荟萃分析|多国研究|情景比较|多面板组图",
+      "左栏交代检索、筛选和样本。右栏以同一血脂刻度对齐斑块体积与成分变化。",
+      "https://doi.org/10.1016/j.jacasi.2025.05.016",
+      "https://ars.els-cdn.com/content/image/1-s2.0-S2772374725003138-ga1_lrg.jpg",
+      "Fujisaki 等 · 出版社原图",
+      "by",
+      {
+        "doi": "10.1016/j.jacasi.2025.05.016",
+        "published": "2025-07-15",
+        "width": 3446,
+        "height": 1862,
+        "titleEn": "Aligning lipid levels with changes in coronary plaque",
+        "noteEn": "The left column shows evidence selection and sample size. A common lipid scale on the right aligns changes in plaque volume and composition.",
+        "rightsSource": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12426849/",
+        "scanCandidate": 273
+      }
     ]
   ],
   "withheld": [
@@ -254,6 +728,285 @@
       "status": "original pending",
       "reason": "The accessible archive figures are 800 pixels wide. An original with legible labels at gallery size was not verified.",
       "source": "https://doi.org/10.1093/ije/dyaf171"
+    },
+    {
+      "doi": "10.1016/j.jacadv.2025.102487",
+      "journal": "JACC: Advances",
+      "figure": "Graphical Abstract",
+      "status": "visual selection",
+      "reason": "Several pie charts and dense text compete at the same visual level.",
+      "source": "https://doi.org/10.1016/j.jacadv.2025.102487",
+      "scanCandidate": 2
+    },
+    {
+      "doi": "10.1016/j.jacadv.2025.102507",
+      "journal": "JACC: Advances",
+      "figure": "Graphical Abstract",
+      "status": "visual selection",
+      "reason": "Three similar survival panels repeat a familiar format.",
+      "source": "https://doi.org/10.1016/j.jacadv.2025.102507",
+      "scanCandidate": 7
+    },
+    {
+      "doi": "10.1007/s11357-025-02060-3",
+      "journal": "GeroScience",
+      "figure": "Graphical Abstract",
+      "status": "visual selection",
+      "reason": "Routine cohort counts and outcome plots in parallel boxes.",
+      "source": "https://doi.org/10.1007/s11357-025-02060-3",
+      "scanCandidate": 11
+    },
+    {
+      "doi": "10.1007/s11357-025-02038-1",
+      "journal": "GeroScience",
+      "figure": "Graphical Abstract",
+      "status": "visual selection",
+      "reason": "Conventional biomarker-and-outcome summary boxes repeat other examples.",
+      "source": "https://doi.org/10.1007/s11357-025-02038-1",
+      "scanCandidate": 17
+    },
+    {
+      "doi": "10.1007/s11357-025-02052-3",
+      "journal": "GeroScience",
+      "figure": "Graphical Abstract",
+      "status": "visual selection",
+      "reason": "Dense saturation and competing pie charts make the comparisons hard to follow.",
+      "source": "https://doi.org/10.1007/s11357-025-02052-3",
+      "scanCandidate": 23
+    },
+    {
+      "doi": "10.1016/j.lanepe.2025.101557",
+      "journal": "The Lancet Regional Health – Europe",
+      "figure": "Graphical Abstract",
+      "status": "visual selection",
+      "reason": "The radial text outline adds limited detail about how the evidence is assembled.",
+      "source": "https://doi.org/10.1016/j.lanepe.2025.101557",
+      "scanCandidate": 24
+    },
+    {
+      "doi": "10.1007/s11357-025-02027-4",
+      "journal": "GeroScience",
+      "figure": "Graphical Abstract",
+      "status": "visual selection",
+      "reason": "Standard methods, results and conclusion columns repeat stronger examples.",
+      "source": "https://doi.org/10.1007/s11357-025-02027-4",
+      "scanCandidate": 26
+    },
+    {
+      "doi": "10.1007/s11357-025-02025-6",
+      "journal": "GeroScience",
+      "figure": "Graphical Abstract",
+      "status": "visual selection",
+      "reason": "A familiar challenge, solution and findings layout with limited new design value.",
+      "source": "https://doi.org/10.1007/s11357-025-02025-6",
+      "scanCandidate": 28
+    },
+    {
+      "doi": "10.1007/s11357-025-01982-2",
+      "journal": "GeroScience",
+      "figure": "Graphical Abstract",
+      "status": "visual selection",
+      "reason": "Multiple imaging and omics panels are packed too tightly for this gallery.",
+      "source": "https://doi.org/10.1007/s11357-025-01982-2",
+      "scanCandidate": 63
+    },
+    {
+      "doi": "10.1016/j.jacasi.2025.08.027",
+      "journal": "JACC: Asia",
+      "figure": "Graphical Abstract",
+      "status": "visual selection",
+      "reason": "Conventional pie and bar comparisons add little to the design examples.",
+      "source": "https://doi.org/10.1016/j.jacasi.2025.08.027",
+      "scanCandidate": 81
+    },
+    {
+      "doi": "10.1007/s11357-025-01938-6",
+      "journal": "GeroScience",
+      "figure": "Graphical Abstract",
+      "status": "visual selection",
+      "reason": "The mechanism-oriented illustration adds limited study-design reference value.",
+      "source": "https://doi.org/10.1007/s11357-025-01938-6",
+      "scanCandidate": 110
+    },
+    {
+      "doi": "10.1007/s11357-025-01936-8",
+      "journal": "GeroScience",
+      "figure": "Graphical Abstract",
+      "status": "visual selection",
+      "reason": "A standard two-arm flow and numeric result tables.",
+      "source": "https://doi.org/10.1007/s11357-025-01936-8",
+      "scanCandidate": 111
+    },
+    {
+      "doi": "10.1093/ehjopen/oeaf140",
+      "journal": "European Heart Journal Open",
+      "figure": "Graphical Abstract",
+      "status": "visual selection",
+      "reason": "A conventional comparison followed by Kaplan–Meier curves.",
+      "source": "https://doi.org/10.1093/ehjopen/oeaf140",
+      "scanCandidate": 112
+    },
+    {
+      "doi": "10.1016/j.jacasi.2025.06.021",
+      "journal": "JACC: Asia",
+      "figure": "Graphical Abstract",
+      "status": "visual selection",
+      "reason": "Several small disconnected panels are difficult to read together.",
+      "source": "https://doi.org/10.1016/j.jacasi.2025.06.021",
+      "scanCandidate": 127
+    },
+    {
+      "doi": "10.1016/j.jacadv.2025.102184",
+      "journal": "JACC: Advances",
+      "figure": "Graphical Abstract",
+      "status": "visual selection",
+      "reason": "Outcome curves repeat a common design already represented in the gallery.",
+      "source": "https://doi.org/10.1016/j.jacadv.2025.102184",
+      "scanCandidate": 147
+    },
+    {
+      "doi": "10.1016/j.jacasi.2025.07.020",
+      "journal": "JACC: Asia",
+      "figure": "Graphical Abstract",
+      "status": "visual selection",
+      "reason": "The reachable copy was 765 pixels wide with small text and standard survival curves.",
+      "source": "https://doi.org/10.1016/j.jacasi.2025.07.020",
+      "scanCandidate": 161
+    },
+    {
+      "doi": "10.1016/j.jaccao.2025.06.011",
+      "journal": "JACC: CardioOncology",
+      "figure": "Graphical Abstract",
+      "status": "visual selection",
+      "reason": "Common cohort, matching and incidence plot layout.",
+      "source": "https://doi.org/10.1016/j.jaccao.2025.06.011",
+      "scanCandidate": 166
+    },
+    {
+      "doi": "10.1016/j.jacasi.2025.06.020",
+      "journal": "JACC: Asia",
+      "figure": "Graphical Abstract",
+      "status": "visual selection",
+      "reason": "Small labels and dispersed panels reduce readability.",
+      "source": "https://doi.org/10.1016/j.jacasi.2025.06.020",
+      "scanCandidate": 180
+    },
+    {
+      "doi": "10.1016/j.jacadv.2025.102070",
+      "journal": "JACC: Advances",
+      "figure": "Graphical Abstract",
+      "status": "visual selection",
+      "reason": "Top-heavy text and a standard prescription bar chart.",
+      "source": "https://doi.org/10.1016/j.jacadv.2025.102070",
+      "scanCandidate": 212
+    },
+    {
+      "doi": "10.1016/j.jacadv.2025.102038",
+      "journal": "JACC: Advances",
+      "figure": "Graphical Abstract",
+      "status": "visual selection",
+      "reason": "An organizational chart and dense prose focus on staffing rather than study design.",
+      "source": "https://doi.org/10.1016/j.jacadv.2025.102038",
+      "scanCandidate": 255
+    },
+    {
+      "doi": "10.1016/j.envres.2025.122300",
+      "journal": "Environmental Research",
+      "figure": "Graphical Abstract",
+      "status": "visual selection",
+      "reason": "Dense instrument and biomarker icons compete with the analytic comparison.",
+      "source": "https://doi.org/10.1016/j.envres.2025.122300",
+      "scanCandidate": 288
+    },
+    {
+      "doi": "10.1016/j.envres.2025.122229",
+      "journal": "Environmental Research",
+      "figure": "Graphical Abstract",
+      "status": "third-party credit",
+      "reason": "Third-party BioRender credit requires a separate image reuse determination.",
+      "source": "https://doi.org/10.1016/j.envres.2025.122229",
+      "scanCandidate": 290
+    },
+    {
+      "doi": "10.1016/j.jacadv.2025.101803",
+      "journal": "JACC: Advances",
+      "figure": "Graphical Abstract",
+      "status": "visual selection",
+      "reason": "Dense algorithm and clinical-application text is difficult to scan.",
+      "source": "https://doi.org/10.1016/j.jacadv.2025.101803",
+      "scanCandidate": 292
+    },
+    {
+      "doi": "10.1016/j.jacadv.2025.101887",
+      "journal": "JACC: Advances",
+      "figure": "Graphical Abstract",
+      "status": "visual selection",
+      "reason": "A laboratory workflow and conventional profiling plots repeat common designs.",
+      "source": "https://doi.org/10.1016/j.jacadv.2025.101887",
+      "scanCandidate": 312
+    },
+    {
+      "doi": "10.1016/j.jaccao.2025.03.008",
+      "journal": "JACC: CardioOncology",
+      "figure": "Graphical Abstract",
+      "status": "visual selection",
+      "reason": "The results are chiefly a dense numeric table.",
+      "source": "https://doi.org/10.1016/j.jaccao.2025.03.008",
+      "scanCandidate": 316
+    },
+    {
+      "doi": "10.1016/j.envint.2025.109612",
+      "journal": "Environment International",
+      "figure": "Graphical Abstract",
+      "status": "visual selection",
+      "reason": "Crowded labels and small directional marks limit useful reading at gallery scale.",
+      "source": "https://doi.org/10.1016/j.envint.2025.109612",
+      "scanCandidate": 320
+    },
+    {
+      "doi": "10.1016/j.jacadv.2025.101743",
+      "journal": "JACC: Advances",
+      "figure": "Graphical Abstract",
+      "status": "visual selection",
+      "reason": "Conventional stacked interval estimates with limited additional design value.",
+      "source": "https://doi.org/10.1016/j.jacadv.2025.101743",
+      "scanCandidate": 328
+    },
+    {
+      "doi": "10.1016/j.jaccao.2025.04.003",
+      "journal": "JACC: CardioOncology",
+      "figure": "Graphical Abstract",
+      "status": "visual selection",
+      "reason": "Routine two-group comparison with a short result table.",
+      "source": "https://doi.org/10.1016/j.jaccao.2025.04.003",
+      "scanCandidate": 331
+    },
+    {
+      "doi": "10.1016/j.jacasi.2025.01.013",
+      "journal": "JACC: Asia",
+      "figure": "Graphical Abstract",
+      "status": "visual selection",
+      "reason": "A predominately mechanistic cell illustration was lower priority for this round.",
+      "source": "https://doi.org/10.1016/j.jacasi.2025.01.013",
+      "scanCandidate": 398
+    },
+    {
+      "doi": "10.1016/j.jacadv.2025.101651",
+      "journal": "JACC: Advances",
+      "figure": "Graphical Abstract",
+      "status": "visual selection",
+      "reason": "A long numeric table takes up most of the image.",
+      "source": "https://doi.org/10.1016/j.jacadv.2025.101651",
+      "scanCandidate": 414
+    },
+    {
+      "doi": "10.1016/j.metabol.2025.156160",
+      "journal": "Metabolism",
+      "figure": "Graphical Abstract",
+      "status": "visual selection",
+      "reason": "Preclinical intervention schematic is outside this round’s population-study emphasis.",
+      "source": "https://doi.org/10.1016/j.metabol.2025.156160",
+      "scanCandidate": 452
     }
   ]
 }
