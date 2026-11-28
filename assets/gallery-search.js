@@ -1301,6 +1301,362 @@
 ];
   for (const [source, translation] of newCardTranslations) exact.set(source, translation);
 
+  const reviewed2026Translations = [
+  [
+    "数字病房与常规房颤照护怎么对照",
+    "Comparing a digital ward with usual atrial fibrillation care"
+  ],
+  [
+    "左栏对齐两种照护路径和匹配队列，右栏按临床结局、再次就诊与成本分层。",
+    "The left column aligns care pathways and matched cohorts. The right column separates clinical outcomes, repeat visits and costs."
+  ],
+  [
+    "用窦性心律超声图像识别房颤",
+    "Identifying atrial fibrillation from sinus-rhythm echocardiograms"
+  ],
+  [
+    "三条横向流程分别交代模型开发、独立检验与后续随访。",
+    "Three horizontal tracks separate model development, independent testing and subsequent follow-up."
+  ],
+  [
+    "Tromsø 队列中糖尿病与心梗风险的性别差异",
+    "Sex differences in myocardial infarction risk in the Tromsø Study"
+  ],
+  [
+    "先用地图交代队列，再把男女发病曲线、调整后风险和各因素的贡献并排。",
+    "A map locates the cohort. Adjacent panels align incidence curves, adjusted risks and individual risk-factor contributions by sex."
+  ],
+  [
+    "把心电向量放回心脏成像空间",
+    "Placing electrocardiographic vectors in cardiac imaging space"
+  ],
+  [
+    "左侧按时间交代心电测量，右侧用心脏影像和两根向量解释测量指标。",
+    "Serial ECG measurements sit on the left. Cardiac imaging on the right anchors the two vectors used in the analysis."
+  ],
+  [
+    "按射血分数比较急性冠脉综合征后的用药",
+    "Comparing treatment after acute coronary syndrome across ejection fractions"
+  ],
+  [
+    "上方交代加权队列，下方用相邻图表对照不同射血分数下的生存结果。",
+    "The weighted cohort sits above paired displays of survival across ejection fractions."
+  ],
+  [
+    "在一张图里区分抗血小板方案的直接和间接比较",
+    "Direct and indirect comparisons of antiplatelet strategies"
+  ],
+  [
+    "上半部画出三条给药路径，下半部按临床结局对齐直接和间接证据。",
+    "Treatment pathways appear above outcome rows that align the direct and indirect comparisons."
+  ],
+  [
+    "用同一组颜色连接休克表型与三日转归",
+    "Tracking cardiogenic shock phenotypes over three days"
+  ],
+  [
+    "左栏定义三种表型，右栏用风险矩阵和三日流向图保留同一表型颜色。",
+    "The left column defines three phenotypes. A risk matrix and a three-day flow diagram reuse the same colors."
+  ],
+  [
+    "用共享对照连接两项药物试验",
+    "Connecting two drug trials through a shared comparator"
+  ],
+  [
+    "左栏用共享对照解释跨试验比较，中栏把随访曲线和效应估计放在一起。",
+    "The shared comparator explains the cross-trial design on the left. The middle pairs follow-up curves with effect estimates."
+  ],
+  [
+    "从细胞外囊泡提取到心脏淀粉样变蛋白组",
+    "From extracellular vesicles to proteomic patterns in cardiac amyloidosis"
+  ],
+  [
+    "上半部把样本与囊泡分离接到蛋白热图，下半部列出两类差异信号。",
+    "Sample collection and vesicle isolation lead to a protein heatmap, with two sets of distinguishing signals below."
+  ],
+  [
+    "社区心肾代谢照护试验的图文摘要",
+    "A community trial of integrated cardiometabolic care"
+  ],
+  [
+    "上下分区把招募、干预对照和主要结局接起来，干预组颜色从分组沿用至结果。",
+    "Stacked panels connect recruitment, randomized groups and the primary outcome. Group colors carry through to the results."
+  ],
+  [
+    "顺序到达的心电和胸片怎样进入同一个模型",
+    "Combining sequential ECGs and chest radiographs in one model"
+  ],
+  [
+    "用四格对照临床工作流、模型模块、数据来源与外部验证。",
+    "Four panels align the clinical workflow, model architecture, data sources and external validation."
+  ],
+  [
+    "用放射状图组织克隆性造血和心血管风险",
+    "A radial map of clonal hematopoiesis and cardiovascular risk"
+  ],
+  [
+    "中心用环状图组织克隆组分，左右两翼分别交代移植前风险和心血管影响。",
+    "A central ring organizes clonal components, flanked by pre-transplant risks and cardiovascular outcomes."
+  ],
+  [
+    "两种心肌标志物怎样组合做术后风险分层",
+    "Combining cardiac biomarkers for postoperative risk stratification"
+  ],
+  [
+    "上方地图定位多中心队列，下方并排放判别曲线、标志物重叠与组合风险。",
+    "A map locates the multicenter cohort above aligned discrimination curves, biomarker overlap and joint risk groups."
+  ],
+  [
+    "把年轻人死因趋势和人群差异放在同一张摘要图",
+    "Showing mortality trends and population differences in one abstract"
+  ],
+  [
+    "上方用图标串联人群、死因和统计结果，下方并排展示时间趋势和地理差异。",
+    "A row of icons connects population, cause of death and analysis. Lower panels place temporal and geographic comparisons side by side."
+  ],
+  [
+    "把证据网络和治疗效应逐行对照",
+    "Aligning evidence networks and treatment effects by outcome"
+  ],
+  [
+    "相同方案图标贯穿左列的治疗清单，中右列按结局对齐证据网络与森林图。",
+    "Treatment icons define the options on the left. Evidence networks and forest plots align in outcome rows on the right."
+  ],
+  [
+    "移植后高血压研究的时间轴与结局分支",
+    "A timeline with three outcome branches after stem-cell transplantation"
+  ],
+  [
+    "先用时间轴定位移植和检查窗口，再向下分三条路线展示随访结局。",
+    "The timeline anchors transplantation and assessment windows, followed by three parallel outcome branches."
+  ],
+  [
+    "自主神经指标与癌症死亡风险的对照矩阵",
+    "A comparison matrix for autonomic markers and cancer mortality"
+  ],
+  [
+    "把不同指标放在列、癌种放在行，以一致颜色表示风险升降和未观察到关联。",
+    "Markers form columns and cancer sites form rows. Shared colors distinguish higher, lower and null associations."
+  ],
+  [
+    "把病历文字转成结构化心肌炎证据",
+    "Turning clinical notes into structured myocarditis evidence"
+  ],
+  [
+    "三层依次呈现研究目标、分层信息提取及对照评估，顶部图标与方法分支呼应。",
+    "Three tiers show the objective, hierarchical extraction and comparative evaluation. Icons connect the inputs to their method branches."
+  ],
+  [
+    "心电模型、超声表型与外部队列的对照",
+    "Aligning ECG predictions, ultrasound phenotypes and external replication"
+  ],
+  [
+    "左至右呈现心电推断、匹配的超声数据和相关性，底部单列外部复现。",
+    "Left-to-right panels connect ECG inference, matched echocardiography and correlations. External replication appears below."
+  ],
+  [
+    "用同一颜色系统跟踪主动脉狭窄分期",
+    "Reusing stage colors across aortic stenosis panels"
+  ],
+  [
+    "心脏损害分级、瓣膜图标和结局曲线使用相同的层级顺序与颜色。",
+    "Cardiac damage stages, valve illustrations and outcome curves follow the same category order and color scheme."
+  ],
+  [
+    "从首个警示信号到确诊和随访",
+    "From early warning signs to diagnosis and follow-up"
+  ],
+  [
+    "围绕诊断时点分段，用上下对齐的文字和图标标出警示、转诊与远期结局。",
+    "An aligned timeline marks warning signs, referral and long-term outcomes around the diagnosis date."
+  ],
+  [
+    "房颤分型的开发、外部验证与策略比较",
+    "Developing, validating and applying atrial fibrillation phenotypes"
+  ],
+  [
+    "训练和外部应用置于左侧，右侧按相同分型颜色对照预后与消融策略。",
+    "Training and external application sit on the left. Matching phenotype colors connect prognosis and ablation comparisons on the right."
+  ],
+  [
+    "把多维衰弱的测量和结局压缩到三栏",
+    "A three-column design for multidimensional frailty"
+  ],
+  [
+    "中间用四个图标解释衰弱评分，两边分别放队列和一年结局。",
+    "Four icons explain the frailty score between the cohort overview and one-year outcomes."
+  ],
+  [
+    "孕期和产后心血管筛查的双路径图",
+    "Two pathways for cardiovascular screening in pregnancy and postpartum"
+  ],
+  [
+    "以颜色区分孕期与产后筛查，再把两条路径接到确诊和阳性预测值。",
+    "Color distinguishes screening in pregnancy and postpartum. Both pathways lead to confirmation and positive predictive values."
+  ],
+  [
+    "从多普勒频谱到每次检查的自动输出",
+    "From Doppler spectra to examination-level output"
+  ],
+  [
+    "三栏按输入、自动分析和检查层面输出排列，保留原始多普勒信号的局部示例。",
+    "Three columns show the input, automated analysis and examination-level output, with a sample Doppler trace in context."
+  ],
+  [
+    "地图、病例与社会因素如何组成先心病研究摘要",
+    "Mapping sites, patients and social factors in congenital heart disease"
+  ],
+  [
+    "地图定位参与中心，第二层交代治疗路径，底层把社会因素与临床决策并排。",
+    "A map locates participating centers. Treatment paths lead to a comparison of social factors and clinical decisions."
+  ],
+  [
+    "图解心电人工智能的诊断证据汇总",
+    "A visual synthesis of diagnostic evidence for AI-enabled ECGs"
+  ],
+  [
+    "第一层解释心电输入、模型和参考检查，第二层独立汇总诊断指标与统计图。",
+    "The top tier introduces inputs, models and the reference test. A separate tier summarizes diagnostic metrics and plots."
+  ],
+  [
+    "用同一时间轴连接用药、血红蛋白与癌症检出",
+    "An aligned timeline for anticoagulation, hemoglobin and cancer detection"
+  ],
+  [
+    "上方按时间顺序放两次测量和癌症观察窗，下方用对应的小图展示风险比较。",
+    "The timeline identifies two measurements and the cancer observation window above the corresponding risk comparisons."
+  ],
+  [
+    "把多模态模型、风险判别与影像解释同图排列",
+    "Aligning a multimodal model with risk and imaging explanations"
+  ],
+  [
+    "上半部对照影像与结构化数据的融合，下半部并列判别表现、变量重要性和影像解释。",
+    "The upper pipeline combines images and structured data. Lower panels align discrimination, variable importance and image explanations."
+  ],
+  [
+    "用眼底照片筛查亚临床动脉粥样硬化",
+    "Screening for subclinical atherosclerosis with retinal images"
+  ],
+  [
+    "用四个对应模块交代临床问题、数据、模型与输出，底部列出可能的使用场景。",
+    "Four aligned modules show the clinical problem, data, model and output, with potential uses summarized below."
+  ],
+  [
+    "用颜色贯穿移植物示意与试验证据",
+    "Carrying graft colors from surgical diagrams to trial evidence"
+  ],
+  [
+    "上方用颜色和图形区分搭桥策略，下方在森林图与试验网络复用这些颜色。",
+    "Color and shape distinguish bypass strategies above and reappear in the forest plot and evidence network below."
+  ],
+  [
+    "镜像呈现人工和自动超声测量",
+    "Mirroring manual and automated echocardiography measurements"
+  ],
+  [
+    "左右两栏保留同一参考检查与测量项目，只改变人工和自动测量的比较对象。",
+    "Both columns use the same reference examination and measurements. The comparison changes from human readers to AI."
+  ],
+  [
+    "把四个队列、糖尿病风险刻度和长期曲线对齐",
+    "Aligning cohorts, diabetes risk bands and long-term outcomes"
+  ],
+  [
+    "左上列出开发和验证数据，右侧沿同一颜色阶梯对照不同风险组的长期结局。",
+    "Development and validation data appear on the left. Color-ordered risk bands correspond to long-term curves on the right."
+  ],
+  [
+    "用分支队列解释遗传变异与妊娠相关心肌病",
+    "A branching cohort graphic for genetic variants and pregnancy-associated cardiomyopathy"
+  ],
+  [
+    "从携带同一类变异的人群出发，先按妊娠经历分支，再交代心肌病和随访比较。",
+    "The diagram starts with variant carriers, branches by pregnancy history and then shows cardiomyopathy and follow-up comparisons."
+  ],
+  [
+    "儿童家族性高胆固醇血症的两步筛查",
+    "Two-step screening for familial hypercholesterolemia in children"
+  ],
+  [
+    "左栏说明入组和筛查流程，右栏用分布和阳性检出图联系阈值与结果。",
+    "Enrollment and screening steps sit on the left. Distribution and detection plots on the right connect thresholds with findings."
+  ],
+  [
+    "从儿童期开始降脂治疗的远期比较",
+    "Long-term comparisons of lipid lowering from childhood"
+  ],
+  [
+    "三组定义置顶，以下用同一尺度比较效应区间，并并列展示临床结局构成。",
+    "The three group definitions sit above estimates aligned to a common scale and side-by-side clinical outcome distributions."
+  ],
+  [
+    "把临床队列、UK Biobank 与机制证据拼在一张图里",
+    "Combining clinical, biobank and mechanistic evidence in one graphic"
+  ],
+  [
+    "左侧按三类证据分区，右侧将基因和代谢通路接到组织表型。",
+    "Three tiers on the left establish the evidence sources. The right connects genetic and metabolic pathways to tissue phenotypes."
+  ],
+  [
+    "血脂异常怎样连到肿瘤和心血管疾病",
+    "Linking dyslipidemia, cancer and cardiovascular disease"
+  ],
+  [
+    "用环形布局展示肿瘤、心血管病与脂质治疗的相互影响，沿环排列路径图标。",
+    "A circular layout connects cancer, cardiovascular disease and lipid management, with icons positioned along the pathways."
+  ],
+  [
+    "把试验代表性和性别分层结果放在一张图里",
+    "Showing trial representation alongside sex-stratified results"
+  ],
+  [
+    "把女性入组比例和效应差异独立分区，用相同的图形符号把代表性接到证据缺口。",
+    "Separate panels display representation and treatment effects. Consistent symbols connect recruitment to evidence gaps."
+  ],
+  [
+    "用一张图解释 PCSK9 观察性比较的设计",
+    "A one-figure summary of an observational PCSK9 comparison"
+  ],
+  [
+    "先交代设计和人群，再按治疗比较与敏感性分析对齐随访曲线。",
+    "Study design and population come first, followed by aligned follow-up curves for treatment comparisons and sensitivity analyses."
+  ],
+  [
+    "随机分配、随访与结局的分层排版",
+    "Layering randomization, follow-up and outcomes"
+  ],
+  [
+    "主线沿随机分配走向随访，下方按主次要结局逐行比较两组。",
+    "The top tracks randomization into follow-up. Lower rows compare the groups by primary and secondary outcomes."
+  ],
+  [
+    "四个面板对照心肾代谢综合征的性别差异",
+    "Four panels for sex differences in cardiovascular–kidney–metabolic syndrome"
+  ],
+  [
+    "四个区域依次放分期定义、性别构成、临床风险与干预比较。",
+    "Four areas present stage definitions, sex distribution, clinical risk and intervention comparisons."
+  ],
+  [
+    "SCORE2-HF 怎样把地区差异放进风险表达",
+    "How SCORE2-HF shows regional differences in risk"
+  ],
+  [
+    "各地区的风险色贯穿校准地图与病例比较，下方示例展示同一个人群画像的绝对风险差异。",
+    "Consistent regional colors link the calibration map to example profiles that illustrate differences in absolute risk."
+  ],
+  [
+    "把心衰模型放进两个临床病例对照",
+    "Comparing two clinical cases with the LIFE-Preserved model"
+  ],
+  [
+    "左侧说明 LIFE-Preserved 的模型要素，右侧用镜像病例同尺度比较不同时间窗的风险。",
+    "Model components sit on the left. Mirrored cases on the right compare risks at matched time horizons."
+  ]
+];
+  for (const [source, translation] of reviewed2026Translations) exact.set(source, translation);
+
   globalThis.GalleryLanguage = {
     searchText(item) {
       return [exact.get(item[3]), exact.get(item[5])].filter(Boolean).join(' ');
@@ -1375,8 +1731,15 @@
   heading.style.cssText = 'display:flex;justify-content:space-between;align-items:flex-start;gap:12px';
   title.before(heading);
   heading.append(title,toggle);
+  const footer = document.createElement('footer');
+  footer.className = 'wrap';
+  footer.style.cssText = 'padding:14px 0 24px;border-top:1px solid var(--edge);color:var(--muted);font-size:13px';
+  footer.textContent = '技术支持 · OpenAI Codex';
+  document.querySelector('main').after(footer);
+  exact.set('技术支持 · OpenAI Codex', 'Technical support · OpenAI Codex');
+
   const roots = [document.querySelector('title'), document.querySelector('header'),
-    document.querySelector('main'), document.querySelector('#viewer')].filter(Boolean);
+    document.querySelector('main'), footer, document.querySelector('#viewer')].filter(Boolean);
 
   function apply() {
     document.documentElement.lang = useEnglish ? 'en' : 'zh-CN';
