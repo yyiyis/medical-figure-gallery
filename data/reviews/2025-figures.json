@@ -83,6 +83,48 @@
         "noteEn": "A postcard from 1900 frames the cover. Its projected view of microbes draws the eye to the issue’s antimicrobial resistance theme.",
         "rightsSource": "https://wwwnc.cdc.gov/eid/article/31/1/ac-3101_article"
       }
+    ],
+    [
+      "abstract",
+      "JACC: Advances",
+      2025,
+      "代谢物分群如何连到表型和遗传结果",
+      "组学|代谢组|UK Biobank|队列研究|心血管|代谢健康|热图|多面板组图",
+      "三栏依次放代谢物分群、表型与遗传位点的关联、心代谢结局。热图和两组关联图各留一块，读者可以顺着分析步骤看结果。",
+      "https://doi.org/10.1016/j.jacadv.2025.101620",
+      "https://ars.els-cdn.com/content/image/1-s2.0-S2772963X25000377-ga1_lrg.jpg",
+      "Zhou 等 · JACC: Advances · Central Illustration",
+      "by-nc-nd",
+      {
+        "doi": "10.1016/j.jacadv.2025.101620",
+        "published": "2025-02-20",
+        "width": 3446,
+        "height": 2329,
+        "titleEn": "Connecting metabolic clusters to phenotypes and genetic results",
+        "noteEn": "Three columns move from metabolite clustering to phenotype and genetic associations, then to cardiometabolic outcomes. The heatmap and association plots follow the order of analysis.",
+        "rightsSource": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11891690/"
+      }
+    ],
+    [
+      "abstract",
+      "JACC: Asia",
+      2025,
+      "心血管风险工具的变量对照",
+      "心血管|风险预测|综述|模型比较|多国研究",
+      "行列固定危险因素和风险工具，空心、半填和实心标记区分纳入程度，描边另标风险增强因素。",
+      "https://doi.org/10.1016/j.jacasi.2025.01.006",
+      "https://ars.els-cdn.com/content/image/1-s2.0-S2772374725000511-ga1_lrg.jpg",
+      "Nguyen 等 · JACC: Asia · Central Illustration",
+      "by",
+      {
+        "doi": "10.1016/j.jacasi.2025.01.006",
+        "published": "2025-03-04",
+        "width": 3446,
+        "height": 2043,
+        "titleEn": "A side-by-side comparison of cardiovascular risk calculators",
+        "noteEn": "Rows align risk factors across calculators. Open, half-filled, and filled symbols distinguish how consistently factors are included, while outlines mark risk enhancers or modifiers.",
+        "rightsSource": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11934049/"
+      }
     ]
   ],
   "withheld": [
@@ -113,6 +155,13 @@
       "status": "original pending",
       "reason": "The publisher lists a visual abstract. The open PMC archive did not supply the matching image.",
       "source": "https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2833029"
+    },
+    {
+      "doi": "10.1016/j.jcmg.2025.05.022",
+      "figure": "Central Illustration",
+      "status": "licence",
+      "reason": "The publisher copyright statement and PMC archive do not document image redistribution permission.",
+      "source": "https://www.jacc.org/doi/10.1016/j.jcmg.2025.05.022"
     }
   ]
 }
