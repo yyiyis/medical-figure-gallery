@@ -1,0 +1,58 @@
+name: Archive the 2025 journal scan
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows: [Medical figure gallery]
+    types: [completed]
+    branches: [main]
+
+permissions: {}
+concurrency:
+  group: medical-gallery-2025-archive
+  cancel-in-progress: false
+
+jobs:
+  archive:
+    if: github.event_name == 'workflow_dispatch' || (github.event.workflow_run.id == 46147150433 && github.event.workflow_run.conclusion == 'success')
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: write
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: main
+      - uses: actions/download-artifact@v4
+        with:
+          name: scan-result
+          run-id: 46147150433
+          path: ${{ runner.temp }}/gallery-2025
+          github-token: ${{ github.token }}
+      - name: Validate and retain the report
+        run: |
+          python3 - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          report = Path(os.environ['RUNNER_TEMP']) / 'gallery-2025' / 'scan-result.json'
+          data = json.loads(report.read_text(encoding='utf-8'))
+          if (data['mode'], data['start'], data['end']) != ('backfill', '2025-01-01', '2025-12-31'):
+              raise ValueError('The report does not match the requested 2025 scan.')
+          names = [entry['name'] for entry in data['results']]
+          if len(set(names)) != len(names) or len(names) != 94:
+              raise ValueError('The report must include the 94 registered journals.')
+          if len(data['items']) != data['candidates']:
+              raise ValueError('Candidate count does not match the report.')
+          for row in data['items']:
+              if not '2025-01-01' <= row[10]['published'] <= '2025-12-31':
+                  raise ValueError('A candidate date falls outside the scan.')
+          data['source_run'] = 46147150433
+          path = Path('data/history-2025.json')
+          path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + '
+', encoding='utf-8')
+          PY
+          git add data/history-2025.json
+          if git diff --cached --quiet; then exit 0; fi
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -m "Archive the 2025 journal catalogue scan"
+          git push origin HEAD:main
