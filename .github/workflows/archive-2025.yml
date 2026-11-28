@@ -25,7 +25,7 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           name: scan-result
-          run-id: 46147150433
+          run-id: '46147150433'
           path: ${{ runner.temp }}/gallery-2025
           github-token: ${{ github.token }}
       - name: Validate and retain the report
@@ -49,8 +49,9 @@ jobs:
                   raise ValueError('A candidate date falls outside the scan.')
           data['source_run'] = 46147150433
           path = Path('data/history-2025.json')
-          path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + '
-', encoding='utf-8')
+          with path.open('w', encoding='utf-8') as output:
+              json.dump(data, output, ensure_ascii=False, indent=2)
+              print(file=output)
           PY
           git add data/history-2025.json
           if git diff --cached --quiet; then exit 0; fi
