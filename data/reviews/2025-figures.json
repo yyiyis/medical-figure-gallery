@@ -4,7 +4,7 @@
     "end": "2025-12-31",
     "basis": "First online publication for articles. Issue month for covers.",
     "workflow": "https://github.com/yyiyis/medical-figure-gallery/actions/runs/46147150433",
-    "review": "Initial individually reviewed figures. The journal scan and candidate review are ongoing."
+    "review": "Initial review of selected figures and publication dates. The annual candidate review is ongoing."
   },
   "dateCorrections": [
     {
@@ -18,6 +18,42 @@
       "doi": "10.1093/eurheartj/ehaf947",
       "published": "2025-12-15",
       "evidence": "https://api.crossref.org/works/10.1093/eurheartj/ehaf947"
+    },
+    {
+      "source": "https://academic.oup.com/eurjpc/article/32/1/77/7777149",
+      "doi": "10.1093/eurjpc/zwae316",
+      "published": "2024-09-26",
+      "evidence": "https://academic.oup.com/eurjpc/article/32/1/77/7777149"
+    },
+    {
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11734013/",
+      "doi": "10.1016/j.jacadv.2024.101372",
+      "published": "2024-12-26",
+      "evidence": "https://pubmed.ncbi.nlm.nih.gov/39817066/"
+    },
+    {
+      "source": "https://the-innovation.org/article/doi/10.59717/j.xinn-med.2025.100175",
+      "doi": "10.59717/j.xinn-med.2025.100175",
+      "published": "2025-11-19",
+      "evidence": "https://www.the-innovation.org/data/article/medicine/preview/pdf/XINNMEDICINE-2025-0036.pdf"
+    },
+    {
+      "source": "https://www.the-innovation.org/article/doi/10.59717/j.xinn-med.2025.100164",
+      "doi": "10.59717/j.xinn-med.2025.100164",
+      "published": "2025-10-31",
+      "evidence": "https://www.the-innovation.org/data/article/medicine/preview/pdf/XINNMEDICINE-2025-0094.pdf"
+    },
+    {
+      "source": "https://www.nature.com/articles/s41746-025-01771-3/figures/1",
+      "doi": "10.1038/s41746-025-01771-3",
+      "published": "2025-07-26",
+      "evidence": "https://www.nature.com/articles/s41746-025-01771-3"
+    },
+    {
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12490207/#abs0002",
+      "doi": "10.1016/j.xcrm.2025.102309",
+      "published": "2025-08-25",
+      "evidence": "https://pubmed.ncbi.nlm.nih.gov/40858104/"
     }
   ],
   "figures": [
@@ -110,7 +146,7 @@
       "JACC: Asia",
       2025,
       "心血管风险工具的变量对照",
-      "心血管|风险预测|综述|模型比较|多国研究",
+      "心血管|风险预测|综述|组间比较|多国研究",
       "行列固定危险因素和风险工具，空心、半填和实心标记区分纳入程度，描边另标风险增强因素。",
       "https://doi.org/10.1016/j.jacasi.2025.01.006",
       "https://ars.els-cdn.com/content/image/1-s2.0-S2772374725000511-ga1_lrg.jpg",
@@ -124,6 +160,48 @@
         "titleEn": "A side-by-side comparison of cardiovascular risk calculators",
         "noteEn": "Rows align risk factors across calculators. Open, half-filled, and filled symbols distinguish how consistently factors are included, while outlines mark risk enhancers or modifiers.",
         "rightsSource": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11934049/"
+      }
+    ],
+    [
+      "figures",
+      "Journal of Exposure Science & Environmental Epidemiology",
+      2025,
+      "用同一套颜色比较两地的个人光暴露",
+      "环境健康|可穿戴|多国研究|研究流程图|地理地图|时间轴|多面板组图",
+      "图 1 顶部放共同的测量日程。下面的地图、个人观测时段和日内光照曲线沿用两地配色，还标出设备的记录空档。",
+      "https://www.nature.com/articles/s41370-025-00825-8/figures/1",
+      "https://media.springernature.com/original/springer-static/image/art%3A10.1038%2Fs41370-025-00825-8/MediaObjects/41370_2025_825_Fig1_HTML.png",
+      "Biller、Zauner 等 · Figure 1",
+      "by",
+      {
+        "doi": "10.1038/s41370-025-00825-8",
+        "published": "2025-12-03",
+        "width": 1972,
+        "height": 1760,
+        "titleEn": "Comparing personal light exposure at two sites",
+        "noteEn": "Figure 1 begins with a shared measurement schedule. The map, individual observation periods, and daily light curves reuse the site colors and show gaps in device recording.",
+        "rightsSource": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12960204/"
+      }
+    ],
+    [
+      "figures",
+      "Nature Communications",
+      2025,
+      "在同一张图上组织组学、全身健康与暴露组",
+      "暴露组|环境健康|脑健康|多组学|概念框架|概念与方法示意图",
+      "图 1 左侧沿微观到宏观排列数据层，用重复的图标格标记每层变量。右侧单独组织怎样把这些信息纳入个体模型。",
+      "https://www.nature.com/articles/s41467-025-67448-3/figures/1",
+      "https://media.springernature.com/original/springer-static/image/art%3A10.1038%2Fs41467-025-67448-3/MediaObjects/41467_2025_67448_Fig1_HTML.png",
+      "Ibáñez 等 · Nature Communications 图 1",
+      "by-nc-nd",
+      {
+        "doi": "10.1038/s41467-025-67448-3",
+        "published": "2025-12-11",
+        "width": 1983,
+        "height": 1759,
+        "titleEn": "Mapping omics, whole-body health and the exposome",
+        "noteEn": "The left panel arranges data layers from micro to macro, using a recurring icon grid for variables. The right panel outlines how these layers could feed into personalized models.",
+        "rightsSource": "https://www.nature.com/articles/s41467-025-67448-3"
       }
     ]
   ],
@@ -162,6 +240,20 @@
       "status": "licence",
       "reason": "The publisher copyright statement and PMC archive do not document image redistribution permission.",
       "source": "https://www.jacc.org/doi/10.1016/j.jcmg.2025.05.022"
+    },
+    {
+      "doi": "10.1136/bmjopen-2025-101632",
+      "figure": "Figure 1",
+      "status": "original pending",
+      "reason": "The accessible image is 613 × 453 and the labels are too small for full-size study of the design.",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12551503/"
+    },
+    {
+      "doi": "10.1093/ije/dyaf171",
+      "figure": "Figure 1 and Figure 3",
+      "status": "original pending",
+      "reason": "The accessible archive figures are 800 pixels wide. An original with legible labels at gallery size was not verified.",
+      "source": "https://doi.org/10.1093/ije/dyaf171"
     }
   ]
 }
